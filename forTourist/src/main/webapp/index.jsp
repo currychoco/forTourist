@@ -20,15 +20,28 @@
         </ul>
 	</nav>
 	<section>
+<<<<<<< HEAD
 		메인 수정 최종으로 3:11에 했습니다 .
 		ㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇ
 		ㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴ
 		머지하겠습니다.
 		ㅁㄴㅇㅁㄴㅇㅁㄴㅇ
 		홍지웅 브런치에서 머지 
+<<<<<<< HEAD
+=======
+=======
+		홍지웅 최종 커밋 
+>>>>>>> refs/remotes/origin/#JeongMinsik
+		
+>>>>>>> refs/remotes/origin/main
 	</section>
+<<<<<<< HEAD
+	<footer>
+
+=======
 	<footer>	
 	푸터푸터
+>>>>>>> refs/remotes/origin/#HongJiung
 	</footer>
 </body>
 </html>
