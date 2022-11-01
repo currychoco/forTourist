@@ -20,7 +20,22 @@
         </ul>
 	</nav>
 	<section>
+<<<<<<< HEAD
 	광고?? 
+=======
+<<<<<<< HEAD
+		홍지웅 최종 커밋 
+		
+		홍지웅 삭제하고 다시 최종 커밋합니다.
+=======
+		메인 수정 최종으로 3:11에 했습니다 .
+		ㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇ
+		ㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴ
+		머지하겠습니다.
+		ㅁㄴㅇㅁㄴㅇㅁㄴㅇ
+		홍지웅 브런치에서 머지 
+>>>>>>> refs/remotes/origin/#HongJiung
+>>>>>>> refs/remotes/origin/#JeongMinsik
 	</section>
 	<footer>	
 	회사정보
