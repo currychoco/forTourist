@@ -24,6 +24,7 @@
 	</section>
 	<footer>
 		출처~ 참고~
+		정민식
 	</footer>
 </body>
 </html>
