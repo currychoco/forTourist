@@ -21,6 +21,6 @@
         </table>
     </div>
 
-    <script src="search_festival.js"></script>
+    <script src="resources/search_festival.js"></script>
 </body>
 </html>
