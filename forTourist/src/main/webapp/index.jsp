@@ -23,19 +23,10 @@
 	
 	</section>
 	<footer>
-		출처~ 참고~
-<<<<<<< HEAD
 
 		정민식
-		연13213123
-=======
-<<<<<<< HEAD
-		
-	 <!-- #홍지웅  -->
-	 멀지 수정 했습니다.
-	 수정수정
-	 수정2번째 홍지웅
->>>>>>> refs/remotes/origin/#HongJiung
+		연1
+		1234123413
 	</footer>
 </body>
 </html>
