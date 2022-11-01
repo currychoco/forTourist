@@ -24,8 +24,12 @@
 	</section>
 	<footer>
 		출처~ 참고~
+<<<<<<< HEAD
 		
 	 <!-- #홍지웅  -->
+=======
+		정민식
+>>>>>>> refs/remotes/origin/#JeongMinsik
 	</footer>
 </body>
 </html>
