@@ -4,15 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="header.jsp"/>
-
-	<section>
-		테마 / 전국
-	</section>
-	
-	<jsp:include page="footer.jsp"/>
-	
+	<footer>
+		출처, 참고.
+	</footer>
 </body>
 </html>

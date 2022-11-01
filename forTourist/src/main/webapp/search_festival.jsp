@@ -4,9 +4,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
+    <div>
+        <input type="date" id="date" />
+        <button onclick="searchFestival()">search</button>
+    </div>
 
+    <div>
+        <table>
+            <tbody class="container">
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="search_festival.js"></script>
 </body>
 </html>
