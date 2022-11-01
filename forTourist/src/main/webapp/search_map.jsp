@@ -28,11 +28,11 @@
 
 
 	let map;
-|	function initMap() {
+	function initMap() {
 		var seoul = new google.maps.LatLng(37.580797, 126.990675);
 		map = new google.maps.Map(document.getElementById("map"), {
 			center : seoul,
-			zoom : 8,
+			zoom : 15,
 		});
 
 //		const infowindow = new google.maps.InfoWindow();
