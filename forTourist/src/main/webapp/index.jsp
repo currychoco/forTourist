@@ -21,6 +21,7 @@
 	</nav>
 	<section>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	광고?? 
 =======
 <<<<<<< HEAD
@@ -39,6 +40,12 @@
 	</section>
 	<footer>	
 	회사정보
+=======
+	
+	</section>
+	<footer>
+	출처, 참고.
+>>>>>>> refs/remotes/origin/#RyuHyeKyoung
 	</footer>
 </body>
 </html>
