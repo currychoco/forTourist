@@ -40,6 +40,7 @@
 	 수정3번째 1:05
 =======
 >>>>>>> refs/remotes/origin/#HongJiung
+되고있낭? 모르곘네...
 >>>>>>> refs/remotes/origin/#JeongMinsik
 	</footer>
 </body>
