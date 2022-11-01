@@ -24,8 +24,9 @@
 	</section>
 	<footer>
 		출처~ 참고~
+
 		정민식
-		연습
+		연13213123
 	</footer>
 </body>
 </html>
