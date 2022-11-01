@@ -24,8 +24,12 @@
 	</section>
 	<footer>
 		출처~ 참고~
+<<<<<<< HEAD
 		
 	 <!-- #홍지웅  -->
+	 멀지 수정 했습니다.
+	 수정수정
+	 
 	</footer>
 </body>
 </html>
