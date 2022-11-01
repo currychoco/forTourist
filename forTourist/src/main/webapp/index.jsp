@@ -40,7 +40,14 @@
 	 수정3번째 1:05
 =======
 >>>>>>> refs/remotes/origin/#HongJiung
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/#JeongMinsik
+=======
+되고있낭? 모르곘네...
+>>>>>>> refs/remotes/origin/#JeongMinsik
+
+이거 내거에만 따로 올라가야 하는데 왜 자 꾸 메인에 올라가지;;;;;
+>>>>>>> branch 'main' of https://github.com/currychoco/forTourist.git
 	</footer>
 </body>
 </html>
