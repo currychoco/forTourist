@@ -24,6 +24,7 @@
 		<!-- #이혜량 -->
 	</section>
 	<footer>
+<<<<<<< HEAD
 		출처~ 참고~
 <<<<<<< HEAD
 
@@ -60,6 +61,11 @@
 홍지웅 메인 머지 도전 해보겠습니다.
 
 >>>>>>> refs/remotes/origin/main
+=======
+	홍지웅 14:26분 새롭게 커밋 
+	머지용 
+	 
+>>>>>>> refs/remotes/origin/#HongJiung
 	</footer>
 </body>
 </html>
