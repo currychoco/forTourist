@@ -1,3 +1,7 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//src/main/webapp/search_area.jsp=UTF-8
+=======
+encoding//src/main/webapp/search_keyword.jsp=UTF-8
+>>>>>>> refs/remotes/origin/#JeongMinsik
 encoding/<project>=UTF-8
