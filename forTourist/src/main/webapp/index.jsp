@@ -55,7 +55,7 @@
 이거 내거에만 따로 올라가야 하는데 왜 자 꾸 메인에 올라가지;;;;;
 >>>>>>> branch 'main' of https://github.com/currychoco/forTourist.git
 
-
+메인ㄱㄱ
 
 홍지웅 메인 머지 도전 해보겠습니다.
 
