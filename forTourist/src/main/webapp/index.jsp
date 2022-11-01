@@ -30,6 +30,8 @@
 =======
 		정민식
 >>>>>>> refs/remotes/origin/#JeongMinsik
+
+내 브랜치에 이제 올라가나?!?!?!
 	</footer>
 </body>
 </html>
