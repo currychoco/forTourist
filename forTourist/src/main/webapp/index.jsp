@@ -23,10 +23,16 @@
 	
 	</section>
 	<footer>
+<<<<<<< HEAD
 
 		정민식
 		연1
 		1234123413
+=======
+	홍지웅 14:26분 새롭게 커밋 
+	머지용 
+	 
+>>>>>>> refs/remotes/origin/#HongJiung
 	</footer>
 </body>
 </html>
