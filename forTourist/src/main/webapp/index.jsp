@@ -22,10 +22,15 @@
 	<section>
 		홍지웅 최종 커밋 
 		
-		<!-- #이혜량 -->
+		홍지웅 삭제하고 다시 최종 커밋합니다.
 	</section>
+<<<<<<< HEAD
 	<footer>
 
+=======
+	<footer>	
+	푸터푸터
+>>>>>>> refs/remotes/origin/#HongJiung
 	</footer>
 </body>
 </html>
