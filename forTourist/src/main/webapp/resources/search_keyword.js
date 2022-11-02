@@ -17,10 +17,23 @@ function searchKeyword(){
        console.log("response : ", response);
        const items = response.response.body.items.item;
        console.log(items);
-       items.forEach(e => {
-       });
+       items.forEach((e) => {
+            const firstimage = e.firstimage;
+            const title = e.title;
+            const addr1 = e.addr1;
+            const addr2 = e.addr2;
+            const tel = e.tel;
+       $(".container").append(
+        `<tr>
+        <td><img src="${firstimage}"></td>
+            <td>${title}</td>
+            <td>${addr1}</td>
+            <td>${addr2}</td>
+            <td>${tel}</td>
+        </tr>`
+     );
     });
-    console.log("아무거나");
+});
 }
 
 function syncKeyword(item){
