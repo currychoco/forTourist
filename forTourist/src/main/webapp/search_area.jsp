@@ -27,45 +27,48 @@
         </nav>
         <section>
             <h1>지역별 검색</h1>
-            <button id="key" onclick="clk(this)" value="부산광역시">부산</button>
-            <button id="key" onclick="clk(this)" value="인천광역시">인천</button>
-            <button id="key" onclick="clk(this)" value="서울특별시">서울</button>
-            <button id="key" onclick="clk(this)" value="광주광역시">광주</button>
-            <button id="key" onclick="clk(this)" value="대구광역시">대구</button>
-            <button id="key" onclick="clk(this)" value="대전광역시">대전</button>
-            <button id="key" onclick="clk(this)" value="울산광역시">울산</button>
-            <button id="key" onclick="clk(this)" value="강원도">강원도</button>
-            <button id="key" onclick="clk(this)" value="충청북도">충청북도</button>
-            <button id="key" onclick="clk(this)" value="충청남도">충청남도</button>
-            <button id="key" onclick="clk(this)" value="전라북도">전라북도</button>
-            <button id="key" onclick="clk(this)" value="전라남도">전라남도</button>
-            <button id="key" onclick="clk(this)" value="경상남도">경상남도</button>
-            <button id="key" onclick="clk(this)" value="경상북도">경상북도</button>
-            </section>
+            <button id="key" onclick="clk(this)" value="1">서울</button>
+            <button id="key" onclick="clk(this)" value="6">부산</button>
+            <button id="key" onclick="clk(this)" value="4">대구</button>
+            <button id="key" onclick="clk(this)" value="2">인천</button>
+            <button id="key" onclick="clk(this)" value="5">광주</button>
+            <button id="key" onclick="clk(this)" value="3">대전</button>
+            <button id="key" onclick="clk(this)" value="7">울산</button>
+            <button id="key" onclick="clk(this)" value="8">세종</button>
+            <button id="key" onclick="clk(this)" value="39">제주도</button>
+            <button id="key" onclick="clk(this)" value="31">경기도</button>
+            <button id="key" onclick="clk(this)" value="32">강원도</button>
+            <button id="key" onclick="clk(this)" value="33">충청북도</button>
+            <button id="key" onclick="clk(this)" value="34">충청남도</button>
+            <button id="key" onclick="clk(this)" value="35">전라북도</button>
+            <button id="key" onclick="clk(this)" value="36">전라남도</button>
+            <button id="key" onclick="clk(this)" value="37">경상북도</button>
+            <button id="key" onclick="clk(this)" value="38">경상남도</button>
+        </section>
         <section>
-            <div class="listContainer">
-                <div>
-                    <strong>구룡소 돌개구멍 (경북 동해안 국가지질공원)</strong>
-                    <img src="http://tong.visitkorea.or.kr/cms/resource/77/2614477_image2_1.bmp" alt="구룡소">
-                    <p>경상북도 포항시 남구 호미곶면 대동배리</p>
-                </div>
+            <div style="text-align: center;">
+                <button class="back_button" onclick="getDataBack()">back</button>
+                <button class="next_button" onclick="getDataNext()">next</button>
             </div>
-            <!-- <table border="1">
+
+            <table border="1">
                 <thead class="head">
                     <tr>
-                        <th>image</th>
-                        <th>title</th>
+                        <th>img</th>               
                         <th>address</th>
+                        <th>title</th> 
                     </tr>
                 </thead>
                 <tbody class="container">
 
                 </tbody>
-            </table> -->
+            </table>
         </section>
     </main>
+    <script src="resources/search_area.js"></script>
     <footer>
+
     </footer>
     </body>
-    <script src="resources/search_area.js"></script>
+
 </html>
