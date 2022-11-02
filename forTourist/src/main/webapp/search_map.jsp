@@ -25,7 +25,19 @@
 <div id="map"></div>
 
 <script>
+<%
+/*
+참조 url
+https://developers.google.com/maps/documentation/javascript/events#MarkerEvents
+https://developers.google.com/maps/documentation/javascript/reference/coordinates#Point
+https://developers.google.com/maps/documentation/javascript/reference/marker
+https://console.cloud.google.com/apis/credentials?project=weighty-media-367307
+https://support.google.com/maps/answer/18539?hl=ko&co=GENIE.Platform%3DDesktop
+https://velog.io/@jiwon709/Google-Maps-API-%ED%99%9C%EC%9A%A9
+https://developers.google.com/maps/documentation/javascript/events?hl=ko
+*/
 
+%>
 
 	let map;
 	function initMap() {

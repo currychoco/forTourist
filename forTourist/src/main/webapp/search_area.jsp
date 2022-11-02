@@ -27,23 +27,21 @@
         </nav>
         <section>
             <h1>지역별 검색</h1>
-            <div>
-                <button class="searchBtn" value="서울">서울</button>
-                <button class="searchBtn" value="부산">부산</button>
-                <button class="searchBtn" value="인천">인천</button>
-                <button class="searchBtn" value="광주">광주</button>
-                <button class="searchBtn" value="대구">대구</button>
-                <button class="searchBtn" value="대전">대전</button>
-                <button class="searchBtn" value="울산">울산</button>
-                <button class="searchBtn" value="강원도">강원도</button>
-                <button class="searchBtn" value="충청북도">충청북도</button>
-                <button class="searchBtn" value="충청남도">충청남도</button>
-                <button class="searchBtn" value="전라북도">전라북도</button>
-                <button class="searchBtn" value="전라남도">전라남도</button>
-                <button class="searchBtn" value="경상남도">경상남도</button>
-                <button class="searchBtn" value="경상북도">경상북도</button>
-            </div>
-        </section>
+            <button id="key" onclick="clk(this)" value="부산광역시">부산</button>
+            <button id="key" onclick="clk(this)" value="인천광역시">인천</button>
+            <button id="key" onclick="clk(this)" value="서울특별시">서울</button>
+            <button id="key" onclick="clk(this)" value="광주광역시">광주</button>
+            <button id="key" onclick="clk(this)" value="대구광역시">대구</button>
+            <button id="key" onclick="clk(this)" value="대전광역시">대전</button>
+            <button id="key" onclick="clk(this)" value="울산광역시">울산</button>
+            <button id="key" onclick="clk(this)" value="강원도">강원도</button>
+            <button id="key" onclick="clk(this)" value="충청북도">충청북도</button>
+            <button id="key" onclick="clk(this)" value="충청남도">충청남도</button>
+            <button id="key" onclick="clk(this)" value="전라북도">전라북도</button>
+            <button id="key" onclick="clk(this)" value="전라남도">전라남도</button>
+            <button id="key" onclick="clk(this)" value="경상남도">경상남도</button>
+            <button id="key" onclick="clk(this)" value="경상북도">경상북도</button>
+            </section>
         <section>
             <div class="listContainer">
                 <div>
@@ -52,12 +50,22 @@
                     <p>경상북도 포항시 남구 호미곶면 대동배리</p>
                 </div>
             </div>
+            <!-- <table border="1">
+                <thead class="head">
+                    <tr>
+                        <th>image</th>
+                        <th>title</th>
+                        <th>address</th>
+                    </tr>
+                </thead>
+                <tbody class="container">
+
+                </tbody>
+            </table> -->
         </section>
     </main>
     <footer>
-
     </footer>
-    <script src="TP_Tour.js"></script> 
     </body>
-
+    <script src="resources/search_area.js"></script>
 </html>
