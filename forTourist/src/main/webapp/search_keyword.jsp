@@ -17,6 +17,11 @@
    		<input type="text" id="keyword"/>
     	<button onclick="searchKeyword()">search</button>
     </div>
+
+	<div>
+        <button class="back_button" onclick="getDataBack()">back</button>
+        <button class="next_button" onclick="getDataNext()">next</button>
+    </div>
     
     <table border="1">
     	<thead class="head">
@@ -24,8 +29,6 @@
                 <th>사진</th>              
                 <th>이름</th>              
                 <th>주소</th>               
-                <th>상세주소</th>              
-                <th>전화번호</th>
             </tr>
         </thead>
         <tbody class="container">
