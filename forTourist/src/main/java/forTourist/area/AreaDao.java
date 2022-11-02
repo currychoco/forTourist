@@ -21,6 +21,7 @@ public class AreaDao {
 		return instance;
 	}
 	
+//	public AreaDto 
 	
 
 }
