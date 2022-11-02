@@ -2,10 +2,6 @@ function searchKeyword(){
     let keyword =  $("#keyword").val();
    
    console.log(keyword);
-   let data = [];
-   data = keyword.split('-');
-
-   keyword = data[0] + data[1] + data[2] + data[3]+ data[4];
 
    $.ajax({
        method: "GET",
@@ -22,7 +18,6 @@ function searchKeyword(){
        const items = response.response.body.items.item;
        console.log(items);
        items.forEach(e => {
-        syncKeyword(e);
        });
     });
     console.log("아무거나");
