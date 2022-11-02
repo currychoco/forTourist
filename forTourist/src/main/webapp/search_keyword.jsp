@@ -13,7 +13,7 @@
 
 <body>
     <input type="text" id="keyword"/>
-    <button onclick="search()">search</button>
+    <button onclick="searchKeyword()">search</button>
 
     <!-- 문서의 하단에 위치함 -->
      <script src="resources/search_keyword.js"></script>
