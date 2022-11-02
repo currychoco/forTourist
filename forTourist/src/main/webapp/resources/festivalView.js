@@ -7,7 +7,12 @@ function searchFestival(){
         	date : date
        }
    }).done(function(response){
-		console.log(response);
+		console.log("여기 들어오긴 하세요???");
+		const list = response;
+		
+		list.forEach(e=>{
+			
+		});
    });
 }
  
