@@ -1,7 +1,5 @@
 function searchFestival(){
     let date = $("#date").val();
-    
-    console.log(typeof(date));
     let data = [];
     data = date.split('-');
 
@@ -11,6 +9,7 @@ function searchFestival(){
        method:"GET",
        url:"http://apis.data.go.kr/B551011/KorService/searchFestival",
        data:{
+			numOfRows:30,
            _type:'json',
            serviceKey:'l2oC21FGcJ1+nVdL+JFnI3VBpnvzf5lsgD57VDKIGm7hR6fr0+NtkS5i+qtBHo7zUtvUe1nhWVqg/Kc6dxa/Ow==',
            MobileOS:'ETC',
@@ -18,14 +17,11 @@ function searchFestival(){
            eventStartDate: date
        }
    }).done(function(response){
-       console.log("response : ", response);
        const items = response.response.body.items.item;
-       console.log(items);
        items.forEach(e => {
           syncFestival(e);
        });
    });
-   console.log("아무거나");
 }
 
 function syncFestival(item){

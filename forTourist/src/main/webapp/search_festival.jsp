@@ -12,15 +12,6 @@
         <button onclick="searchFestival()">search</button>
     </div>
 
-    <div>
-        <table>
-            <tbody class="container">
-                <tr>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
     <script src="resources/search_festival.js"></script>
 </body>
 </html>

@@ -3,6 +3,9 @@ package forTourist.festival;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import forTourist.util.DBManager;
 
@@ -104,5 +107,55 @@ public class FestivalDao {
 				e2.printStackTrace();
 			}
 		}
+	}
+	
+	public List<FestivalDto> getAllFestivalByDate(String date){
+		List<FestivalDto> list = new ArrayList<>();
+		String sql = "select * from festival\r\n"
+				+ " where event_start_date <= STR_TO_DATE(?, '%Y-%m-%d') \r\n"
+				+ " AND event_end_date >= STR_TO_DATE(?, '%Y-%m-%d');";
+		
+		try {
+			conn=DBManager.getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, date);
+			pstmt.setString(2, date);
+			rs = pstmt.executeQuery();
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			while(rs.next()) {
+				int contentId = rs.getInt(1);
+				String addr1 = rs.getString(2);
+				String addr2 = rs.getString(3);
+				String areacode = rs.getString(4);
+				String booktour = rs.getString(5);
+				String cat1 = rs.getString(6);
+				String cat2 = rs.getString(7);
+				String cat3 = rs.getString(8);
+				String eventEndDate = sdf.format(rs.getDate(9));
+				String eventStartDate = sdf.format(rs.getDate(10));
+				String posterImage = rs.getString(11);
+				double mapX = rs.getDouble(12);
+				double mapY = rs.getDouble(13);
+				int mlevel = rs.getInt(14);
+				String sigungucode =rs.getString(15);
+				String tel = rs.getString(16);
+				String title = rs.getString(17);
+				
+				list.add(new FestivalDto(contentId, addr1, addr2, areacode, booktour, cat1, cat2, cat3, eventEndDate, eventStartDate, posterImage, mapX, mapY, mlevel, sigungucode, tel, title));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return list;
 	}
 }
