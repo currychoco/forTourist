@@ -1,6 +1,6 @@
 
-function clk() {
-    let key = $("#key").val();
+function clk(element) {
+    let key = element.value;
     console.log(key);
 
     $.ajax({
