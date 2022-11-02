@@ -113,7 +113,7 @@ public class FestivalDao {
 		List<FestivalDto> list = new ArrayList<>();
 		String sql = "select * from festival\r\n"
 				+ " where event_start_date <= STR_TO_DATE(?, '%Y-%m-%d') \r\n"
-				+ " AND event_end_date >= STR_TO_DATE(?, '%Y-%m-%d');";
+				+ " AND event_end_date >= STR_TO_DATE(?, '%Y-%m-%d') ORDER BY event_end_date;";
 		
 		try {
 			conn=DBManager.getConnection();
