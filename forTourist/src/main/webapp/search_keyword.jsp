@@ -12,9 +12,21 @@
 </head>
 
 <body>
+	<h1>키워드 검색</h1>
+	<div>
     <input type="text" id="keyword"/>
     <button onclick="searchKeyword()">search</button>
+    </div>
 
+
+	<div>
+        <table>
+            <tbody class="container">
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <!-- 문서의 하단에 위치함 -->
      <script src="resources/search_keyword.js"></script>
 </body>
