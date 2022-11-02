@@ -12,7 +12,7 @@
         <button onclick="searchFestival()">search</button>
     </div>
 
-    <div>
+    <div>ㄴ
         <table>
             <tbody class="container">
                 <tr>

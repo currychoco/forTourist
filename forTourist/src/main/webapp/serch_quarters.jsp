@@ -13,27 +13,17 @@
 	<table border = 1px>
 		<thead>
 			<tr>
-				<th><img src =""/>firstimage</th>
+				<th>firstimage</th>
 				<th>title</th>
 				<th>addr1</th>
 				<th>tel</th>
 				<th>readcount</th>
 				<th>굿스테이</th>
 				<th>베니키아</th>
-				<th>한옥</th>
 			</tr>
 		</thead>
 		<tbody class = "container">
-			<tr>
-				<td><img src=""></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
+			
 		</tbody>
 	</table>
 	<script src="search_quarters.js"></script>
