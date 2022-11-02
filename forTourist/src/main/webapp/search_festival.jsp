@@ -11,11 +11,8 @@
         <input type="date" id="date" />
         <button onclick="searchFestival()">search</button>
     </div>
-<<<<<<< HEAD
-    
-=======
 
-    <div>ㄴ
+    <div>
         <table>
             <tbody class="container">
                 <tr>
@@ -24,7 +21,6 @@
         </table>
     </div>
 
->>>>>>> refs/remotes/origin/#RyuHyeKyoung
     <script src="resources/search_festival.js"></script>
 </body>
 </html>
