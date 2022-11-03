@@ -11,19 +11,11 @@ import forTourist.util.DBManager;
 
 public class UserDao {
 
-	private String url;
-	private String user;
-	private String password;
-
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
 	private UserDao() {
-		this.url = "jdbc:mysql://database-1.ccnr5xsbemm5.ap-northeast-2.rds.amazonaws.com:3306/fortourist";
-		this.user = "admin";
-		this.password = "tGTACmhj8b0ti";
-
 		this.conn = null;
 		this.pstmt = null;
 		this.rs = null;
@@ -107,5 +99,39 @@ public class UserDao {
 		
 	}
 	
+	public UserDto getUserById(String id) {
+		UserDto dto = null;
+		String sql = "SELECT * FROM `user` WHERE id=?";
+		
+		try {
+			conn=DBManager.getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				int no = rs.getInt(1);
+				String password = rs.getString(3);
+				String name = rs.getString(4);
+				String nickname = rs.getString(5);
+				String gender = rs.getString(6);
+				String phone = rs.getString(7);
+				Timestamp resDate = rs.getTimestamp(8);
+				
+				dto = new UserDto(no, id, password, name, nickname, gender, phone, resDate);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return dto;
+	}
 
 }
