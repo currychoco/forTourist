@@ -1,15 +1,15 @@
 
 let pageNo = 1;
-let is_end = false;
+let endPoint = false;
 
 $(".back_button").hide();
+$(".next_button").hide();
 $(".head").hide();
 
 
 function clk(element) {
     let key = element.value;
     console.log(key);
-    
     $(".container").empty();
     $.ajax({
         method: "GET",
@@ -21,35 +21,49 @@ function clk(element) {
             MobileApp: 'AppTest',
             areaCode: key,
             pageNo: pageNo,
-            numOfRows : 20
+            numOfRows: 20
         },
-    }).done(function(response){
+    }).done(function (response) {
         console.log("response : ", response);
         const items = response.response.body.items.item;
         items.forEach((e) => {
-            if(e.firstimage){
-            const firstimage = e.firstimage;
-            const url = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query="+e.title;
-            const title = e.title;
-            const addr1 = e.addr1;
-            
-            $(".container").append(
-                `<tr>
-                <td><a href="${url}"><img src="${firstimage}"></a></td>
+            if (e.firstimage) {
+                const firstimage = e.firstimage;
+                const url = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=" + e.title;
+                const title = e.title;
+                const addr1 = e.addr1;
+                $(".head").show();
+                $(".container").append(
+                    `<tr>
+                <td><a href="${url}"><img src="${firstimage}" class = "img"></a></td>
                   <td>${addr1}</td>
                   <td>${title}</td>
                 </tr>`
-             );
+                );
             }
         });
 
-        is_end = response.meta.is_end;
-        if (is_end === true) {
-           $(".next_button").hide();
+        let cnt = response.response.body.totalCount;
+        let restCnt = response.response.body.totalCount % 10;
+        if (restCnt === 0) {
+            if (cnt / 20 <= pageNo) {
+                endPoint = true;
+            } else {
+                endPoint = false;
+            }
+        } else {
+            if (cnt / 20 < pageNo) {
+                endPoint = true;
+            } else {
+                endPoint = false;
+            }
         }
-        if (page === 1) {
-           $(".back_button").hide();
-           $(".next_button").show();
+        if (endPoint === true) {
+            $(".next_button").hide();
+        }
+        if (pageNo === 1) {
+            $(".back_button").hide();
+            $(".next_button").show();
         }
 
     });
@@ -60,14 +74,16 @@ function clk(element) {
 function getDataBack() {
     if (pageNo > 1) {
         pageNo--;
-       clk();
+        clk(key);
     }
- }
- 
- function getDataNext() {
-    if (is_end === false) {
+}
+
+function getDataNext() {
+    if (endPoint === false) {
         pageNo++;
-       clk();
-       $(".back_button").show();
+        clk(key);
+        $(".back_button").show();
     }
- }
+}
+
+
