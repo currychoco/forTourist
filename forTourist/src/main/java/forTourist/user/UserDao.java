@@ -124,6 +124,9 @@ public class UserDao {
 		return 0;
 	}
 	
+	public void modifyUser(String id, String password) {
+		
+	}
 	
 	
 	public void deleteUser(String account , String password) {
