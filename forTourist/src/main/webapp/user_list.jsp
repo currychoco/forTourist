@@ -25,7 +25,8 @@
 					<th>회원 닉네임</th>
 					<th>회원 성별</th>
 					<th>회원 핸드폰번호</th>
-					<th>회원 가입날짜<th>
+					<th>회원 가입날짜</th>
+					<th>권한 여부</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,7 +42,8 @@
 				<td><%=user.getNickname()%></td>
 				<td><%=user.getGender()%></td>
 				<td><%=user.getPhone()%></td>
-				<td><%=user.getResDate() %></td>
+				<td><%=user.getResDate()%></td>
+				<td><%=user.getManager()%></td>
 			</tr>
 			<%
 			}
