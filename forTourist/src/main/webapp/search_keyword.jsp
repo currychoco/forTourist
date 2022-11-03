@@ -82,15 +82,16 @@
         </optgroup>
         </select>
 
-        <label class="reg2" for="healing">힐링 :</label>
+        <label class="reg" for="healing">힐링 :</label>
         <select size="4" id="healing" multiple>
             <option value="tree">산림욕</option>
             <option value="sea">해수욕</option>
             <option value="hotWater">온천</option>
             <option value="relax">휴양림</option>
+       
         </select>
 
-        <label class="reg3" for="outside">야외활동 : </label>
+        <label class="reg" for="outside">야외활동 : </label>
         <select size="3" id="outside" multiple>
             <option value="glamping">글램핑</option>
             <option value="camping">캠핑</option>
