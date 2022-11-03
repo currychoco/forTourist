@@ -84,8 +84,6 @@
 
             <div id = "postedReview">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis itaque ea, distinctio provident nam excepturi minima fugiat maiores. Repudiandae iste suscipit doloremque. Qui neque beatae a, nemo repellat soluta debitis!
-                <!-- 입력된 리뷰 택스트를 출력하는 공간 -->
-                <!-- <div> ${리뷰텍스트} </div> -->
             </div>
         </div>
     </article>
