@@ -34,11 +34,11 @@ function clk(element) {
                 const addr1 = e.addr1;
                 $(".head").show();
                 $(".container").append(
-                    `<tr>
-                <td><a href="${url}"><img src="${firstimage}" class = "img"></a></td>
-                  <td>${addr1}</td>
-                  <td>${title}</td>
-                </tr>`
+                    `<ol>
+                <li><a href="${url}"><img src="${firstimage}" class = "img"></a></li>
+                  <li>${title}</li>
+                  <li>${addr1}</li>
+                </ol>`
                 );
             }
         });

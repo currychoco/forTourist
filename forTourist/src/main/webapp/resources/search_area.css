@@ -105,3 +105,8 @@ img {
 	height: 150px;
 	object-fit: cover;
   }
+  
+ ol{
+ list-style-type: none;
+
+ }
