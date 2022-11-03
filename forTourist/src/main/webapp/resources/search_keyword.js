@@ -7,7 +7,9 @@ $(".searchBtn").on("click", () => {
  });
 
 let pageNo = 1;
-let is_end = false;
+let endPoint = false;
+
+
 
 $(".back_button").hide();
 
@@ -51,8 +53,24 @@ function searchKeyword(){
             </tr>`
             );}
         });
-        is_end = response.meta.is_end;
-        if (is_end === true) {
+        
+        let cnt = response.response.body.totalCount;
+        let restCnt = response.response.body.totalCount % 10;
+        if (restCnt === 0) {
+            if (cnt / 10 <= pageNo) {
+                endPoint = true;
+            } else {
+                endPoint = false;
+            }
+        } else {
+            if (cnt / 10 < pageNo) {
+                endPoint = true;
+            } else {
+                endPoint = false;
+            }
+        }
+
+        if (endPoint === true) {
             $(".next_button").hide();
         }
         if (pageNo === 1) {
@@ -71,9 +89,12 @@ function getDataBack() {
 
 
  function getDataNext() {
-    if (is_end === false) {
+    if (endPoint === false) {
        pageNo++;
       searchKeyword(searchInput.val());
        $(".back_button").show();
     }
  }
+
+
+ 
