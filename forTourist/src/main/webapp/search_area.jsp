@@ -11,22 +11,29 @@
     <!-- 라이브러리 등을 참조하는 경우 , 이곳에 위치-->
     <!-- jpquery문서 : https://api.jquery.com-->
     <!-- google cdn : 에서 가져오기-->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <title>Document</title>
+	<link rel="stylesheet" href="resources/search_area.css">
+    </head>
+    <body>
     <header>
-        <h2>한국 관광 사이트</h2>
-    </header>
-    <main>
-        <nav>
-            <ul>
-                <li>지역별 검색</li>
-                <li>활동별 검색</li>
-                <li>축제별 검색</li>
-                <li>전체 지도 검색</li>
+        <ul class = "login"> 
+            <li class = "log"><a href="">로그인</a>
+            <li class = "join"><a href="">회원가입</a>
             </ul>
-        </nav>
-        <section>
-            <h1>지역별 검색</h1>
+        <h1>한국 관광 사이트</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="">지역별 검색</a></li>
+            <li><a href="">활동별 검색</a></li>
+            <li><a href="">축제별 검색</a></li>
+            <li><a href="">전체 지도 검색</a></li>
+        </ul>
+    </nav>
+    <aside>
+            <h2>지역별 검색</h2>
             <button id="key" onclick="clk(this)" value="1">서울</button>
             <button id="key" onclick="clk(this)" value="6">부산</button>
             <button id="key" onclick="clk(this)" value="4">대구</button>
@@ -40,31 +47,21 @@
             <button id="key" onclick="clk(this)" value="32">강원도</button>
             <button id="key" onclick="clk(this)" value="33">충청북도</button>
             <button id="key" onclick="clk(this)" value="34">충청남도</button>
-            <button id="key" onclick="clk(this)" value="35">전라북도</button>
-            <button id="key" onclick="clk(this)" value="36">전라남도</button>
-            <button id="key" onclick="clk(this)" value="37">경상북도</button>
-            <button id="key" onclick="clk(this)" value="38">경상남도</button>
-        </section>
+            <button id="key" onclick="clk(this)" value="35">경상북도</button>
+            <button id="key" onclick="clk(this)" value="36">경상남도</button>
+            <button id="key" onclick="clk(this)" value="37">전라북도</button>
+            <button id="key" onclick="clk(this)" value="38">전라남도</button>
+    </aside>
         <section>
-            <div style="text-align: center;">
-                <button class="back_button" onclick="getDataBack()">back</button>
-                <button class="next_button" onclick="getDataNext()">next</button>
+            
+            <div class="container">
+
             </div>
-
-            <table border="1">
-                <thead class="head">
-                    <tr>
-                        <th>img</th>               
-                        <th>address</th>
-                        <th>title</th> 
-                    </tr>
-                </thead>
-                <tbody class="container">
-
-                </tbody>
-            </table>
+            <div style="text-align: center;">
+                <button id = "key" class="back_button" onclick="getDataBack()">back</button>
+                <button id = "key" class="next_button" onclick="getDataNext()">next</button>
+            </div>
         </section>
-    </main>
     <script src="resources/search_area.js"></script>
     <footer>
 
