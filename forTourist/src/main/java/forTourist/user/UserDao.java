@@ -93,6 +93,31 @@ public class UserDao {
 		return result;
 	}
 	
+	public int getLastNo() {
+		String sql = "SELECT MAX(no) FROM user";
+		
+		try{
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1) +1;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				conn.close();
+				pstmt.close();
+				rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
+	
+	
 	
 	public void deleteUser(String account , String password) {
 		
