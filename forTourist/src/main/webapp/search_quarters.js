@@ -1,4 +1,4 @@
-let key = 1;
+let key = 39;
 let page = 1;
 let is_end = false;
 getData(key);
@@ -9,7 +9,6 @@ function clk(element) {
     getData(key);
 }
 
-
 function getData(key){
     $(".container").empty();
 
@@ -17,7 +16,7 @@ function getData(key){
         method:"GET",
         url: "http://apis.data.go.kr/B551011/KorService/searchStay",
         data: {
-            numOfRows: '10',
+            numOfRows: '12',
             pageNo: `${page}`,
             MobileApp: 'AppTest',
             _type: 'json',
@@ -42,34 +41,32 @@ function getData(key){
               const title = e.title;
               const addr1 = e.addr1;
               const tel = e.tel;
-              const readcount= e.readcount;
+              const contentid= e.contentid;
               const goodstay = e.goodstay;
               const benikia = e.benikia;
               const hanok = e.hanok;
               $(".container").append(
-                  `<tr>
-                  <td><a href = ""><img src="${image}"></a></td>
-                  <td>${title}</td>
-                  <td>${addr1}</td>
-                  <td>${tel}</td>
-                  <td>${readcount}</t>
-                  <td>${goodstay}</td>
-                  <td>${benikia}</td>
-                  </tr>`
+                  `<ol class = "content">
+				  <li id = "contentid" hidden>${contentid}</li>
+                  <li id = "thumbnail"><a href = "reviewForm.jsp"><img src="${image}"id = "firstimg"></a></li>
+                  <li id = "title">${title}</li>
+                  <li id = "address">${addr1}</li>
+                  <li id = "tel">${tel}</li>               
+                  </ol>`
               );
          });
 
-        const whole_page = Math.floor(parseInt(response.response.body.totalCount)/10)+1;
+        const whole_page = Math.floor(parseInt(response.response.body.totalCount)/12)+1;
         console.log(response.response.body.totalCount)
         console.log(whole_page)
-         if (page === whole_page){
-             $('.next_button').hide();
-             is_end=true;
-            }
         if(page === 1) {
             $('.back_button').hide();
             $('.next_button').show();
         }
+         if (page === whole_page){
+             $('.next_button').hide();
+             is_end=true;
+            }
     });
 }
 
