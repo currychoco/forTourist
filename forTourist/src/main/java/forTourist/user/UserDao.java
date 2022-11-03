@@ -117,14 +117,35 @@ public class UserDao {
 		return 0;
 	}
 	
-	public void modifyUser(String id, String password) {
+	public void modifyUser(UserDto user , int no) {
+//		"INSERT INTO `user`(`no`,id,`password`,`name`,nickname,gender,phone) VALUES(?, ?, ?, ?, ?, ?, ?)";
+//		String sql = "UPDATE `user` SET id = ?, `password` = ? , `name` = ?, nickname = ?, gender = ? phone = ?, WHERE `no` = ?";
+		String sql = "UPDATE `user` SET `password` = ? , `name` = ?, phone = ?, WHERE `no` = ?";
 		
-	}
-	
-	
-	public void deleteUser(String account , String password) {
-		
-		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, user.getPassword());
+			pstmt.setString(2, user.getName());
+			pstmt.setString(3, user.getPhone());
+			pstmt.setInt(4, user.getNo());
+			
+//			pstmt.setString(1, user.getId());
+//			pstmt.setString(4, user.getNickname());
+//			pstmt.setString(5, user.getGender());
+			
+			pstmt.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public UserDto getUserById(String id) {
@@ -162,5 +183,9 @@ public class UserDao {
 		}
 		return dto;
 	}
+	
+	
+	
+	
 
 }

@@ -27,11 +27,14 @@ String nickname = request.getParameter("nickname");
 String gender = request.getParameter("gender");
 String phone = request.getParameter("phone");
 
+
+
 /* if(no != null && id != null && password != null && name != null && nickname != null && gender != null && phone != null && resDate != null){ */
 	userDto = new UserDto(no, id , password, name , nickname , gender, phone);
 	userDao.createUser(userDto);
 	response.sendRedirect("user_list.jsp");
 %>
+
 
 </body>
 </html>

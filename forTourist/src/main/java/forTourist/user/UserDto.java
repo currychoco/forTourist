@@ -38,6 +38,14 @@ public class UserDto {
 		this.manager = manager;
 		
 	}
+	
+	public UserDto(String password,  String name , String phone) {
+		super();
+		this.password = password;
+		this.name = name;
+		this.phone = phone;
+	
+	}
 
 
 
@@ -138,12 +146,6 @@ public class UserDto {
 //	public void setManager(boolean manager) {
 //		this.manager = manager;
 //	}
-	
-	
-	
-	
-	
-	
 	
 	
 	

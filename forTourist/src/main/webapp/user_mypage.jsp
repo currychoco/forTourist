@@ -1,6 +1,6 @@
 <%@page import="forTourist.user.UserDto"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="forTourist.user.UserDao"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,10 +12,13 @@
 <body>
 	<section>
 	<%
+	String id = "test1";  // **현재 임시값** 로그인 하고 받아와야 하는 값 입니다.
 	UserDao userDao = UserDao.getInstance();
-	ArrayList<UserDto> list = userDao.getUserAll();
+	UserDto user = userDao.getUserById(id);
 	%>
-		<table border = "1" >
+	<h2>회원 정보 수정 및 탈퇴</h2>
+	
+			<table border = "1" >
 			<thead>
 				<tr>
 					<th>회원 번호</th>
@@ -25,14 +28,9 @@
 					<th>회원 닉네임</th>
 					<th>회원 성별</th>
 					<th>회원 핸드폰번호</th>
-					<th>회원 가입날짜</th>
-					<th>권한 여부</th>
 				</tr>
 			</thead>
 			<tbody>
-			<%
-				for (UserDto user : list) {
-			%>
 			<tr>
 				<!-- 값을 어떻게 넘길건지 -->
 				<td><%=user.getNo()%></td>
@@ -42,20 +40,14 @@
 				<td><%=user.getNickname()%></td>
 				<td><%=user.getGender()%></td>
 				<td><%=user.getPhone()%></td>
-				<td><%=user.getResDate()%></td>
-				<td><%=user.getManager()%></td>
 			</tr>
-			<%
-			}
-			%>
-			
-		 <form>
-		 <input type="button" onclick="location.href='user_joinDelete.jsp'" value="회원 삭제">
-		 <input type="button" onclick="location.href='user_login.jsp'" value="로그인페이지이동">
+		 <form>	
+		 <input type="button" onclick="location.href='user_modify.jsp?value=<%=id%>'" value="회원 정보수정">
+		 <input type="button" onclick="location.href='user_delete.jsp'" value="회원 탈퇴 ">
 		</form>
 		</table>
-
-		</tbody>
+	
+	
 	</section>
 </body>
 </html>
