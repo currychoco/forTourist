@@ -1,4 +1,4 @@
-let key = 1;
+let key = 39;
 let page = 1;
 let is_end = false;
 getData(key);
@@ -9,7 +9,6 @@ function clk(element) {
     getData(key);
 }
 
-
 function getData(key){
     $(".container").empty();
 
@@ -17,7 +16,7 @@ function getData(key){
         method:"GET",
         url: "http://apis.data.go.kr/B551011/KorService/searchStay",
         data: {
-            numOfRows: '10',
+            numOfRows: '12',
             pageNo: `${page}`,
             MobileApp: 'AppTest',
             _type: 'json',
@@ -47,29 +46,26 @@ function getData(key){
               const benikia = e.benikia;
               const hanok = e.hanok;
               $(".container").append(
-                  `<tr>
-                  <td><a href = ""><img src="${image}"></a></td>
-                  <td>${title}</td>
-                  <td>${addr1}</td>
-                  <td>${tel}</td>
-                  <td>${readcount}</t>
-                  <td>${goodstay}</td>
-                  <td>${benikia}</td>
-                  </tr>`
+                  `<ol class = "content">
+                  <li id = "thumbnail"><a href = ""><img src="${image}"id = "firstimg"></a></td>
+                  <li id = "title">${title}</td>
+                  <li id = "address">${addr1}</td>
+                  <li id = "tel">${tel}</td>               
+                  </ol>`
               );
          });
 
-        const whole_page = Math.floor(parseInt(response.response.body.totalCount)/10)+1;
+        const whole_page = Math.floor(parseInt(response.response.body.totalCount)/12)+1;
         console.log(response.response.body.totalCount)
         console.log(whole_page)
-         if (page === whole_page){
-             $('.next_button').hide();
-             is_end=true;
-            }
         if(page === 1) {
             $('.back_button').hide();
             $('.next_button').show();
         }
+         if (page === whole_page){
+             $('.next_button').hide();
+             is_end=true;
+            }
     });
 }
 
