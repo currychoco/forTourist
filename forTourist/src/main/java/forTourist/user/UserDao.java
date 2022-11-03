@@ -37,7 +37,7 @@ public class UserDao {
 	}
 
 	public void createUser(UserDto userDto) {
-		String sql = "INSERT INTO user VALUERS(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO user VALUERS(?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			this.conn = DBManager.getConnection();
@@ -50,7 +50,7 @@ public class UserDao {
 			this.pstmt.setString(5, userDto.getNickname());
 			this.pstmt.setString(6, userDto.getGender());
 			this.pstmt.setString(7, userDto.getPhone());
-			this.pstmt.setTimestamp(8, userDto.getResDate());
+//			this.pstmt.setTimestamp(8, userDto.getResDate());
 
 			this.pstmt.execute();
 			System.out.println("생성 성공 ");
@@ -85,8 +85,8 @@ public class UserDao {
 				String nickname = rs.getString(5);
 				String gender = rs.getString(6);
 				String phone = rs.getString(7);
-				Timestamp resDate = rs.getTimestamp(8);
-				result.add(new UserDto(no, id, password, name, nickname, gender, phone, resDate));
+//				Timestamp resDate = rs.getTimestamp(8);
+				result.add(new UserDto(no, id, password, name, nickname, gender, phone));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -27,7 +27,7 @@ public class UserDto {
 	
 	
 	
-	public UserDto(int no, String id, String password,  String name ,String nickname, String gender, String phone, Timestamp resDate) {
+	public UserDto(int no, String id, String password,  String name ,String nickname, String gender, String phone) {
 		super();
 		this.no = no;
 		this.id = id;
@@ -36,7 +36,7 @@ public class UserDto {
 		this.nickname = nickname;
 		this.gender = gender;
 		this.phone = phone;
-		this.resDate = resDate;
+//		this.resDate = resDate;
 	}
 
 
