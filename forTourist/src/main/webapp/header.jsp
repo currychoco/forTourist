@@ -9,9 +9,17 @@
 </head>
 <body>
 	<header>
+	<%
+	String id = (String)session.getAttribute("id");
+	if(id == null){
+	%>
 		<ul class = "login"> 
-		<li class = "log"><a href="login.jsp">로그인</a>
+		<li class = "log"><a href="loginForm.jsp">로그인</a>
         <li class = "join"><a href="join.jsp">회원가입</a>
+    <%}else{ %>
+    	<span><b><%=id %></b>님 안녕하세요!</span>
+    	<button onclick="location.href='logoutPro.jsp'">logout</button>
+    <%} %>
 		</ul>
 		<h1>관광지 검색</h1>
 	</header>
