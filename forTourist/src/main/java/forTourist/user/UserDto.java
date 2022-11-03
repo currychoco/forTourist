@@ -2,19 +2,6 @@ package forTourist.user;
 
 import java.sql.Timestamp;
 
-//no int id password name nickname gender phone resDate
-
-
-//no int PK 
-//id varchar(20) 
-//password varchar(20) 
-//name varchar(10) 
-//nickname varchar(20) 
-//gender char(1) 
-//phone varchar(20) 
-//resDate timestamp
-
-
 public class UserDto {
 	private int no;
 	private String id;
@@ -24,7 +11,7 @@ public class UserDto {
 	private String gender;
 	private String phone;
 	private Timestamp resDate;
-	
+	private boolean manager;
 	
 	
 	public UserDto(int no, String id, String password,  String name ,String nickname, String gender, String phone) {
@@ -36,7 +23,20 @@ public class UserDto {
 		this.nickname = nickname;
 		this.gender = gender;
 		this.phone = phone;
-//		this.resDate = resDate;
+	}
+	
+	public UserDto(int no, String id, String password,  String name ,String nickname, String gender, String phone , Timestamp resDate, boolean manager) {
+		super();
+		this.no = no;
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.nickname = nickname;
+		this.gender = gender;
+		this.phone = phone;
+		this.resDate = resDate;
+		this.manager = manager;
+		
 	}
 
 
@@ -83,6 +83,11 @@ public class UserDto {
 	public Timestamp getResDate() {
 		return resDate;
 	}
+	
+	
+	public boolean getManager() {
+		return manager;
+	}
 
 
 
@@ -128,6 +133,10 @@ public class UserDto {
 
 //	public void setResDate(Timestamp resDate) {
 //		this.resDate = resDate;
+//	}
+	
+//	public void setManager(boolean manager) {
+//		this.manager = manager;
 //	}
 	
 	
