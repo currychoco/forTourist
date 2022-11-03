@@ -21,7 +21,7 @@
 		<section>
 		<!-- no id password name nickname gender phone resDate 8 -->
 			<form method = "POST" action = "user_joinPro.jsp">
-				<table border = "1" style = "boarder-collapse : collapes;">
+				<table border = "1">
 					<tr>
 						<td id = "title"> 회원번호(자동발생) </td>
 						<td><input type = "text" id = "no" name = "no" value="<%=no %>" maxlength = "50" readonly><td>
