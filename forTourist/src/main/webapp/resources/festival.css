@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.container{
+	display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+    'festivalImg festivalTable';
+}
+
+.festivalImg{
+    grid-area: festivalImg;
+    width: 400px;
+    height: 400px
+}
+
+.festivalImg>img{
+	width: 300px;
+	height: auto;
+}
+
+.festivalTable{
+	grid-area: festivalTable;
+}
+
+festivalTable>table{
+	width:100%;
+	height:100%;
+}
+

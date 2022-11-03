@@ -17,15 +17,12 @@ function searchFestival(){
         	date : date
        }
    }).done(function(response){
-		console.log("lastPage : " + lastPage);
 		const list = response;
-		console.log("list.length :" + list.length );
+		console.log(list);
 		lastPage = parseInt(list.length / CNT);
-		console.log("parseInt(list.size): " + lastPage);
 		if(list.length/CNT > lastPage){
 			lastPage++;
 		}
-		console.log("lastPage : "+lastPage);
 		
 		 $('.container').append(
                 `
@@ -44,21 +41,16 @@ function searchFestival(){
 				if(posterImage === ""){
 					posterImage = noImage;
 				}
-				const mapX = list[i].mapX;
-				const mapY = list[i].mayY;
-				const tel = list[i].tel;
 				const title = list[i].title;
 				
 				$('.container').append(
 				
                 `<tr>
-               		<td>${contentId}</td>
-               		<td><img src ="${posterImage}" width="160px" height="auto"></td>
+               		<td><a href = 'detailFestivalView.jsp?contentId=${contentId}'><img src ="${posterImage}" width="160px" height="auto"></a></td>
                		<td>${title}</td>
                		<td>${eventStartDate}</td>
                		<td>${eventEndDate}</td>
                		<td>${addr1}</td>
-                	<td>${tel}</td>	
                 </tr>`
             );
 			}
