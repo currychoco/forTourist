@@ -11,9 +11,13 @@
 	<section>
 		<div>
 			<input type="date" id="date" name="date">
-			<button onclick="searchFestival()">search</button>
+			<button onclick="firstSearchFestival()">search</button>
 		</div>
 	    <div class='container'>
+    	</div>
+    	<div class="page_form">
+	        <button class="back_button" onclick="getDataBack()">back</button>
+	        <button class="next_button" onclick="getDataNext()">next</button>
     	</div>
 		<script src = "resources/festivalView.js"></script>
 	</section>

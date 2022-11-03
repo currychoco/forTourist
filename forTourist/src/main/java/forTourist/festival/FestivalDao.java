@@ -29,14 +29,14 @@ public class FestivalDao {
 	public FestivalDto findById(int contentId) {
 		FestivalDto dto = null;
 		String sql = "select content_id, addr1, addr2, areacode, booktour, cat1, cat2, cat3, event_end_date, event_start_date, poster_image, map_x, map_y, mlevel, sigungucode, tel, title from festival where content_id = ?";
-		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, contentId);
-			rs=pstmt.executeQuery();
-			
-			if(rs.next()) {
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
 				String addr1 = rs.getString(2);
 				String addr2 = rs.getString(3);
 				String areacode = rs.getString(4);
@@ -44,9 +44,8 @@ public class FestivalDao {
 				String cat1 = rs.getString(6);
 				String cat2 = rs.getString(7);
 				String cat3 = rs.getString(8);
-				// TODO date String 으로 받기
-				//String eventEndDate = rs.get(9);
-				//String eventStartDate = rs.get(10);
+				String eventEndDate = sdf.format(rs.getDate(9));
+				String eventStartDate = sdf.format(rs.getDate(10));
 				String posterImg = rs.getString(11);
 				double mapX = rs.getDouble(12);
 				double mapY = rs.getDouble(13);
@@ -54,8 +53,9 @@ public class FestivalDao {
 				String sigungucode = rs.getString(15);
 				String tel = rs.getString(16);
 				String title = rs.getString(17);
-				
-				dto = new FestivalDto(contentId, addr1, addr2, areacode, booktour, cat1, cat2, cat3, null, null, posterImg, mapX, mapY, mlevel, sigungucode, tel, title);
+
+				dto = new FestivalDto(contentId, addr1, addr2, areacode, booktour, cat1, cat2, cat3, eventEndDate, eventStartDate,
+						posterImg, mapX, mapY, mlevel, sigungucode, tel, title);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -70,13 +70,13 @@ public class FestivalDao {
 		}
 		return dto;
 	}
-	
+
 	public void insertFestival(FestivalDto dto) {
 
 		String sql = "insert into festival(content_id, addr1, addr2, areacode, booktour, cat1, cat2, cat3, event_end_date, event_start_date, poster_image, map_x, map_y, mlevel, sigungucode, tel, title) values(?,?,?,?,?,?,?,?,STR_TO_DATE(?, '%Y%m%d'),STR_TO_DATE(?, '%Y%m%d'),?,?,?,?,?,?,?);";
-		
+
 		try {
-			conn=DBManager.getConnection();
+			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getContentId());
 			pstmt.setString(2, dto.getAddr1());
@@ -95,7 +95,7 @@ public class FestivalDao {
 			pstmt.setString(15, dto.getSigungucode());
 			pstmt.setString(16, dto.getTel());
 			pstmt.setString(17, dto.getTitle());
-			
+
 			pstmt.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -108,22 +108,21 @@ public class FestivalDao {
 			}
 		}
 	}
-	
-	public List<FestivalDto> getAllFestivalByDate(String date){
+
+	public List<FestivalDto> getAllFestivalByDate(String date) {
 		List<FestivalDto> list = new ArrayList<>();
-		String sql = "select * from festival\r\n"
-				+ " where event_start_date <= STR_TO_DATE(?, '%Y-%m-%d') \r\n"
-				+ " AND event_end_date >= STR_TO_DATE(?, '%Y-%m-%d');";
-		
+		String sql = "select * from festival\r\n" + " where event_start_date <= STR_TO_DATE(?, '%Y-%m-%d') \r\n"
+				+ " AND event_end_date >= STR_TO_DATE(?, '%Y-%m-%d') ORDER BY event_end_date;";
+
 		try {
-			conn=DBManager.getConnection();
-			pstmt=conn.prepareStatement(sql);
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, date);
 			pstmt.setString(2, date);
 			rs = pstmt.executeQuery();
-			
+
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			while(rs.next()) {
+			while (rs.next()) {
 				int contentId = rs.getInt(1);
 				String addr1 = rs.getString(2);
 				String addr2 = rs.getString(3);
@@ -138,13 +137,14 @@ public class FestivalDao {
 				double mapX = rs.getDouble(12);
 				double mapY = rs.getDouble(13);
 				int mlevel = rs.getInt(14);
-				String sigungucode =rs.getString(15);
+				String sigungucode = rs.getString(15);
 				String tel = rs.getString(16);
 				String title = rs.getString(17);
-				
-				list.add(new FestivalDto(contentId, addr1, addr2, areacode, booktour, cat1, cat2, cat3, eventEndDate, eventStartDate, posterImage, mapX, mapY, mlevel, sigungucode, tel, title));
+
+				list.add(new FestivalDto(contentId, addr1, addr2, areacode, booktour, cat1, cat2, cat3, eventEndDate,
+						eventStartDate, posterImage, mapX, mapY, mlevel, sigungucode, tel, title));
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -158,4 +158,5 @@ public class FestivalDao {
 		}
 		return list;
 	}
+
 }

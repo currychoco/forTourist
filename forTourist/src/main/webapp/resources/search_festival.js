@@ -1,5 +1,7 @@
 function searchFestival(){
     let date = $("#date").val();
+    
+    console.log(typeof(date));
     let data = [];
     data = date.split('-');
 
@@ -17,7 +19,9 @@ function searchFestival(){
            eventStartDate: date
        }
    }).done(function(response){
+       console.log("response : ", response);
        const items = response.response.body.items.item;
+       console.log(items);
        items.forEach(e => {
           syncFestival(e);
        });
@@ -49,7 +53,7 @@ function syncFestival(item){
 				title : item.title
 	       }
 	   }).done(function(response){
-			console.log(response);
+			
 	   });
 }
  
