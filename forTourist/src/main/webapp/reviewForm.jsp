@@ -49,19 +49,6 @@
                 console.log("Selected date: " + dateText + "; input's current value: " + this.value);
             }
         });
-        // $(document).ready(function() {
-    //     $("input:date").on('change', function getDate(){
-    //         let start = document.getElementById('startDate');
-    //         let end = document.getElementById('endDate');
-    //         if ( $(this).prop('checked') ) {
-    //                 $(textarea).append( `${start}에 다녀왔어요~`);
-    //                 console.log(`${start}~${end}에 다녀왔어요~`)
-    //             } else {
-    //                 $(textarea).append( `${start}~${end}에 다녀왔어요~`);
-    //                 console.log(`${start}~${end}에 다녀왔어요~`)
-    //             }
-    //     });
-    // });
         </script>
 
     </article>
@@ -84,6 +71,11 @@
 
             <div id = "postedReview">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis itaque ea, distinctio provident nam excepturi minima fugiat maiores. Repudiandae iste suscipit doloremque. Qui neque beatae a, nemo repellat soluta debitis!
+<<<<<<< HEAD
+=======
+                <!-- 입력된 리뷰 택스트를 출력하는 공간 -->
+                <!-- <div>리뷰텍스트 </div> -->
+>>>>>>> refs/remotes/origin/#RyuHyeKyoung
             </div>
         </div>
     </article>
