@@ -41,16 +41,17 @@ function getData(key){
               const title = e.title;
               const addr1 = e.addr1;
               const tel = e.tel;
-              const readcount= e.readcount;
+              const contentid= e.contentid;
               const goodstay = e.goodstay;
               const benikia = e.benikia;
               const hanok = e.hanok;
               $(".container").append(
                   `<ol class = "content">
-                  <li id = "thumbnail"><a href = ""><img src="${image}"id = "firstimg"></a></td>
-                  <li id = "title">${title}</td>
-                  <li id = "address">${addr1}</td>
-                  <li id = "tel">${tel}</td>               
+				  <li id = "contentid" hidden>${contentid}</li>
+                  <li id = "thumbnail"><a href = "reviewForm.jsp"><img src="${image}"id = "firstimg"></a></li>
+                  <li id = "title">${title}</li>
+                  <li id = "address">${addr1}</li>
+                  <li id = "tel">${tel}</li>               
                   </ol>`
               );
          });
