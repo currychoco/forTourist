@@ -37,7 +37,7 @@ public class UserDao {
 	}
 
 	public void createUser(UserDto userDto) {
-		String sql = "INSERT INTO user VALUERS(?, ?, ?, ?, ?, ?, ?, ? ,?)";
+		String sql = "INSERT INTO `user`(`no`,id,`password`,`name`,nickname,gender,phone) VALUES(?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			this.conn = DBManager.getConnection();
@@ -50,8 +50,6 @@ public class UserDao {
 			this.pstmt.setString(5, userDto.getNickname());
 			this.pstmt.setString(6, userDto.getGender());
 			this.pstmt.setString(7, userDto.getPhone());
-			Timestamp now = new Timestamp(System.currentTimeMillis());
-//			this.pstmt.setTimestamp(8, userDto.getResDate());
 
 			this.pstmt.execute();
 			System.out.println("생성 성공 ");
@@ -77,7 +75,6 @@ public class UserDao {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
-			// no id password name nickname gender phone resDate 8
 			while (rs.next()) {
 				int no = rs.getInt(1);
 				String id = rs.getString(2);
@@ -87,7 +84,8 @@ public class UserDao {
 				String gender = rs.getString(6);
 				String phone = rs.getString(7);
 				Timestamp resDate = rs.getTimestamp(8);
-				result.add(new UserDto(no, id, password, name, nickname, gender, phone));
+				boolean manager = rs.getBoolean(9);
+				result.add(new UserDto(no, id, password, name, nickname, gender, phone , resDate , manager));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
