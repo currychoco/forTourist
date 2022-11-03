@@ -36,25 +36,22 @@
 				<!-- 값을 어떻게 넘길건지 -->
 				<td><%=user.getNo()%></td>
 				<td><%=user.getId() %></td>
-				<td><%=user.%></td>
-				<td><%=user%></td>
-				<td><%=user%></td>
-				<td><%=user%></td>
-				<td><%=user%></td>
-				<td><%=user%></td>
-				
+				<td><%=user.getPassword()%></td>
+				<td><%=user.getName()%></td>
+				<td><%=user.getNickname()%></td>
+				<td><%=user.getGender()%></td>
+				<td><%=user.getPhone()%></td>
+				<td><%=user.getResDate() %></td>
 			</tr>
 			<%
 			}
 			%>
 			
 		 </form>
-		 <input type="button" onclick="location.href='joinDelete.jsp'" value="회원 삭제">
-		 <input type="button" onclick="location.href='login.jsp'" value="로그인페이지이동">
+		 <input type="button" onclick="location.href='user_joinDelete.jsp'" value="회원 삭제">
+		 <input type="button" onclick="location.href='user_login.jsp'" value="로그인페이지이동">
 		
-
 		</table>
-
 
 			</tbody>
 	</section>
