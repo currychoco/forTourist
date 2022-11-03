@@ -56,26 +56,47 @@
     </table>
     
     <div class="contentSection">
-        <h3>추천검색어</h3>
-        <h3>레져</h3>
-        <ul class="">
-          <li>지상</li>
-          <li>수상</li>
-          <li>항공</li>
-        </ul>  
-        <h3>힐링</h3>
-          <ul>
-          <li>산림욕</li>
-          <li>해수욕</li>
-          <li>온천</li>
-          <li>휴양림</li>
-          </ul>
-        <h3>야외활동</h3>
-          <ul>
-            <li>글램핑</li>
-            <li>캠핑</li>
-            <li>낚시</li>
-          </ul>
+        <label class="reg" for="leisure">레져 :</label>
+    <select id="leisure">
+        <optgroup label="지상">
+            <option value="ground">승마</option>
+            <option value="ground">골프</option>
+            <option value="ground">자전거</option>
+            <option value="ground">스키</option>
+            <option value="ground">썰매</option>
+        </optgroup>
+        <optgroup label="수상">
+            <option value="water">요트</option>
+            <option value="water">수상스키</option>
+            <option value="water">래프팅</option>
+            <option value="water">서핑</option>
+            <option value="water">카약</option>
+            <option value="water">카누</option>
+            <option value="water">보트</option>
+            <option value="water">스쿠버다이빙</option>
+        </optgroup>
+        <optgroup label="항공">
+            <option value="sky">패러글라이딩</option>
+            <option value="sky">스카이워크</option>
+            <option value="sky">번지점프</option>
+        </optgroup>
+        </select>
+
+        <label class="reg2" for="healing">힐링 :</label>
+        <select size="4" id="healing" multiple>
+            <option value="tree">산림욕</option>
+            <option value="sea">해수욕</option>
+            <option value="hotWater">온천</option>
+            <option value="relax">휴양림</option>
+        </select>
+
+        <label class="reg3" for="outside">야외활동 : </label>
+        <select size="3" id="outside" multiple>
+            <option value="glamping">글램핑</option>
+            <option value="camping">캠핑</option>
+            <option value="fishing">낚시</option>
+        
+        </select>
       </div>
   </section> 
     <!-- 문서의 하단에 위치함 -->
