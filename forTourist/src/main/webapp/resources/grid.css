@@ -29,3 +29,47 @@ ul{
     justify-content: space-around;
     cursor: pointer;
 }
+.number{
+    font-size: 40px;
+    font-weight: 900;
+}
+footer{
+    margin:0;
+    margin-top: 70px;
+}
+.social{
+    margin:0;
+    height:60px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    width: 100%;
+    display: flex;
+	align-items: center;
+    justify-content: space-between;
+}
+
+.names{
+    margin-top: 40px;
+    text-align: left;
+}
+
+.reference{
+    text-align: left;
+    margin: 40px 0 80px 0;
+}
+
+#refimg{
+	height:100%;
+    vertical-align: bottom;
+    align-items: end;
+}
+
+#refname{
+    vertical-align: bottom;
+    text-align: left;
+    align-items: end;
+}
+a{
+    text-decoration: none;
+    color: #555;
+}
