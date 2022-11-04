@@ -47,4 +47,40 @@
   	<url-pattern>/detailFestival</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>join</servlet-name>
+  	<jsp-file>/user_join.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>join</servlet-name>
+  	<url-pattern>/join</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>modify</servlet-name>
+  	<jsp-file>/user_modify.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>modify</servlet-name>
+  	<url-pattern>/modify</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>area</servlet-name>
+  	<jsp-file>/search_area.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>area</servlet-name>
+  	<url-pattern>/area</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>keyword</servlet-name>
+  	<jsp-file>/search_keyword.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>keyword</servlet-name>
+  	<url-pattern>/keyword</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

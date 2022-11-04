@@ -46,7 +46,7 @@ function searchFestival(){
 				$('.container').append(
 				
                 `<tr>
-               		<td><a href = 'detailFestival?contentId=${contentId}'><img src ="${posterImage}" width="160px" height="auto"></a></td>
+               		<td><a href = 'detailFestival?contentId=${contentId}' target='_blank'><img src ="${posterImage}" width="160px" height="auto"></a></td>
                		<td>${title}</td>
                		<td>${eventStartDate}</td>
                		<td>${eventEndDate}</td>

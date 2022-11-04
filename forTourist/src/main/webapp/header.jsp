@@ -26,9 +26,9 @@
     <%} %>
 	</header>
 			<ul class = "mainMenu">
-				<li><a href="">지역 명소는?</a></li>
-				<li><a href="">활동 찾기</a></li>
-				<li><a href="">축제 찾기</a></li>
+				<li><a href="area">지역 명소는?</a></li>
+				<li><a href="keyword">활동 찾기</a></li>
+				<li><a href="festival">축제 찾기</a></li>
 				<li><a href="">숙소 둘러보기</a></li>
 			</ul>
 	<!-- <aside></aside> -->
