@@ -32,12 +32,14 @@
     	</div>
     <%} %>
 	</header>
+	<nav>
 			<ul class = "mainMenu">
 				<li><a href="area">지역 명소는?</a></li>
 				<li><a href="keyword">활동 찾기</a></li>
 				<li><a href="festival">축제 찾기</a></li>
 				<li><a href="quarters">숙소 둘러보기</a></li>
 			</ul>
+	</nav>
 	<!-- <aside></aside> -->
 </body>
 </html>
