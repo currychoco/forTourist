@@ -1,3 +1,4 @@
+
 let pageNo = 1;
 let endPoint = false;
 
@@ -13,7 +14,7 @@ function clk(element) {
     start(key);
 }
 
-function start(let) {
+function start(let){
     $(".container").empty();
     $.ajax({
         method: "GET",
@@ -40,7 +41,7 @@ function start(let) {
                 $(".container").append(
                     `<ol>
                 <li><a href="${url}"><img src="${firstimage}" class = "img"></a></li>
-                  <li>${title}</li>
+                <li>${title}</li>
                   <li>${addr1}</li>
                 </ol>`
                 );
@@ -78,14 +79,14 @@ function start(let) {
 function getDataBack() {
     if (pageNo > 1) {
         pageNo--;
-        clk(key);
+        start(key);
     }
 }
 
 function getDataNext() {
     if (endPoint === false) {
         pageNo++;
-        clk(key);
+        start(key);
         $(".back_button").show();
     }
 }

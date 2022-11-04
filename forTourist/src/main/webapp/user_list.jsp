@@ -49,7 +49,7 @@
 			}
 			%>
 		 <form>
-		 <!-- <input type="button" onclick="location.href='user_joinDelete.jsp'" value="회원 삭제"> -->
+		 <!-- <input type="button" onclick="location.href='user_joinDelete.jsp'" value="관리자 전용 회원 삭제"> -->
 		 <input type="button" onclick="location.href='index.jsp'" value="메인페이지 이동">
 		</form>
 		</table>
