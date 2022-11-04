@@ -11,7 +11,7 @@
 	<section>
 		<div>
 			<input type="date" id="date" name="date">
-			<button onclick="firstSearchFestival()">search</button>
+			<button onclick="searchFestival()">search</button>
 		</div>
 	    <div class='container'>
     	</div>

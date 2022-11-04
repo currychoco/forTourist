@@ -22,7 +22,7 @@
 		if(password.equals(dto.getPassword())){
 			session.setAttribute("id", id);
 			System.out.println("세션저장성공");
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("home");
 		}else{
 			System.out.println("세션저장실패");
 			response.sendRedirect("loginForm.jsp");

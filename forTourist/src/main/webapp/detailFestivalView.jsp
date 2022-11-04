@@ -48,9 +48,11 @@
 	        	</table>
 	        </div>
 		</div>
-		<div class="review">
+		<div class="writeReview">
 			<textarea name="content" rows="3" placeholder="리뷰 작성" required></textarea>
             <button>작성</button>
+		</div>
+		<div class="review">
 		</div>
 	</section>
 	<jsp:include page="footer.jsp"/>
