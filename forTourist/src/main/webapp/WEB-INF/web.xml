@@ -12,6 +12,15 @@
   
   <!-- jsp파일 -->
   <servlet>
+  	<servlet-name>quarters</servlet-name>
+  	<jsp-file>/search_quarters.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>quarters</servlet-name>
+  	<url-pattern>/quarters</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
   	<servlet-name>home</servlet-name>
   	<jsp-file>/index.jsp</jsp-file>
   </servlet>

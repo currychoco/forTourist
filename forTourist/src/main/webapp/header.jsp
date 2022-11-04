@@ -15,13 +15,8 @@
 	if(id == null){
 	%>
 		<div class = "logininfo"> 
-<<<<<<< HEAD
-			<div class = "log"><a href="login">로그인</a></div>
-        	<div class = "join"><a href="user_join.jsp">회원가입</a></div>
-=======
 			<div class = "log"><a href="login">로그인</a></div>&nbsp; | &nbsp;
         	<div class = "join"><a href="join">회원가입</a></div>
->>>>>>> refs/remotes/origin/#RyuHyeKyoung
         </div>
     <%}else{ %>
     	<div class = "logininfo">
@@ -34,7 +29,7 @@
 				<li><a href="area">지역 명소는?</a></li>
 				<li><a href="keyword">활동 찾기</a></li>
 				<li><a href="festival">축제 찾기</a></li>
-				<li><a href="">숙소 둘러보기</a></li>
+				<li><a href="quarters">숙소 둘러보기</a></li>
 			</ul>
 	<!-- <aside></aside> -->
 </body>
