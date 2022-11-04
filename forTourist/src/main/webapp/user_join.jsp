@@ -47,6 +47,7 @@
 						<td id = "title"> 성별[남/여] </td>
 						<td>		
 						<select id="gender" name = "gender">
+							<option value="">성별을 선택해주세요.</option>
 							<option value="남">남</option>
 							<option value="여">여</option>	
 						</select>
@@ -58,14 +59,14 @@
 					 </tr>
 					 <tr>
 					<td colspan="2" text-align: center>
-					<input type="submit" value="등록">
+					<input type="button" onclick="checkForm(form)" value="등록">
 					<input type="button" value="조회">
 					</td>
 				</tr>
 				</table>
 			</form>
+			<script src="resources/vaildationJoin.js"></script>
 		</section>
 	</div>
-		<script src="resources/vaildationJoin.js"></script>
 </body>
 </html>
