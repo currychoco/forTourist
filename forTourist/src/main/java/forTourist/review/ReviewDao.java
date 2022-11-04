@@ -89,6 +89,7 @@ public class ReviewDao {
 	
 	//Read
 	public List<ReviewDto> getAllReview(int contentId){
+		System.out.println("리뷰읽어오기");
 		List<ReviewDto> list = new ArrayList<>();
 		String sql = "select * from review where contentid = ? order by no desc";
 		

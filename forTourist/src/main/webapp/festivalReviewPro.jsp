@@ -12,7 +12,6 @@
 
 	ReviewDao dao = ReviewDao.getInstance();
 	List<ReviewDto> dtoList = dao.getAllReview(contentId);
-	
 	%>
 	[
 	<% for(ReviewDto dto : dtoList) { %>
