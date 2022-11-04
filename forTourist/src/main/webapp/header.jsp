@@ -24,8 +24,6 @@
     	<button onclick="location.href='logoutPro.jsp'">logout</button>
     	</div>
     <%} %>
-		</ul>
-		<h1>관광지 검색</h1>
 	</header>
 			<ul class = "mainMenu">
 				<li><a href="">지역 명소는?</a></li>
