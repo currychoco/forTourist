@@ -3,10 +3,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<link rel="stylesheet" href="resources/search_area.css">
     </head>
     <body>
     	<jsp:include page="header.jsp"/>
-  
+    	<article>
     <aside>
             <h2>지역별 검색</h2>
             <button id="key" onclick="clk(this)" value="1">서울</button>
@@ -32,11 +34,10 @@
                 <button id = "key" class="back_button" onclick="getDataBack()">back</button>
                 <button id = "key" class="next_button" onclick="getDataNext()">next</button>
             </div>
-            
             <div class="container">
-
             </div>
         </section>
+    	</article>
     <script src="resources/search_area.js"></script>
     <jsp:include page="footer.jsp"/>
     </body>
