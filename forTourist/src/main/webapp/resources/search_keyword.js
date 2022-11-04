@@ -47,7 +47,7 @@ function searchKeyword(){
 
             $(".container").append(
             `<ol class="content">
-                <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=${title}"><img src="${firstimage}"></a></li>
+                <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=${title}"><img src="${firstimage}" id="img"></a></li>
                 <li>${title}</li>
                 <li>${addr1}</li>
             </ol>`

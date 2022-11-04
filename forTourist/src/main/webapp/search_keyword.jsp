@@ -14,12 +14,7 @@
 </head>
 
 <body>
-
-		<jsp:include page="header.jsp"/>
-
-      
-    
-	
+	<jsp:include page="header.jsp"/>
 	 <!--  
 	 <nav>
       <ul>
@@ -30,7 +25,7 @@
       </ul>
     </nav>
     -->
-	
+	<section class="page">
 	<aside>
 		<h2>활동별 검색</h2>
    		<input type="text" id="keyword"/>
@@ -106,14 +101,14 @@
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a class="dropdown-item" href="#">Action</a></li>
     <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li> 
   </ul>
 </div>  --> 
 
+	</section>
 
-   <footer>
+
   	<jsp:include page="footer.jsp"/>
-   </footer>
     <!-- 문서의 하단에 위치함 -->
      <script src="resources/search_keyword.js"></script>
 </body>
