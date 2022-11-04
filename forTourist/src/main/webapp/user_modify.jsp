@@ -39,7 +39,7 @@ user = userDao.getUserById(id);
 				</tr>
 				<tr>
 					<td>회원닉네임</td>
-					<td><input type="text" id="nickname" name = "nickname" value = "<%=user.getNickname()%>" readonly></td>
+					<td><input type="text" id="nickname" name = "nickname" value = "<%=user.getNickname()%>"></td>
 				</tr>
 				<tr>
 					<td>회원성별</td>
@@ -51,13 +51,10 @@ user = userDao.getUserById(id);
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="수정" onclick="alert('회원정보수정이 완료 되었습니다.')"> <input
-						type="button" value="조회"></td>
+						type="button" value="취소" onclick = "location.href='user_mypage.jsp'"></td>
 				</tr>
 			</table>
 		</form>
 	</section>
-
-
-
 </body>
 </html>

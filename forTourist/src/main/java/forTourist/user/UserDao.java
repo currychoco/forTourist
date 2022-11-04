@@ -77,7 +77,7 @@ public class UserDao {
 				String phone = rs.getString(7);
 				Timestamp resDate = rs.getTimestamp(8);
 				boolean manager = rs.getBoolean(9);
-				result.add(new UserDto(no, id, password, name, nickname, gender, phone , resDate , manager));
+				result.add(new UserDto(no, id, password, name, nickname, gender, phone, resDate, manager));
 
 			}
 		} catch (Exception e) {
@@ -92,49 +92,47 @@ public class UserDao {
 		}
 		return result;
 	}
-	
+
 	public int getLastNo() {
 		String sql = "SELECT MAX(no) FROM user";
-		
-		try{
+
+		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				return rs.getInt(1) +1;
+			if (rs.next()) {
+				return rs.getInt(1) + 1;
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
 				conn.close();
 				pstmt.close();
 				rs.close();
-			}catch(SQLException e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 		return 0;
 	}
-	
-	public void modifyUser(UserDto user , int no) {
-//		"INSERT INTO `user`(`no`,id,`password`,`name`,nickname,gender,phone) VALUES(?, ?, ?, ?, ?, ?, ?)";
-//		String sql = "UPDATE `user` SET id = ?, `password` = ? , `name` = ?, nickname = ?, gender = ? phone = ?, WHERE `no` = ?";
-		String sql = "UPDATE `user` SET `password` = ? , `name` = ?, phone = ?, WHERE `no` = ?";
-		
+
+	public void modifyUser(UserDto user, int no) {
+		String sql = "UPDATE `user` SET `password` = ? , `name` = ?, `nickname` = ?, phone = ? WHERE `no` = ?";
+
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			
+
 			pstmt.setString(1, user.getPassword());
 			pstmt.setString(2, user.getName());
-			pstmt.setString(3, user.getPhone());
-			pstmt.setInt(4, user.getNo());
-			
+			pstmt.setString(3, user.getNickname());
+			pstmt.setString(4, user.getPhone());
+			pstmt.setInt(5, user.getNo());
+
 //			pstmt.setString(1, user.getId());
-//			pstmt.setString(4, user.getNickname());
 //			pstmt.setString(5, user.getGender());
-			
+
 			pstmt.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -147,18 +145,18 @@ public class UserDao {
 			}
 		}
 	}
-	
+
 	public UserDto getUserById(String id) {
 		UserDto dto = null;
 		String sql = "SELECT * FROM `user` WHERE id=?";
-		
+
 		try {
-			conn=DBManager.getConnection();
-			pstmt=conn.prepareStatement(sql);
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			rs=pstmt.executeQuery();
-			
-			if(rs.next()) {
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
 				int no = rs.getInt(1);
 				String password = rs.getString(3);
 				String name = rs.getString(4);
@@ -167,7 +165,7 @@ public class UserDao {
 				String phone = rs.getString(7);
 				Timestamp resDate = rs.getTimestamp(8);
 				boolean manager = rs.getBoolean(9);
-				
+
 				dto = new UserDto(no, id, password, name, nickname, gender, phone, resDate, manager);
 			}
 		} catch (Exception e) {
@@ -183,9 +181,26 @@ public class UserDao {
 		}
 		return dto;
 	}
-	
-	
-	
-	
 
+	public void deleteUser(String id) {
+		String sql = "DELETE FROM user WHERE id=?";
+		System.out.println(id);
+		System.out.println("값잘넘어옴");
+		try {
+			conn = DBManager.getConnection();
+			PreparedStatement pstmt = null;
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
