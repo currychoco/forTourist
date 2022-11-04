@@ -18,10 +18,14 @@
 	if(id == null){
 	%>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<div class = "logininfo"> 
 =======
 		<div class = "logininfo">
 >>>>>>> refs/remotes/origin/#HongJiung
+=======
+		<div class = "logininfo"> 
+>>>>>>> refs/remotes/origin/#RyuHyeKyoung
 			<div class = "log"><a href="login">로그인</a></div>&nbsp; | &nbsp;
         	<div class = "join"><a href="join">회원가입</a></div>
         </div>
