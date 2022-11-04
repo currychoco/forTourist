@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
-.container{
+/*.container{ 임시
 	display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-areas:
     'festivalImg festivalTable';
-}
+}*/
 
 .festivalImg{
     grid-area: festivalImg;
@@ -26,4 +26,64 @@ festivalTable>table{
 	width:100%;
 	height:100%;
 }
+/*이하 유혜경 작업*/
 
+*{
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+section{
+    height: 100%;
+}
+.space{
+    grid-area: br;
+}
+.searchrow{
+    margin:20px;
+	
+}
+.searchdate{
+    border: solid 2px #bababa;
+    padding: 10px;
+    align-content:center
+}
+
+.contained{
+    text-align: center;
+    font-size: 14px;
+    margin: 50px 50px 40px;
+    align-content: center;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows: repeat(2,400px);
+    ;
+}
+.content{
+    list-style-type: none;
+    margin: 10px 5px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.page_form{
+    text-align: center;
+}
+button{
+    border:0;
+    outline: 0;
+    background-color: white;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer
+}
+
+#firstimg{
+    width:80%
+}
+
+#title {
+    font-size: 16px;
+    font-weight: 700;
+}

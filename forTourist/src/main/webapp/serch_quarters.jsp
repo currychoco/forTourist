@@ -11,7 +11,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<img src="https://s3.amazonaws.com/files.d20.io/images/312414451/ZZXwa0gsVbRJZBSXs5D2Ew/max.png" style="width:300px;" class= "home"/>
+	<jsp:include page="header.jsp"/>
 <nav>
 	<button id="key" onclick="clk(this)" value="1">서울</button> |
 	<button id="key" onclick="clk(this)" value="6">부산</button> |
@@ -36,6 +36,7 @@
 			<button class = "back_button" onclick="getDataBack()">back</button>
 			<button class = "next_button" onclick="getDataNext()">next</button>
 		</aside>
+	<jsp:include page="footer.jsp"/>
 	<script src="resources/search_quarters.js"></script>
 </body>
 </html>

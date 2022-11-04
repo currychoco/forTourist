@@ -25,9 +25,9 @@ function searchFestival(){
 		}
 		
 		 $('.container').append(
-                `
-                <table>
-                `
+               `
+	    <div class='contained'>
+				`
             );
             for(let i = (page-1)*CNT; i<(page-1)*CNT + CNT; i++){
 				if(i == list.length){
@@ -43,23 +43,24 @@ function searchFestival(){
 				}
 				const title = list[i].title;
 				
-				$('.container').append(
-				
-                `<tr>
-               		<td><a href = 'detailFestival?contentId=${contentId}' target='_blank'><img src ="${posterImage}" width="160px" height="auto"></a></td>
-               		<td>${title}</td>
-               		<td>${eventStartDate}</td>
-               		<td>${eventEndDate}</td>
-               		<td>${addr1}</td>
-                </tr>`
+				$('.contained').append(
+				//테이블을 사용하는것보다 ul/ol 태그를 사용하는게 세로로 세우기 더 쉬워요!
+				//원래 써놓으신건 따로 백업해놨습니다 필요하시면 슬랙으로 보내드릴게요 
+               `<ul class = "content">
+					<li><a href = 'detailFestival?contentId=${contentId}' target='_blank'><img src ="${posterImage}" id = "firstimg" style = "width:160px"></a></li>
+					<li id = "title">${title}</li>
+					<li>${eventStartDate}</li>
+					<li>${eventEndDate}</li>
+					<li>${addr1}</li>
+		 		</ul>`
             );
 			}
 
 		
 		$('.container').append(
-                `
-                </table>
-                `
+			`
+			</div>
+			`
         );
         $('.back_button').hide();
         $('.next_button').hide();

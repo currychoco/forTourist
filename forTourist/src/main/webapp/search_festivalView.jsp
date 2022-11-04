@@ -4,15 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/festival.css">
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
 	<section>
-		<div>
+	<div class="searchrow">
+		<span class ="searchdate">
 			<input type="date" id="date" name="date">
 			<button onclick="searchFestival()">search</button>
-		</div>
+		</span>
+	</div>
 	    <div class='container'>
     	</div>
     	<div class="page_form">
