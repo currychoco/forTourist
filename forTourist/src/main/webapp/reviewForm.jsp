@@ -18,7 +18,7 @@
 <%
 int contentId = Integer.parseInt(request.getParameter("contentid"));
 String img = request.getParameter("firstimg");
-System.out.print(contentId, img)
+System.out.println(contentId+ img);
 %>
 
 

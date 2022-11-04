@@ -16,7 +16,7 @@
 	%>
 		<div class = "logininfo"> 
 			<div class = "log"><a href="loginForm.jsp">로그인</a></div>
-        	<div class = "join"><a href="join.jsp">회원가입</a></div>
+        	<div class = "join"><a href="user_join.jsp">회원가입</a></div>
         </div>
     <%}else{ %>
     	<div class = "logininfo">
