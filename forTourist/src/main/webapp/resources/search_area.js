@@ -1,4 +1,3 @@
-
 let pageNo = 1;
 let endPoint = false;
 
@@ -6,10 +5,15 @@ $(".back_button").hide();
 $(".next_button").hide();
 $(".head").hide();
 
+let key;
 
 function clk(element) {
-    let key = element.value;
-    console.log(key);
+    key = element.value;
+    pageNo = 1;
+    start(key);
+}
+
+function start(let) {
     $(".container").empty();
     $.ajax({
         method: "GET",

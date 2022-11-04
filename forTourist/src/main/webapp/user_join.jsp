@@ -60,7 +60,8 @@
 					 <tr>
 					<td colspan="2" text-align: center>
 					<input type="button" onclick="checkForm(form)" value="등록">
-					<input type="button" value="조회">
+					<input type="button" onclick="location.href='index.jsp'" value="취소">
+					
 					</td>
 				</tr>
 				</table>
