@@ -43,7 +43,6 @@
 						<td><input type = "text" id = "nickname" name = "nickname" maxlength = "20" placeholder = "닉네임을 입력해주세요."><td>
 					 </tr>
 					 <tr>
-					 
 						<td id = "title"> 성별[남/여] </td>
 						<td>		
 						<select id="gender" name = "gender">
@@ -61,7 +60,6 @@
 					<td colspan="2" text-align: center>
 					<input type="button" onclick="checkForm(form)" value="등록">
 					<input type="button" onclick="location.href='index.jsp'" value="취소">
-					
 					</td>
 				</tr>
 				</table>
