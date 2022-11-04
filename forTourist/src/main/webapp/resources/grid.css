@@ -3,15 +3,29 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100&family=Single+Day&display=swap')
 	;
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 * {
 	margin: 0;
 	padding: 0;
+    text-align: center;
+    font-family: 'Nanum Gothic', sans-serif;    
 }
 
-ul {
-	display: flex;
-	justify-content: space-around;
-	list-style: none;
+header{
+    display: flex;
+    justify-content: space-between;
 }
-
+.logininfo{
+    align-items: flex-start;
+    display: flex;
+}
+ul{
+    font-size: 18px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    padding: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}

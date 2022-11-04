@@ -14,6 +14,14 @@
     <title>Document</title>
 </head>
 <body>
+
+<%
+int contentId = Integer.parseInt(request.getParameter("contentid"));
+String img = request.getParameter("firstimg");
+System.out.print(contentId, img)
+%>
+
+
     <!-- 헤더 대신 임의로 넣은 것. -->
     <img src="https://s3.amazonaws.com/files.d20.io/images/312414451/ZZXwa0gsVbRJZBSXs5D2Ew/max.png" style="width:300px;" class= "home"/>
     <!-- 이미지 , 가게 이름을 이전 페이지에서 받는다는 것을 전제로 하고 -->
@@ -21,7 +29,7 @@
     <article id = "input_review">
         <!-- 이전 페이지에서 받은 이미지정보. 임의로 넣은 이미지는 저희 로고입니다!-->
         
-        <div ><img src="https://s3.amazonaws.com/files.d20.io/images/312414451/ZZXwa0gsVbRJZBSXs5D2Ew/max.png"class = "get_img"  id = "get_img" style="width:300px;"/></div>
+        <div ><img src="<%=img%>"class = "get_img"  id = "get_img" style="width:300px;"/></div>
         <div id = "get_review">
                 <input type="date" id="startDate" >
                 <!-- 당일치기 체크박스 체크 시 끝날짜 없앨 수 있습니다 -->
