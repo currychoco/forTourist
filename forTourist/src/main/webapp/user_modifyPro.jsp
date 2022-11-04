@@ -27,16 +27,13 @@ String name = request.getParameter("name");
 if(name != null)
 	user.setName(name);
 
+String nickname = request.getParameter("nickname");
+if(nickname != null)
+user.setNickname(nickname);
+
 String phone = request.getParameter("phone");
 if(phone != null)
 user.setPhone(phone);
-
-
-
-System.out.println(id);
-System.out.println(password);
-System.out.println(name);
-System.out.println(phone);
 
 userDao.modifyUser(user, no);
 response.sendRedirect("user_list.jsp");

@@ -12,7 +12,7 @@
 <body>
 	<section>
 	<%
-	String id = "test1";  // **현재 임시값** 로그인 하고 받아와야 하는 값 입니다.
+	String id = "test2";  // **현재 임시값** 로그인 하고 받아와야 하는 값 입니다.
 	UserDao userDao = UserDao.getInstance();
 	UserDto user = userDao.getUserById(id);
 	%>
@@ -43,7 +43,7 @@
 			</tr>
 		 <form>	
 		 <input type="button" onclick="location.href='user_modify.jsp?value=<%=id%>'" value="회원 정보수정">
-		 <input type="button" onclick="location.href='user_delete.jsp'" value="회원 탈퇴 ">
+		 <input type="button" onclick="location.href='user_delete.jsp?value=<%=id%>'" value="회원 탈퇴 ">
 		</form>
 		</table>
 	
