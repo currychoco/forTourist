@@ -9,14 +9,19 @@
 </head>
 <body>
 	<header>
-		<img src="https://s3.amazonaws.com/files.d20.io/images/312414451/ZZXwa0gsVbRJZBSXs5D2Ew/max.png" style="width:300px;" class= "home"/>
+		<a href=""><img src="https://s3.amazonaws.com/files.d20.io/images/312414451/ZZXwa0gsVbRJZBSXs5D2Ew/max.png" style="width:300px;" class= "home"/></a>
 	<%
 	String id = (String)session.getAttribute("id");
 	if(id == null){
 	%>
 		<div class = "logininfo"> 
+<<<<<<< HEAD
 			<div class = "log"><a href="login">로그인</a></div>
         	<div class = "join"><a href="user_join.jsp">회원가입</a></div>
+=======
+			<div class = "log"><a href="login">로그인</a></div>&nbsp; | &nbsp;
+        	<div class = "join"><a href="join">회원가입</a></div>
+>>>>>>> refs/remotes/origin/#RyuHyeKyoung
         </div>
     <%}else{ %>
     	<div class = "logininfo">
