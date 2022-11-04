@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+
+header {
+	grid-area: header;
+	text-align: center;
+    position: relative;
+	margin-top: 2%;
+}
+
+footer{
+
+	grid-area: footer;
+	font-size: 0.8em;
+	margin: auto auto 100px;
+
+}
+
+nav {
+	grid-area: nav;
+	text-align: center;
+	position: relative;
+}
+
+
+ul{
+    font-size: 18px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    padding: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}

@@ -5,33 +5,32 @@
 	;
 
 * {
+    font-family: 'IBM Plex Sans KR', sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
 body {
-	height: 150vh;
+	height: 120vh;
 	display: grid;
 	grid-template-columns: 100px 1fr 100px;
 	grid-template-rows: 120px 40px 100px 1fr 150px;
 	grid-template-areas: "header header  header" 
-						            "nav    nav     nav"
+						"nav    nav     nav"
                         "aside  aside   aside" 
-						          "section section section"
-						            "footer footer  footer";
-	font-family: 'IBM Plex Sans KR', sans-serif;
+						"section section section"
+						"footer footer  footer";
 }
 
 header {
 	grid-area: header;
 	text-align: center;
     position: relative;
+	margin-top: 2%;
 }
 
 section{
 	grid-area: section;
-  text-align: left;
-  margin-left: 300px;
 
 }
 
@@ -40,9 +39,9 @@ section{
     right: 20px;
     top: 20px;
 }
-h1 {
+/* h1 {
 	margin-top: 5%;
-}
+} */
 
 nav {
 	grid-area: nav;
@@ -55,9 +54,11 @@ aside {
 	align-items: center;
 }
 
+
 footer {
 	grid-area: footer;
 	font-size: 0.8em;
+	margin: auto auto 100px;
 }
 
 ul {
@@ -71,21 +72,52 @@ a {
 	text-decoration: none;
 }
 
+li {
+    margin: 3px;
+}
+
 #key {
-border-radius: 10%;
-color: black;
-background-color: wheat;
+    border-color: rgb(110, 110, 110);
+    box-shadow: none;
+    border-radius: 10%;
+    outline: 0;
+    padding: 1px 2px 1px 2px;
+    color: black;
+    background-color: rgb(254, 239, 211);
 }
 
 .searchSection {
   margin-bottom: 100px;
 }
 
-.contentSection {
-  margin-bottom: 100px;
+section {
+    grid-area: section;
+    text-align: center;
 }
 
-#firstimg{
-			width : 200%;
-			height: 240px;
-		}
+.head {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 1000;
+    margin: 50px 100px 40px;
+    align-content: center;
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,300px);
+}
+
+
+img{
+    width: 300px;
+	height: 150px;
+	object-fit: cover;
+}
+
+.content {
+    list-style-type: none;
+}
