@@ -9,10 +9,37 @@
 <body>
 	<jsp:include page="header.jsp"/>
 	<section>
-		값을 가져 왔을까?
-		
-		
-	<script src = "resources/festivalView.js"></script>
+	<%
+ 	request.setCharacterEncoding("UTF-8"); 
+	
+	int contentId = Integer.parseInt(request.getParameter("contentid"));
+	String title = request.getParameter("title");
+	String addr1 = request.getParameter("addr1");
+	String firstimage = request.getParameter("firstimage");
+	
+	System.out.println(contentId);
+ 	System.out.println(title); 
+	System.out.println(addr1);
+	System.out.println(firstimage);
+	%>	
+		<div class='container'>
+			<ol class='content'>
+				<li><img src="<%=firstimage%>" class = "img"></li>
+				<li><%=title%></li>
+				<li><%=addr1%></li>				
+			</ol>
+		</div>
+		<div class="writeReview">
+			<form method="post" action="/forTourist/writeReviewProForArea.jsp">
+				<input type="hidden" id="contentId" name="contentId" value=<%=contentId %>>
+				<textarea required name="content" id="content" rows="3" placeholder="리뷰 작성" required></textarea>
+	            <input type="submit" value="작성">
+            </form>
+		</div>
+		<div class="review">
+			<input type="hidden" id="contentId" name="contentId" value=<%=contentId %>>
+		</div>
+		<!-- <script src="resources/review.js"></script> -->
 	</section>
 	<jsp:include page="footer.jsp"/>
 </body>
