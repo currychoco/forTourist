@@ -92,4 +92,12 @@
   	<url-pattern>/keyword</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>detailArea</servlet-name>
+  	<jsp-file>/detailArea.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>detailArea</servlet-name>
+  	<url-pattern>/detailArea</url-pattern>
+  </servlet-mapping>
 </web-app>
