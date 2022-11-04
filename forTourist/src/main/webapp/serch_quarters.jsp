@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<link rel="stylesheet" href="search_qeotation.css">
+	<link rel="stylesheet" href="resources/search_qeotation.css">
 	<title>Document</title>
 </head>
 <body>
@@ -36,6 +36,6 @@
 			<button class = "back_button" onclick="getDataBack()">back</button>
 			<button class = "next_button" onclick="getDataNext()">next</button>
 		</aside>
-	<script src="search_quarters.js"></script>
+	<script src="resources/search_quarters.js"></script>
 </body>
 </html>

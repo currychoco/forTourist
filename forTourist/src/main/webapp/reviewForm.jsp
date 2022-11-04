@@ -18,7 +18,11 @@
 <%
 int contentId = Integer.parseInt(request.getParameter("contentid"));
 String img = request.getParameter("firstimg");
+<<<<<<< HEAD
 //System.out.print(contentId, img)
+=======
+System.out.println(contentId+ img);
+>>>>>>> refs/remotes/origin/#RyuHyeKyoung
 %>
 
 
