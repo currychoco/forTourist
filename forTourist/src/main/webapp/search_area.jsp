@@ -47,10 +47,10 @@
             <button id="key" onclick="clk(this)" value="32">강원도</button>
             <button id="key" onclick="clk(this)" value="33">충청북도</button>
             <button id="key" onclick="clk(this)" value="34">충청남도</button>
-            <button id="key" onclick="clk(this)" value="35">경상북도</button>
-            <button id="key" onclick="clk(this)" value="36">경상남도</button>
-            <button id="key" onclick="clk(this)" value="37">전라북도</button>
-            <button id="key" onclick="clk(this)" value="38">전라남도</button>
+            <button id="key" onclick="clk(this)" value="35">전라북도</button>
+            <button id="key" onclick="clk(this)" value="36">전라남도</button>
+            <button id="key" onclick="clk(this)" value="37">경상북도</button>
+            <button id="key" onclick="clk(this)" value="38">경상남도</button>
     </aside>
         <section>
             

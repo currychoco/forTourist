@@ -26,13 +26,27 @@ if(user != null){
 	String checkId = user.getId();
 	
 if(id.equals(checkId) && password.equals(checkPassword)){
-	response.sendRedirect("user_list.jsp");
-	userDao.deleteUser(id);
-}else{
-	response.sendRedirect("user_mypage.jsp");
-} 
-}
-
 %>
+
+alert('회원이 탈퇴 되었습니다.');
+
+<%
+userDao.deleteUser(id);
+response.sendRedirect("user_list.jsp");
+}else{
+%>	
+alert('
+회원이 탈퇴 되었습니다.');
+	
+<%	
+response.sendRedirect("user_mypage.jsp");
+	} 
+}
+%>
+
+
+
+
+
 </body>
 </html>
