@@ -58,6 +58,7 @@
 		</div>
 		<div class="review">
 			<input type="hidden" id="contentId" name="contentId" value=<%=contentId %>>
+			<input type="hidden" id="userid" name="userid" value=<%=session.getAttribute("id") %>>
 		</div>
 		<script src="resources/review.js"></script>
 	</section>

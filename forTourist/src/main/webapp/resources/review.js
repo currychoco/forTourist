@@ -1,5 +1,7 @@
- let contentId = $("#contentId").val();
+let contentId = $("#contentId").val();
  console.log(contentId);
+ console.log(typeof(contentId));
+ const userid = $("#userid").val();
 
 review();
 function review(){
@@ -31,9 +33,24 @@ function review(){
 				<td>${e.userid}</td>
 				<td>${e.resDate}</td>
 				<td>${e.content}</td>
+			`
+			);
+			
+		if(userid === e.userid){
+			$('.review').append(
+			`
+				<td><button>수정</button></td>
+				<td><button onclick="validation('${e.userid}',${e.no})">삭제</button></td>
+			`
+			
+			);
+		}
+		 $('.review').append(
+			`
 			</tr>
 			`
-        );
+			);
+
 		});
 		
 		$('.review').append(
@@ -46,4 +63,12 @@ function review(){
 		console.log(err);	
 	});
    
+}
+
+function validation(dtoUserId,dtoNo){
+	if(dtoUserId===userid){
+		location.href="/forTourist/festivalReviewDeletePro.jsp?no=" + dtoNo + "&&userId=" + dtoUserId+"&&contentId=" + contentId;
+	}else{
+		alert("본인이 작성한 리뷰가 아닙니다.");
+	}
 }
