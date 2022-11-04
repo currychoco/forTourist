@@ -17,15 +17,7 @@
 	String id = (String)session.getAttribute("id");
 	if(id == null){
 	%>
-<<<<<<< HEAD
-<<<<<<< HEAD
 		<div class = "logininfo"> 
-=======
-		<div class = "logininfo">
->>>>>>> refs/remotes/origin/#HongJiung
-=======
-		<div class = "logininfo"> 
->>>>>>> refs/remotes/origin/#RyuHyeKyoung
 			<div class = "log"><a href="login">로그인</a></div>&nbsp; | &nbsp;
         	<div class = "join"><a href="join">회원가입</a></div>
         </div>
@@ -37,7 +29,7 @@
     <%} %>
 	</header>
 	<nav>
-			<ul class = "mainMenu">
+			<ul class = "mainManu">
 				<li><a href="area">지역 명소는?</a></li>
 				<li><a href="keyword">활동 찾기</a></li>
 				<li><a href="festival">축제 찾기</a></li>

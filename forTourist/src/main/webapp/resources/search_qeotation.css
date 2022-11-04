@@ -10,16 +10,37 @@
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
-body {
-	height: 120vh;
+.section {
+	height: 150%;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 150px 40px 1fr 150px;
-	grid-template-areas: "homepage" "nav  " "section" "aside ";
+	grid-template-rows: 40px 1fr 100px;
+	grid-template-areas: 
+	"navi" 
+	"container" 
+	"buttons";
 }
 
-.home {
-	height: 150px;
+.navi {
+	grid-area: navi;
+	text-align: center;
+}
+
+.container {
+	grid-area: container;
+	text-align: center;
+	font-size: 14px;
+	margin: 50px 50px 40px;
+	align-content: center;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 400px);
+	;
+}
+
+.buttons {
+	grid-area: buttons;
+	text-align: center;
 }
 
 #title {
@@ -36,32 +57,10 @@ ol {
 	height: 240px;
 }
 
-nav {
-	grid-area: nav;
-	text-align: center;
-}
-
-.container {
-	grid-area: section;
-	text-align: center;
-	font-size: 14px;
-	margin: 50px 50px 40px;
-	align-content: center;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(3, 400px);
-	;
-}
-
 .content {
 	margin: 10px 5px;
 	text-align: center;
 	padding-top: 5px;
-}
-
-aside {
-	grid-area: aside;
-	text-align: center;
 }
 
 button {
