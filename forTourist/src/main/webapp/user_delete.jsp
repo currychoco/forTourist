@@ -6,10 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
-
+	<jsp:include page="header.jsp"/>
 	<section>
 		<h2>회원 	탈퇴</h2>
 		<form method="post" action="user_deletePro.jsp">
@@ -29,5 +28,6 @@
 			</table>
 		</form>
 	</section>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

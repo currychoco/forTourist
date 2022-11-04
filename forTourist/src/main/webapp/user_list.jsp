@@ -10,6 +10,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
+
 	<section>
 	<%
 	UserDao userDao = UserDao.getInstance();
@@ -56,5 +58,6 @@
 
 		</tbody>
 	</section>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

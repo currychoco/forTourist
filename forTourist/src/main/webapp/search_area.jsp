@@ -3,33 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta name="viewport" content="width= device-width, initial-scale=1.0">
-    <!-- 라이브러리 등을 참조하는 경우 , 이곳에 위치-->
-    <!-- jpquery문서 : https://api.jquery.com-->
-    <!-- google cdn : 에서 가져오기-->
-    <link rel="stylesheet" href="resources/search_area.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <title>Document</title>
     </head>
     <body>
-    <header>
-        <ul class = "login"> 
-            <li class = "log"><a href="">로그인</a>
-            <li class = "join"><a href="">회원가입</a>
-            </ul>
-        <h1>한국 관광 사이트</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="">지역별 검색</a></li>
-            <li><a href="">활동별 검색</a></li>
-            <li><a href="">축제별 검색</a></li>
-            <li><a href="">전체 지도 검색</a></li>
-        </ul>
-    </nav>
+    	<jsp:include page="header.jsp"/>
+  
     <aside>
             <h2>지역별 검색</h2>
             <button id="key" onclick="clk(this)" value="1">서울</button>
@@ -61,9 +38,7 @@
             </div>
         </section>
     <script src="resources/search_area.js"></script>
-    <footer>
-
-    </footer>
+    <jsp:include page="footer.jsp"/>
     </body>
 
 </html>

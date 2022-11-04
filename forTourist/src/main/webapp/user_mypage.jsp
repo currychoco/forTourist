@@ -10,9 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"/>
 	<section>
 	<%
-	String id = "test2";  // **현재 임시값** 로그인 하고 받아와야 하는 값 입니다.
+	String id = "test";  // **현재 임시값** 로그인 하고 받아와야 하는 값 입니다.
 	UserDao userDao = UserDao.getInstance();
 	UserDto user = userDao.getUserById(id);
 	%>
@@ -49,5 +50,6 @@
 	
 	
 	</section>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>
