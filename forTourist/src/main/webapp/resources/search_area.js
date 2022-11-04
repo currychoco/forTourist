@@ -32,17 +32,18 @@ function start(let){
         console.log("response : ", response);
         const items = response.response.body.items.item;
         items.forEach((e) => {
-            if (e.firstimage) {
+            if (e.firstimage !== "") {
                 const firstimage = e.firstimage;
                 const title = e.title;
                 const addr1 = e.addr1;
 				const contentid = e.contentid;
+				
                 $(".head").show();
                 $(".container").append(
                     `<ol class="content">
-                <li><a href='detailArea?contentid=${contentId} ?title = ${title} ?addr1 = ${addr1} ?firstimage = ${firstimage}'><img src="${firstimage}" class = "img"></a></li>
+ 				<li><a href='detailArea?contentid=${contentid}&title=${title}&addr1=${addr1}&firstimage=${firstimage}'><img src="${firstimage} " class = "img"></a></li>  
                 <li>${title}</li>
-                  <li>${addr1}</li>
+                 <li>${addr1}</li>
                 </ol>`
                 );
             }
