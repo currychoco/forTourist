@@ -7,8 +7,10 @@
  	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width= device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/searchView.css">
+     <link rel="stylesheet" href="resources/searchView.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+   	<link rel="stylesheet" href="resources/css/bootstrap.css">
+   	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 
@@ -96,12 +98,28 @@
             <option value="glamping">글램핑</option>
             <option value="camping">캠핑</option>
             <option value="fishing">낚시</option>
-        
+            
         </select>
       </div>
-  </section> 
+  </section>
+  
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div> 
+
+
+   
     <!-- 문서의 하단에 위치함 -->
      <script src="resources/search_keyword.js"></script>
+      <script src="resources/js/bootsrap.bundle.js"></script>
+     <script src="resources/js/bootsrap.js"></script>
 </body>
 
 </html>
