@@ -34,9 +34,8 @@ article{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 8fr;
     grid-template-areas: 
-    "start end check send"
     "text text text send"
     ;
 }
@@ -51,20 +50,7 @@ button{
 span{
     font-weight: 700;
 }
-#startDate{
-    grid-area: start;
-}
-
-
-#endDate{
-    display: none;
-    grid-area: end;
-}
-
-#checkbox{
-    grid-area: check;
-}
-#review{
+#content{
     grid-area: text;
 }
 #send{

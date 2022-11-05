@@ -29,7 +29,7 @@ function searchKeyword(){
           serviceKey:'dOeEfUvGFzgN4TPUWYVHFduSfub/oQT8K2dXfsVsHJvS/zxHBTQZN7BQ6wq7IF0MPr3bvrfkd9ZbjsB7A/Yw1Q==',
           MobileOS:'ETC',
           MobileApp:'AppTest',
-          numOfRows: 10,
+          numOfRows: 12,
           pageNo: pageNo, 
           keyword: keyword
        },
@@ -55,15 +55,15 @@ function searchKeyword(){
         });
         
         let cnt = response.response.body.totalCount;
-        let restCnt = response.response.body.totalCount % 10;
+        let restCnt = response.response.body.totalCount % 12;
         if (restCnt === 0) {
-            if (cnt / 10 <= pageNo) {
+            if (cnt / 12 <= pageNo) {
                 endPoint = true;
             } else {
                 endPoint = false;
             }
         } else {
-            if (cnt / 10 < pageNo) {
+            if (cnt / 12 < pageNo) {
                 endPoint = true;
             } else {
                 endPoint = false;

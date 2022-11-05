@@ -15,32 +15,19 @@
 
 <body>
 	<jsp:include page="header.jsp"/>
-	 <!--  
-	 <nav>
-      <ul>
-          <li><a href="">지역별 검색</a></li>
-          <li><a href="">활동별 검색</a></li>
-          <li><a href="">축제별 검색</a></li>
-          <li><a href="">전체 지도 검색</a></li>
-      </ul>
-    </nav>
-    -->
-	<section class="page">
-	<aside>
-		<h2>활동별 검색</h2>
-   		<input type="text" id="keyword"/>
-    	<button onclick="searchKeyword()">search</button>
-    </aside>
-
-    <section>
-	<div style="text-align: center;">
-        <button class="back_button" onclick="getDataBack()">back</button>
-        <button class="next_button" onclick="getDataNext()">next</button>
-    </div>
+	
+			<h2 style = "text-align:center">활동별 검색</h2>
+	<section class="page" style = "text-align:center">
+		<span class="searchword" style="text-align: center;">
+   			<input type="text" id="keyword"/>
+    		<button onclick="searchKeyword()">search</button>
+    	</span>
+        <div class="container"></div>
+		<div class="button" style="text-align: center;">
+        	<button class="back_button" onclick="getDataBack()">back</button>
+        	<button class="next_button" onclick="getDataNext()">next</button>
+    	</div>
     
-        <div class="container">
-                
-        </div>
     </section>
     <!-- </section>
     <div class="contentSection">
@@ -105,7 +92,6 @@
   </ul>
 </div>  --> 
 
-	</section>
 
 
   	<jsp:include page="footer.jsp"/>
