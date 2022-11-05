@@ -49,18 +49,14 @@
 	        		</tr>
 	        	</table>
 	        </div>
-<<<<<<< HEAD
 		</div>
 		
-=======
->>>>>>> refs/remotes/origin/#RyuHyeKyoung
 		<div class="writeReview">
 			<form method="post" action="/forTourist/writeReviewPro.jsp">
 				<input type="hidden" id="contentId" name="contentId" value=<%=contentId %>>
 				<textarea required name="content" id="content" rows="3" placeholder="리뷰 작성" required></textarea>
 	            <input type="submit" value="작성">
             </form>
-		</div>
 		</div>
 		<div class="review">
 			<input type="hidden" id="contentId" name="contentId" value=<%=contentId %>>
