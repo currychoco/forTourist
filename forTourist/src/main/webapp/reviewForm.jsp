@@ -38,7 +38,7 @@ System.out.println(contentId+ img);
                 <span>당일치기  <input type="checkbox" id="checkbox" checked="checked"></span>
                 <input type="date" id="endDate">
                 <!-- <input type="text" id="review" rows="15" cols="50" value => -->
-                <textarea id="review" rows="15" cols="50" value =getdate()></textarea>
+                <textarea id="review" rows="15" cols="50"></textarea>
                 <!-- 리뷰 버튼을 누르면 등록될 수 있도록 -->
                 <input type="button" value = "리뷰 등록" id="send" onclick="">
         </div>

@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+	
+}
+.container{
+	margin:50px;
+	place-items: center;
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "img table"
+    "img review"
+    ;
+	
+}
+
+.img{
+	width:70%;
+	padding-left:50%
+}
+
+.festivalImg{
+	grid-area:img;
+	width:300px;
+	
+}
+
+.festivalTable{
+	text-align:left;
+	grid-area: table;
+	
+}
+
+.writeReview{
+	grid-area:review;
+}
