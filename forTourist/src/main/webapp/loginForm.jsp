@@ -5,16 +5,30 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="resources/login.css">
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
-	<div>
-		<form method="post" action="loginFormPro.jsp">
-			<input type="text" id="id" name="id" required>
-			<input type="password" id="password" name="password" required>
-			<input type="submit" value="login">
-		</form>
-	</div>
+	<div class="inner">
+      <form method="post" action="loginFormPro.jsp">
+      
+      <h2>LOGIN</h2>
+        <input
+          type="text"
+          id="id"
+          name="id"
+          placeholder="아이디를 입력해주세요"
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="비밀번호를 입력해주세요"
+          required
+        />
+        <input id="submitBtn" type="submit" value="login" />
+      </form>
+    </div>
 	<jsp:include page="footer.jsp"/>
 </body>
 </html>

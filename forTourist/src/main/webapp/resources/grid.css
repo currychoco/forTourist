@@ -12,22 +12,46 @@
 }
 
 header{
-    display: flex;
-    justify-content: space-between;
+   position: relative;
+    
+}
+header a img{
+	    width: 250px;
 }
 .logininfo{
-    align-items: flex-start;
+	align-items: flex-start;
     display: flex;
+    right: 30px;
+    top: 42%;
+    position: absolute;
+    font-size: 14px;
 }
+<<<<<<< HEAD
 .mainManu{
     font-size: 18px;
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
+=======
+.mainMenu{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+>>>>>>> refs/remotes/origin/#HongJiung
     padding: 15px;
     list-style: none;
     display: flex;
     justify-content: space-around;
     cursor: pointer;
+    font-weight: 500;
+}
+.mainMenu li a{
+	color:#000;
+}
+.mainMenu li a:hover{
+	font-weight: 700;
+	 font-size: 16px;
+}
+.mainMenu li a:target{
+	font-weight: 700;
 }
 .number{
     font-size: 40px;

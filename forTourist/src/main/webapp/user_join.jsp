@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="resources/join.css">
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -23,9 +24,9 @@
 		<section>
 		<!-- no id password name nickname gender phone resDate 8 -->
 			<form method = "POST" action = "user_joinPro.jsp">
-				<table border = "1">
+				<table>
 					<tr>
-						<td id = "title"> 회원번호(자동발생) </td>
+						<td id = "title"> 회원번호</td>
 						<td><input type = "text" id = "no" name = "no" value="<%=no %>" maxlength = "50" readonly><td>
 					 </tr>
 					<tr>
@@ -40,9 +41,14 @@
 						<td id = "title"> 이름 </td>
 						<td><input type = "text" id = "name" name = "name" maxlength = "20" placeholder = "이름을 입력해주세요."><td>
 					 </tr>
+					 
 					 <tr>
 						<td id = "title"> 닉네임 </td>
 						<td><input type = "text" id = "nickname" name = "nickname" maxlength = "20" placeholder = "닉네임을 입력해주세요."><td>
+					 </tr>
+					 <tr>
+						<td id = "title"> 핸드폰 </td>
+						<td><input type = "text" id = "phone" name = "phone" maxlength = "20" placeholder = "핸드폰을 입력해주세요."><td>
 					 </tr>
 					 <tr>
 						<td id = "title"> 성별[남/여] </td>
@@ -55,11 +61,7 @@
 						<td>
 					 </tr>
 					 <tr>
-						<td id = "title"> 핸드폰 </td>
-						<td><input type = "text" id = "phone" name = "phone" maxlength = "13" placeholder = "핸드폰을 입력해주세요."><td>
-					 </tr>
-					 <tr>
-					<td colspan="2" text-align: center>
+					<td id = "btnWarp" colspan="2" text-align: center>
 					<input type="button" onclick="checkForm(form)" value="등록">
 					<input type="button" onclick="location.href='index.jsp'" value="취소">
 					</td>

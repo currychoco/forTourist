@@ -49,6 +49,7 @@
 	        	</table>
 	        </div>
 		</div>
+		
 		<div class="writeReview">
 			<form method="post" action="/forTourist/writeReviewPro.jsp">
 				<input type="hidden" id="contentId" name="contentId" value=<%=contentId %>>
