@@ -13,7 +13,6 @@ function clk(element) {
     key = element.value;
     pageNo = 1;
     start(key);
-	console.log(key);
 }
 
 function start(let){

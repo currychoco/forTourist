@@ -100,4 +100,14 @@
   	<servlet-name>detailArea</servlet-name>
   	<url-pattern>/detailArea</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>myPage</servlet-name>
+  	<jsp-file>/user_mypage.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>myPage</servlet-name>
+  	<url-pattern>/myPage</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

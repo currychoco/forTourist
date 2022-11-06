@@ -27,7 +27,19 @@ public class UserDao {
 	public static UserDao getInstance() {
 		return instance;
 	}
-
+//	CURD
+//	1.CREATE
+//	public createUser(UserDto userDto) 
+//	public int getLastNo()
+//	2.READ
+//	public ArrayList<UserDto> getUserAll()
+//	3.UPDATE
+//	public void modifyUser(UserDto user, int no) 
+//	public UserDto getUserById(String id) 
+//	4.DELETE
+//	public void deleteUser(String id)
+//	public UserDto getUserById(String id) 
+							
 	public void createUser(UserDto userDto) {
 		String sql = "INSERT INTO `user`(`no`,id,`password`,`name`,nickname,gender,phone) VALUES(?, ?, ?, ?, ?, ?, ?)";
 
@@ -129,9 +141,6 @@ public class UserDao {
 			pstmt.setString(3, user.getNickname());
 			pstmt.setString(4, user.getPhone());
 			pstmt.setInt(5, user.getNo());
-
-//			pstmt.setString(1, user.getId());
-//			pstmt.setString(5, user.getGender());
 
 			pstmt.execute();
 		} catch (Exception e) {

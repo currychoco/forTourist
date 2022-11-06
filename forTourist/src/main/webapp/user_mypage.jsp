@@ -11,14 +11,22 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
+	
 	<section>
-	<%
-	String id = "test";  // **현재 임시값** 로그인 하고 받아와야 하는 값 입니다.
+<%
+request.setCharacterEncoding("utf-8");
+/* String id = null;
+UserDao userDao = null;
+UserDto user = null; */
+
+if(session.getAttribute("id") == null){
+	response.sendRedirect("login");
+}else{
+	String id = (String)session.getAttribute("id");
 	UserDao userDao = UserDao.getInstance();
 	UserDto user = userDao.getUserById(id);
-	%>
+%>
 	<h2>회원 정보 수정 및 탈퇴</h2>
-	
 			<table border = "1" >
 			<thead>
 				<tr>
@@ -33,22 +41,26 @@
 			</thead>
 			<tbody>
 			<tr>
-				<!-- 값을 어떻게 넘길건지 -->
 				<td><%=user.getNo()%></td>
-				<td><%=user.getId() %></td>
+				<td><%=user.getId()%></td>
 				<td><%=user.getPassword()%></td>
 				<td><%=user.getName()%></td>
 				<td><%=user.getNickname()%></td>
 				<td><%=user.getGender()%></td>
 				<td><%=user.getPhone()%></td>
+				
 			</tr>
+			
 		 <form>	
 		 <input type="button" onclick="location.href='user_modify.jsp?value=<%=id%>'" value="회원 정보수정">
 		 <input type="button" onclick="location.href='user_delete.jsp?value=<%=id%>'" value="회원 탈퇴 ">
 		</form>
+		</tbody>
 		</table>
-	
-	
+		
+<%		
+		}
+%>
 	</section>
 	<jsp:include page="footer.jsp"/>
 </body>
