@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.content {
+	flex: 5;
+	display: flex;
+	flex-direction: column;
+}
+
+.imgWarp {
+	width: 100%;
+}
+
+.imgWarp img {
+	width: 70%;
+}
+
+.title {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.text {
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.writeReview {
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+}
+
+.writeReview textarea {
+	width: 500px;
+	height: 100px;
+	
+}
+
+.writeReview input {
+	margin-top: 10px;
+	width: 300px;
+	padding: 10px;
+	color: #fff;
+	background: #000;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.writeReview input:hover {
+	background: rgb(216, 29, 166);
+}
+
+.writeReview input:active {
+	background: rgb(213, 54, 170);
+}
+
+.review {
+	flex: 1;
+	height: 500px;
+	overflow: auto;
+}
+
