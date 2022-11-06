@@ -14,12 +14,11 @@ h2{
 }
 
 .page {
-	height: 120vh;
+	height: 150vh;
 	display: grid;
 	text-align: center;
 	align-items: center;
 	grid-template-columns: 1fr;
-	grid-template-rows: 50px 150% 150px;
 	grid-template-areas:
                         "aside" 
 						"section"

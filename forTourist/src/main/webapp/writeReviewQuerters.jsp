@@ -39,29 +39,23 @@ list = dao.getAllReview(contentId);
         <div><img src="<%=img%>"class = "get_img"  id = "get_img" style="height:200px;"/></div>
         
         <form id = "get_review" >
-                <input type="text" id="content"name = "content"style="text-align:left" required>
+                <input type="text" id="content" name = "content" style="text-align:left" required>
                 <!-- <textarea id="content" name = "content" rows="15" cols="50" style="text-align:left" required></textarea> -->
                 <!-- 리뷰 버튼을 누르면 등록될 수 있도록 -->
-                <input type="button" value = "리뷰 등록" id="send" onclick="location.href='writeReviewProQuerters.jsp?contentId=<%=contentId%>&title=<%=title%>&firstimage=${firstimage}&content=${content}'">
+                <input type="button" value = "리뷰 등록" id="send" onclick="location.href='writeReviewProQuerters.jsp?contentId=<%=contentId%>&firstimage=${firstimage}&content=${content}'">
         </form>
 
     </article>
     <!-- 이하 내용은 리뷰가 존재할 시 끌어오는 형식으로 js파일로 .append작성 예정 -->
     <!--  -->
     <article class="reviewd">
-        
-    </article>
-    <script>
-          
-          $(".reviewd").append(
-        		  <%for(ReviewDto review :list){%>
-        		<div class="isreviewd">
+         <%for(ReviewDto review :list){%>
+        		<div class="isreviewd" style="height:200px">
                   	<div id = "postedInfo" style="display: flex">
                       <!-- 작성자, 등록일자 등을 한줄에 나오도록 -->
                       <div><%=review.getUserid()%></div>
-                      <div><%=title%></div>
-                      <div><%=review.getModDate()%></div>
-					<%if(id == review.getUserid()){ %>
+                     
+					<%if(id.equals(review.getUserid())){ %>
                       <div>
                           <button>수정</button> |
                           <button>삭제</button>
@@ -71,13 +65,12 @@ list = dao.getAllReview(contentId);
 
                   <div id = "postedReview"><%=review.getContent()%></div>
               </div>
-              <%}%>
-              );
-    </script>
+              <%}
+              System.out.println("불러왔습니다");%>
+    </article>
+    
     
     
     	<jsp:include page="footer.jsp"/>
-</body>
-</html>
 </body>
 </html>

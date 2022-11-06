@@ -48,7 +48,7 @@ function getData(key){
               $(".container").append(
                   `<ol class = "content">
 				  <li id = "contentid" hidden>${contentid}</li>
-                  <li id = "thumbnail"><a href = "writeReviewQuerters.jsp?contentid=${contentid}&title=${title}&addr1=${addr1}&firstimage=${image}"><img src="${image}" id = "firstimg" name = "firstimg"></a></li>
+                  <li id = "thumbnail"><a href = "writeReviewQuerters.jsp?contentid=${contentid}&firstimage=${image}"><img src="${image}" id = "firstimg" name = "firstimg"></a></li>
                   <li id = "title">${title}</li>
                   <li id = "address">${addr1}</li>
                   <li id = "tel">${tel}</li>               
