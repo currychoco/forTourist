@@ -17,11 +17,10 @@ header{
     
 }
 header a img{
-<<<<<<< HEAD
+
 	margin-right: 100%;
-=======
 	/* margin: 0px 0px 0px 0px; */
->>>>>>> refs/heads/main
+
 	    width: 300px;
 }
 .logininfo{
