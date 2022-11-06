@@ -30,6 +30,12 @@ public class ReviewDto {
 		this.content = content;
 	}
 
+	public ReviewDto(int no, String content) {
+		super();
+		this.no = no;
+		this.content = content;
+	}
+
 	public int getNo() {
 		return no;
 	}

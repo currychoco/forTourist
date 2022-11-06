@@ -21,42 +21,47 @@ function review(){
        		 );
 		}else{
 			console.log(list);
-       $('.review').append(
-			`<table>
-			`
-        );
+			let htmlText = "";
+			
+			htmlText += `<table>`;
         
-        list.forEach(e=>{
-		 $('.review').append(
-			`
-			<tr>
-				<td>${e.userid}</td>
-				<td>${e.resDate}</td>
-				<td>${e.content}</td>
-			`
-			);
+	        list.forEach(e=>{
+				
+				
+				htmlText += `
+				<tr>
+					<td>${e.userid}</td>
+				`;
+				
+				if(e.modDate != "null"){
+					htmlText += `<td><span>(수정일)</span>${e.modDate}</td>
+						<td class="reviewContent" data-id="${e.no}">${e.content}</td>
+					`;
+				}else{
+					htmlText += `<td><span>(작성일)</span>${e.resDate}</td>
+						<td class="reviewContent" data-id="${e.no}">${e.content}</td>
+					`;
+				}
+				
+				
+				
+				
+				if(userid === e.userid){
+					htmlText += `
+						<td><button onclick="modifyValidation('${e.userid}',${e.no})">수정</button></td>
+						<td><button onclick="deleteValidation('${e.userid}',${e.no})">삭제</button></td>
+					`;
+				} else {
+					htmlText += `
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					`;
+				}
+				htmlText += `</tr>`;
+			});
 			
-		if(userid === e.userid){
-			$('.review').append(
-			`
-				<td><button>수정</button></td>
-				<td><button onclick="validation('${e.userid}',${e.no})">삭제</button></td>
-			`
-			
-			);
-		}
-		 $('.review').append(
-			`
-			</tr>
-			`
-			);
-
-		});
-		
-		$('.review').append(
-			`</table>
-			`
-        );
+			htmlText += `</table>`;
+			$('.review').append(htmlText);
 		}
 		
    }).fail(function(err){
@@ -65,9 +70,21 @@ function review(){
    
 }
 
-function validation(dtoUserId,dtoNo){
+function deleteValidation(dtoUserId,dtoNo){
 	if(dtoUserId===userid){
 		location.href="/forTourist/festivalReviewDeletePro.jsp?no=" + dtoNo + "&&userId=" + dtoUserId+"&&contentId=" + contentId;
+	}else{
+		alert("본인이 작성한 리뷰가 아닙니다.");
+	}
+}
+
+function modifyValidation(dtoUserId,dtoNo){
+	if(dtoUserId===userid){
+		$(".writeReview").hide();
+		$(".updateReview").show();
+		$(".updateReview input[name=no]").val(dtoNo);
+		const text = $(".reviewContent[data-id=" + dtoNo + "]").text();
+		$(".updateReview textarea").val(text);
 	}else{
 		alert("본인이 작성한 리뷰가 아닙니다.");
 	}

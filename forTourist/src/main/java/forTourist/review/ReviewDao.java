@@ -144,4 +144,28 @@ public class ReviewDao {
 			}
 		}
 	}
+	
+	//update
+	public void updateReview(ReviewDto dto) {
+		String sql = "update review set content = ?, modDate = now() where no = ?";
+		int no = dto.getNo();
+		String content = dto.getContent();
+		
+		try {
+			conn=DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, content);
+			pstmt.setInt(2, no);
+			pstmt.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
 }
