@@ -19,12 +19,23 @@ if(session.getAttribute("id") == null){
 	int contentId=Integer.parseInt(request.getParameter("contentId"));
 	String content=request.getParameter("content");
 	String userid = (String)session.getAttribute("id");
+	
+	String title=request.getParameter("title");
+	String addr1=request.getParameter("addr1");
+	String firstimage=request.getParameter("firstimage");
+	
+	
+	System.out.println(contentId);
+	System.out.println(title);
+	System.out.println(addr1);
+	System.out.println(firstimage);
+	
 
 	ReviewDao dao = ReviewDao.getInstance();
 	ReviewDto dto = new ReviewDto(contentId, userid, content);
 	dao.setReview(dto);
-	
-	response.sendRedirect("/forTourist/detailArea?contentId="+contentId+"&title=가람돌솥밥&addr1=제주특별자치도%20서귀포시%20중문관광로%20332&firstimage=http://tong.visitkorea.or.kr/cms/resource/47/2755047_image2_1.jpg");
+	/* response.sendRedirect("/forTourist/contentid=" + contentId + "&title=" + title + "&addr1=" + addr1 + "&firstimage=" + firstimage); */
+	response.sendRedirect("/forTourist/area");
 }
 
 
