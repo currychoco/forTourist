@@ -17,13 +17,10 @@ header{
     
 }
 header a img{
-<<<<<<< HEAD
 
 	margin-right: 100%;
 	/* margin: 0px 0px 0px 0px; */
 
-=======
->>>>>>> refs/remotes/origin/#HongJiung
 	    width: 300px;
 }
 .logininfo{
@@ -34,9 +31,16 @@ header a img{
     position: absolute;
     font-size: 17px;
 }
+
 .mainMenu{
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
+}
+
+.mainManu{
+    font-size: 18px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
     padding: 15px;
     list-style: none;
     display: flex;
