@@ -34,6 +34,7 @@
 				<li><a href="keyword">활동 찾기</a></li>
 				<li><a href="festival">축제 찾기</a></li>
 				<li><a href="quarters">숙소 둘러보기</a></li>
+				<li><a href="myPage">마이페이지</a></li>
 			</ul>
 	</nav>
 	<!-- <aside></aside> -->

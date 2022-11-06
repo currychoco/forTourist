@@ -17,10 +17,13 @@ header{
     
 }
 header a img{
+<<<<<<< HEAD
 
 	margin-right: 100%;
 	/* margin: 0px 0px 0px 0px; */
 
+=======
+>>>>>>> refs/remotes/origin/#HongJiung
 	    width: 300px;
 }
 .logininfo{
