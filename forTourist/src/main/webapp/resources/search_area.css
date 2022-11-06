@@ -8,7 +8,6 @@ article {
 						"nav    nav     nav"
 						"aside  aside   aside" 
 						"section section section"
-						
 }
 
 section{
@@ -25,15 +24,12 @@ li {
 }
 
 #key {
-border-color: rgb(110, 110, 110);
-box-shadow: none;
-border-radius: 10%;
+border: 0;
 outline: 0;
-padding: 1px 2px 1px 2px;
-color: black;
-background-color: rgb(254, 239, 211);
-
-
+background-color: white;
+font-size: 17px;
+/* margin: 10px; */
+cursor: pointer
 }
 
 .container {
