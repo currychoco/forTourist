@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <!-- <link rel="stylesheet" href="resources/festival.css"> -->
-<!-- <link rel="stylesheet" href="resources/detailFestView.css"> -->
-<link rel="stylesheet" href="resources/detailArea.css">
+<link rel="stylesheet" href="resources/detailFestView.css">
+<!-- <link rel="stylesheet" href="resources/detailArea.css"> -->
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
@@ -24,7 +24,7 @@
 		
 		<div class='container' >
 			<div class='imgWrap'><!-- festivalImg -->
-            	<img src="<%=dto.getPosterImage() %>"  class = "img" style = "width:300px ; margin-left:20%">
+            	<img src="<%=dto.getPosterImage() %>"  class = "img" style = "width:300px">
 	        </div>
 	        <div class='content'><!-- festivalTable -->
 	        	<table>
@@ -49,14 +49,13 @@
 	        			<td><%=dto.getTel() %></td>
 	        		</tr>
 	        	</table>
-		<div class="writeReview">
-			<form method="post" action="/forTourist/writeReviewPro.jsp">
+		    </div>
+			<form method="post" action="/forTourist/writeReviewPro.jsp" class="writeReview">
 				<input type="hidden" id="contentId" name="contentId" value=<%=contentId %>>
 				<textarea required name="content" id="content" rows="3" placeholder="리뷰 작성" required></textarea>
 	            <input type="submit" value="작성">
             </form>
-		</div>
-	        </div>
+		
 		</div>
 		
 		<div class="updateReview" style="display:none;">

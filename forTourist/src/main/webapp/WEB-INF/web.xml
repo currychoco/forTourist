@@ -102,6 +102,15 @@
   </servlet-mapping>
 
   <servlet>
+  	<servlet-name>detailKeyword</servlet-name>
+  	<jsp-file>/detailKeyword.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>detailKeyword</servlet-name>
+  	<url-pattern>/detailKeyword</url-pattern>
+  </servlet-mapping>
+   
+  <servlet>
   	<servlet-name>myPage</servlet-name>
   	<jsp-file>/user_mypage.jsp</jsp-file>
   </servlet>
