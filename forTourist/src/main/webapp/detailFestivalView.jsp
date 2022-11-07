@@ -7,7 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <!-- <link rel="stylesheet" href="resources/festival.css"> -->
-<link rel="stylesheet" href="resources/detailFestView.css">
+<!-- <link rel="stylesheet" href="resources/detailFestView.css"> -->
+<link rel="stylesheet" href="resources/detailArea.css">
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
@@ -21,15 +22,15 @@
 		
 		%>
 		
-		<div class='container'>
-			<div class='festivalImg'>
-            	<img src="<%=dto.getPosterImage() %>"  class = "img">
+		<div class='container' >
+			<div class='imgWrap'><!-- festivalImg -->
+            	<img src="<%=dto.getPosterImage() %>"  class = "img" style = "width:300px ; margin-left:20%">
 	        </div>
-	        <div class='festivalTable'>
+	        <div class='content'><!-- festivalTable -->
 	        	<table>
 	        		<tr>
 	        			<th>행사</th>
-	        			<td><%=dto.getTitle() %></td>
+	        			<td class ="title"><%=dto.getTitle() %></td>
 	        		</tr>
 	        		<tr>
 	        			<th>주소</th>
@@ -48,9 +49,6 @@
 	        			<td><%=dto.getTel() %></td>
 	        		</tr>
 	        	</table>
-	        </div>
-		</div>
-		
 		<div class="writeReview">
 			<form method="post" action="/forTourist/writeReviewPro.jsp">
 				<input type="hidden" id="contentId" name="contentId" value=<%=contentId %>>
@@ -58,6 +56,9 @@
 	            <input type="submit" value="작성">
             </form>
 		</div>
+	        </div>
+		</div>
+		
 		<div class="updateReview" style="display:none;">
 			<form method="post" action="updateReviewPro.jsp">
 				<input type="hidden" id = "contentId" name="contentId" value=<%=contentId %>>

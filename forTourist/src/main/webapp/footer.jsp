@@ -11,13 +11,13 @@
 	<footer>
 	<div class = "social">
 			<div>
-				<span><img src="https://cdn-icons-png.flaticon.com/512/74/74451.png" style="width:30px"></span>
+				<span><img src="https://cdn-icons-png.flaticon.com/512/74/74451.png" style="width:30px ;height:30px"></span>
 				<span class = "number">000-0000-0000</span>
 			</div>
 			<div>
-				<span><img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" style="width:30px"></span>
-				<span><img src="https://cdn-icons-png.flaticon.com/512/145/145812.png" style="width:30px"></span>
-				<span><img src="https://cdn-icons-png.flaticon.com/512/3955/3955024.png" style="width:30px"></span>
+				<span><img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" style="width:30px;height:30px"></span>
+				<span><img src="https://cdn-icons-png.flaticon.com/512/145/145812.png" style="width:30px;height:30px"></span>
+				<span><img src="https://cdn-icons-png.flaticon.com/512/3955/3955024.png" style="width:30px;height:30px"></span>
 			</div>
 		</div>
 		<div>
