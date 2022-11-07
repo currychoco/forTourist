@@ -42,7 +42,7 @@ function start(let){
                 $(".head").show();
                 $(".container").append(
                  `<ol class="content">
- 				<li><a href='detailArea?contentid=${contentid}&title=${title}&addr1=${addr1}&firstimage=${firstimage}'><img src="${firstimage} " class = "img"></a></li>
+ 				<li><a href='detailArea?contentid=${contentid}&title=${title}&addr1=${addr1}&firstimage=${firstimage}' target='_blank' ><img src="${firstimage} " class = "img"></a></li>
                 <li>${title}</li>
                  <li>${addr1}</li>
 				</ol>`

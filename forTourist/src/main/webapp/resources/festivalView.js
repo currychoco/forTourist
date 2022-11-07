@@ -47,7 +47,7 @@ function searchFestival(){
 				//테이블을 사용하는것보다 ul/ol 태그를 사용하는게 세로로 세우기 더 쉬워요!
 				//원래 써놓으신건 따로 백업해놨습니다 필요하시면 슬랙으로 보내드릴게요 
                `<ul class = "content">
-					<li><a href = 'detailFestival?contentId=${contentId}' target='_blank'><img src ="${posterImage}" id = "firstimg" style = "width:160px"></a></li>
+					<li><a href = 'detailFestival?contentId=${contentId}' target='_blank'><img src ="${posterImage}" id = "firstimg" style = "width:200px"></a></li>
 					<li id = "title">${title}</li>
 					<li>${eventStartDate}</li>
 					<li>${eventEndDate}</li>

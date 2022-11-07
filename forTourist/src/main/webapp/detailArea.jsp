@@ -1,3 +1,5 @@
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,10 +14,12 @@
 	<section>
 	<%
  	request.setCharacterEncoding("UTF-8"); 
+	response.setCharacterEncoding("utf-8");
 	
 	int contentId = Integer.parseInt(request.getParameter("contentid"));
 	String title = request.getParameter("title");
 	String addr1 = request.getParameter("addr1");
+	String addr1Encode = URLEncoder.encode(addr1,"utf-8").replaceAll("\\+", "%20");
 	String firstimage = request.getParameter("firstimage");
 	/* 
 	System.out.println(title);
@@ -36,7 +40,7 @@
         <form method="post" action="/forTourist/writeReviewProForArea.jsp">
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
           <input type="hidden" id="title" name="title" value=<%=title%>>
-          <input type="hidden" id="addr1" name="addr1" value=<%=addr1%>>
+          <input type="hidden" id="addr1" name="addr1" value=<%=addr1Encode%>>
           <input type="hidden" id="firstimage" name="firstimage" value=<%=firstimage%>>
           <textarea required name="content" id="content" rows="3" placeholder="리뷰 작성" required></textarea>
           <input type="submit" value="작성" />
