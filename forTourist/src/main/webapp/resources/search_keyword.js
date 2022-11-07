@@ -52,7 +52,7 @@ function searchKeyword(){
                 <li>${addr1}</li>
             </ol>`
             );
-		}
+			}
         });
         
         let cnt = response.response.body.totalCount;
