@@ -10,7 +10,6 @@
     	<jsp:include page="header.jsp"/>
     	<article>
     <aside>
-        
             <button id="key" onclick="clk(this)" value="1">서울</button>ㅣ
             <button id="key" onclick="clk(this)" value="2">인천</button>ㅣ
             <button id="key" onclick="clk(this)" value="3">대전</button>ㅣ
@@ -30,16 +29,15 @@
             <button id="key" onclick="clk(this)" value="38">전라남도</button>
     </aside>
         <section>
+            <div class="container">
+            </div>
             <div style="text-align: center;">
                 <button id = "key" class="back_button" onclick="getDataBack()">back</button>
                 <button id = "key" class="next_button" onclick="getDataNext()">next</button>
-            </div>
-            <div class="container">
             </div>
         </section>
     	</article>
     <script src="resources/search_area.js"></script>
     <jsp:include page="footer.jsp"/>
     </body>
-
 </html>

@@ -17,6 +17,10 @@
 	String title = request.getParameter("title");
 	String addr1 = request.getParameter("addr1");
 	String firstimage = request.getParameter("firstimage");
+	/* 
+	System.out.println(title);
+	System.out.println(addr1);
+	System.out.println(firstimage); */
 	%>	
   <div class="container">
       <div class="content">
@@ -28,7 +32,6 @@
       <div class="writeReview">  
        <div class="review">
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
-          
         </div>
         <form method="post" action="/forTourist/writeReviewProForArea.jsp">
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
