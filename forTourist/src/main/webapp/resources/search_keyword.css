@@ -112,12 +112,23 @@ ol{
 
 .button{
 			grid-area: next;
+<<<<<<< HEAD
 }
 
 .img{
     width: 100%;
     height: 170px;
     object-fit: cover;
+=======
+}
+img{
+    width: 300px;
+}
+.img{
+    width: 100%;
+	height: 150px;
+	object-fit: cover;
+>>>>>>> refs/remotes/origin/#HongJiung
 }
 
 .content {

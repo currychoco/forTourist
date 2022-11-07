@@ -1,6 +1,6 @@
 @charset "UTF-8";
 article {
-	height: 120vh;
+	height: 180vh;
 	display: grid;
 	grid-template-columns: 100px 1fr 100px;
 	grid-template-rows: 40px 100px 1fr;
@@ -9,8 +9,12 @@ article {
 						"aside  aside   aside" 
 						"section section section"
 }
+footer {
+    margin: 0;
+    margin-top: 50%;
+}
 
-section{
+section {
 	grid-area: section;
 }
 aside {

@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,11 +14,14 @@
 	<%
  	request.setCharacterEncoding("UTF-8"); 
 	
+	
+	
 	int contentId = Integer.parseInt(request.getParameter("contentid"));
 	String title = request.getParameter("title");
 	String addr1 = request.getParameter("addr1");
 	String firstimage = request.getParameter("firstimage");
 	%>	
+	
   <div class="container">
       <div class="content">
         <div class="imgWarp"><img src="<%=firstimage%>" class="img" /></div>
