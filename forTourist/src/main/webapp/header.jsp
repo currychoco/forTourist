@@ -12,7 +12,7 @@
 </head>
 <body>
 	<header>
-		<a href=""><img src="https://s3.amazonaws.com/files.d20.io/images/312414451/ZZXwa0gsVbRJZBSXs5D2Ew/max.png" class= "home"/></a>
+		<a href="home"><img src="https://s3.amazonaws.com/files.d20.io/images/312414451/ZZXwa0gsVbRJZBSXs5D2Ew/max.png" class= "home"/></a>
 	<%
 	String id = (String)session.getAttribute("id");
 	if(id == null){
