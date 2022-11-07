@@ -110,6 +110,17 @@
   	<url-pattern>/detailKeyword</url-pattern>
   </servlet-mapping>
    
+     <servlet>
+  	<servlet-name>detailQuarters</servlet-name>
+  	<jsp-file>/detailQuarters.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>detailQuarters</servlet-name>
+  	<url-pattern>/detailQuarters</url-pattern>
+  </servlet-mapping>
+   
+   
+   
   <servlet>
   	<servlet-name>myPage</servlet-name>
   	<jsp-file>/user_mypage.jsp</jsp-file>
