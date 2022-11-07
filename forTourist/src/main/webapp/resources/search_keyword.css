@@ -14,7 +14,7 @@ h2{
 }
 
 .page {
-	height: 150vh;
+	height: auto;
 	display: grid;
 	text-align: center;
 	align-items: center;
@@ -99,6 +99,7 @@ ol{
 }
 
 .container {
+	margin: 50px 50px 0 50px;
 	grid-area:section;
     text-align: center;
     font-size: 14px;
@@ -107,28 +108,19 @@ ol{
 	place-items: center;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(3,300px);
+    grid-template-rows: repeat(3,auto);
 }
 
 .button{
 			grid-area: next;
-<<<<<<< HEAD
 }
 
 .img{
+	border-radius:10px;
     width: 100%;
-    height: 170px;
+    height: 240px;
     object-fit: cover;
-=======
-}
-img{
-    width: 300px;
-}
-.img{
-    width: 100%;
-	height: 150px;
-	object-fit: cover;
->>>>>>> refs/remotes/origin/#HongJiung
+
 }
 
 .content {
