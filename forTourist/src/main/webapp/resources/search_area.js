@@ -33,6 +33,7 @@ function start(let){
         const items = response.response.body.items.item;
         items.forEach((e) => {
             if (e.firstimage !== "") {
+	
                 const firstimage = e.firstimage;
                 const title = e.title;
                 const addr1 = e.addr1;
@@ -42,7 +43,7 @@ function start(let){
                 $(".head").show();
                 $(".container").append(
                  `<ol class="content">
- 				<li><a href='detailArea?contentid=${contentid}&title=${title}&addr1=${addr1}&firstimage=${firstimage}'><img src="${firstimage} " class = "img"></a></li>
+ 				<li><a href='detailArea?contentid=${contentid}&title=${title}&addr1=${addr1}&firstimage=${firstimage}' target='_blank' ><img src="${firstimage} " class = "img"></a></li>
                 <li>${title}</li>
                  <li>${addr1}</li>
 				</ol>`

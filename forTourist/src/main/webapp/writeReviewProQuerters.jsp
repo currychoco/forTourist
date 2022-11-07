@@ -1,3 +1,5 @@
+<%@page import="java.net.URLDecoder"%>
+<%@page import="java.net.URLEncoder"%>
 <%@page import="forTourist.review.ReviewDto"%>
 <%@page import="forTourist.review.ReviewDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,29 +12,30 @@
 </head>
 <body>
 <%
+
 request.setCharacterEncoding("utf-8");
-int contentId = Integer.parseInt(request.getParameter("contentId"));
-String content=request.getParameter("content");
-String image=request.getParameter("get_img");
-	System.out.println(contentId);
-	System.out.println(image);
-	String userid = (String)session.getAttribute("id");
+response.setCharacterEncoding("utf-8");
 
 if(session.getAttribute("id") == null){
 	response.sendRedirect("login");
 }else{
-
+	int contentId=Integer.parseInt(request.getParameter("contentId"));
+	String content=request.getParameter("content");
+	String userid = (String)session.getAttribute("id");
+	String tel = (String)session.getAttribute("tel");
+	String title=URLEncoder.encode(request.getParameter("title"),"utf-8");
+	String addr1De = URLDecoder.decode(request.getParameter("addr1"), "utf-8");
+	String addr1En = URLEncoder.encode(addr1De, "utf-8");
+	String firstimage=URLEncoder.encode(request.getParameter("firstimage"),"utf-8");
+	
 	ReviewDao dao = ReviewDao.getInstance();
 	ReviewDto dto = new ReviewDto(contentId, userid, content);
 	dao.setReview(dto);
-	System.out.println("등록완료");
-	
-//	response.sendRedirect("writeReviewQuerters.jsp?contentId=${contentId}&title=${title}&addr1=${addr1}&firstimage=${firstimage}");
-//	response.sendRedirect("writeReviewQuerters.jsp?contentid=${contentId}");
-	response.sendRedirect("quarters");
-}%>
 
+	response.sendRedirect("/forTourist/detailQuarters?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage + "&&tel=" + tel);
 
+}
 
+%>
 </body>
 </html>

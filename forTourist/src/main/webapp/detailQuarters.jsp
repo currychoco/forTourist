@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/detailArea.css">
+<link rel="stylesheet" href="resources/review.css">
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
@@ -20,6 +20,7 @@
 	String title = request.getParameter("title");
 	String addr1 = request.getParameter("addr1");
 	String addr1Encode = URLEncoder.encode(addr1,"utf-8").replaceAll("\\+", "%20");
+	String tel = request.getParameter("tel");
 	String firstimage = request.getParameter("firstimage");
 	
 	%>	
@@ -28,17 +29,19 @@
         <div class="imgWarp"><img src="<%=firstimage%>" class="img" /></div>
         <div class="title"><%=title%></div>
         <div class="text"><%=addr1%></div>
+        <div class="tel"><%=tel%></div>
       </div>
        
       <div class="writeReview">  
        <div class="review">
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
         </div>
-        <form method="post" action="/forTourist/writeReviewProForArea.jsp">
+        <form method="post" action="/forTourist/writeReviewProQuerters.jsp">
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
           <input type="hidden" id="title" name="title" value=<%=title%>>
           <input type="hidden" id="addr1" name="addr1" value=<%=addr1Encode%>>
           <input type="hidden" id="firstimage" name="firstimage" value=<%=firstimage%>>
+          <input type="hidden" id="tel" name="tel" value=<%=tel%>>
           <textarea required name="content" id="content" rows="3" placeholder="리뷰 작성" required></textarea>
           <input type="submit" value="작성" />
         </form>
