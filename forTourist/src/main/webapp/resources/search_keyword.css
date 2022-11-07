@@ -93,6 +93,10 @@ section {
     text-align: center;
 }
 
+ol{
+	list-style:none;
+}
+
 .container {
 	grid-area:section;
     text-align: center;
@@ -110,13 +114,8 @@ place-items: center;
 }
 
 
-<<<<<<< HEAD
-img{
-    width: 300px;
-=======
-#img{
+.img{
     width: 100%;
->>>>>>> refs/remotes/origin/#RyuHyeKyoung
 	height: 150px;
 	object-fit: cover;
 }
