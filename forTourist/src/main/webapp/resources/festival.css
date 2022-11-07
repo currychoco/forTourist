@@ -51,18 +51,20 @@ section{
 }
 
 .contained{
+	height:auto;
+	align-items: center;
     text-align: center;
     font-size: 14px;
     margin: 50px 50px 40px;
     align-content: center;
     display: grid;
     grid-template-columns:repeat(4,1fr);
-    grid-template-rows: repeat(2,400px);
+    grid-template-rows: repeat(2,auto);
     ;
 }
 .content{
     list-style-type: none;
-    margin: 10px 5px;
+    margin: 10px 10px;
     text-align: center;
     padding-top: 5px;
 }
@@ -80,10 +82,19 @@ button{
 }
 
 #firstimg{
-    width:200px;
+	height:100%;
+	border-radius:10px;
+    width:100%;
 }
 
 #title {
     font-size: 16px;
     font-weight: 700;
+}
+
+.imgs{
+	text-align:center;
+	height:450px;
+	margin-bottom:3px;
+	width:100%;
 }
