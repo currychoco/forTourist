@@ -1,6 +1,6 @@
 const noImage = "https://www.pyeongtaek.go.kr/common/images/etc/ready.jpg";
 
-const CNT = 6;
+const CNT = 12;
 let page = 1;
 let lastPage = 100;
 
