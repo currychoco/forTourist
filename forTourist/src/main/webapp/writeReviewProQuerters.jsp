@@ -10,33 +10,29 @@
 </head>
 <body>
 <%
-
 request.setCharacterEncoding("utf-8");
+int contentId = Integer.parseInt(request.getParameter("contentId"));
+String content=request.getParameter("content");
+String image=request.getParameter("get_img");
+	System.out.println(contentId);
+	System.out.println(image);
+	String userid = (String)session.getAttribute("id");
 
 if(session.getAttribute("id") == null){
 	response.sendRedirect("login");
 }else{
-	int contentId=Integer.parseInt(request.getParameter("contentId"));
-	String content=request.getParameter("content");
-	String userid = (String)session.getAttribute("id");
-	
-	String title=request.getParameter("title");
-	String addr1=request.getParameter("addr1");
-	String firstimage=request.getParameter("firstimage");
-	
-	System.out.println(contentId);
-	System.out.println(title);
-	System.out.println(addr1);
-	System.out.println(firstimage);
 
 	ReviewDao dao = ReviewDao.getInstance();
 	ReviewDto dto = new ReviewDto(contentId, userid, content);
 	dao.setReview(dto);
+	System.out.println("등록완료");
 	
-	response.sendRedirect("/forTourist/keyword");
-}
+//	response.sendRedirect("writeReviewQuerters.jsp?contentId=${contentId}&title=${title}&addr1=${addr1}&firstimage=${firstimage}");
+//	response.sendRedirect("writeReviewQuerters.jsp?contentid=${contentId}");
+	response.sendRedirect("quarters");
+}%>
 
 
-%>
+
 </body>
 </html>

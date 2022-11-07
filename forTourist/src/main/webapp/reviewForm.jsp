@@ -25,7 +25,7 @@ System.out.println(contentId+ img);
 
 
     <!-- 헤더 대신 임의로 넣은 것. -->
-    <img src="https://s3.amazonaws.com/files.d20.io/images/312414451/ZZXwa0gsVbRJZBSXs5D2Ew/max.png" style="width:300px;" class= "home"/>
+    <img src="https://s3.amazonaws.com/files.d20.io/images/312414451/ZZXwa0gsVbRJZBSXs5D2Ew/max.png" style="height:200px;" class= "home"/>
     <!-- 이미지 , 가게 이름을 이전 페이지에서 받는다는 것을 전제로 하고 -->
     <!-- ㄴ 리뷰 대상을 눌르고 찾아 들어온 뒤의 페이지이기 때문에 -->
     <article id = "input_review">
