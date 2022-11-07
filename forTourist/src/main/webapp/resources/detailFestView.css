@@ -6,7 +6,7 @@
 	
 }
 .container{
-	margin:50px;
+	margin:50px 20% 0 20% ;
 	place-items: center;
 	display:grid;
 	grid-template-columns: 1fr 1fr;
@@ -19,17 +19,15 @@
 }
 
 .img{
-	width:70%;
-	padding-left:50%
 }
 
-.festivalImg{
+.imgWrap{
 	grid-area:img;
 	width:300px;
 	
 }
 
-.festivalTable{
+.content{
 	text-align:left;
 	grid-area: table;
 	
@@ -37,4 +35,55 @@
 
 .writeReview{
 	grid-area:review;
+	width:100%
+}
+.writeReview textarea {
+	width: 90%;
+	height: 100px;
+	
+}
+
+.writeReview input {
+	margin-top: 10px;
+	width: 90%;
+	padding: 10px;
+	color: #fff;
+	background: #000;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.writeReview input:hover {
+	background: rgb(216, 29, 166);
+}
+
+.writeReview input:active {
+	background: rgb(213, 54, 170);
+}
+
+
+.review{
+	margin:50px 20% 0 20%;
+}
+table{
+	  margin-left:auto; 
+    margin-right:auto;
+}
+
+td{
+	margin-bottom: 2px;
+    padding: 2px;
+    border-bottom: dashed 1px #aaa;
+    
+}
+th{
+	margin-bottom: 2px;
+    padding-bottom: 2px;
+    border-bottom: dashed 1px #aaa;
+}
+
+.reviewContent{
+	border-left:dashed 1px #ccc;
+	width:300px;
+	text-align:left;
 }
