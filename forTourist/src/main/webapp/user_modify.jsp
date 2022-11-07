@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="resources/mypage.css">
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -21,12 +22,12 @@ user = userDao.getUserById(id);
 	<section>
 		<h2>회원 정보 수정</h2>
 		<form method="post" action="user_modifyPro.jsp">
-			<table border="1" style="border-collapse: collapse;">
-				<tr>
-					<td background-color="blue">회원번호</td>
+			<table border="1" style="border-collapse: collapse;" class="mytable">
+				<tr style="background-color:#ddd;">
+					<td>회원번호</td>
 					<td><input type="text" id="no" name = "no" value = "<%=user.getNo()%>" readonly></td>
 				</tr>
-				<tr>
+				<tr	style="background-color:#ddd;">
 					<td>회원아이디</td>
 					<td><input type="text" id="id" name = "id" value = "<%=user.getId()%>" readonly></td>
 				</tr>
@@ -51,8 +52,8 @@ user = userDao.getUserById(id);
 					<td><input type="text" id="phone" name = "phone" value = "<%=user.getPhone()%>"></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" value="수정" onclick="alert('회원정보수정이 완료 되었습니다.')"> <input
-						type="button" value="취소" onclick = "location.href='user_mypage.jsp'"></td>
+					<td colspan="2"><input type="submit" value="수정" onclick="alert('회원정보수정이 완료 되었습니다.')"class ="button">&nbsp; | &nbsp; <input
+						type="button" value="취소" onclick = "location.href='user_mypage.jsp'" class ="button"></td>
 				</tr>
 			</table>
 		</form>

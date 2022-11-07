@@ -7,9 +7,11 @@ $(".searchBtn").on("click", () => {
  });
 
 let pageNo = 1;
-let endPoint = false;
+let endPoint = true;
 
-
+if (endPoint === true) {
+            $(".next_button").hide();
+        }
 
 $(".back_button").hide();
 
@@ -71,12 +73,12 @@ function searchKeyword(){
             }
         }
 
-        if (endPoint === true) {
-            $(".next_button").hide();
-        }
         if (pageNo === 1) {
             $(".back_button").hide();
             $(".next_button").show();
+        }
+        if (endPoint === true) {
+            $(".next_button").hide();
         }
     });
 }
