@@ -108,15 +108,11 @@ place-items: center;
 .button{
 			grid-area: next;
 }
-
-
-<<<<<<< HEAD
 img{
     width: 300px;
-=======
-#img{
+}
+.img{
     width: 100%;
->>>>>>> refs/remotes/origin/#RyuHyeKyoung
 	height: 150px;
 	object-fit: cover;
 }
