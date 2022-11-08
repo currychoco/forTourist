@@ -1,4 +1,4 @@
-package controller.action;
+package login;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,21 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import forTourist.review.ReviewDao;
 
 /**
- * Servlet implementation class ReviewDeleteAction
+ * Servlet implementation class LoginAction
  */
-@WebServlet("/ReviewDeleteAction")
-public class ReviewDeleteAction extends HttpServlet {
+@WebServlet("/LoginAction")
+public class LoginAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReviewDeleteAction() {
+    public LoginAction() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,21 +27,7 @@ public class ReviewDeleteAction extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
-		int no = Integer.parseInt(request.getParameter("no"));
-		int contentId = Integer.parseInt(request.getParameter("contentId"));
-		String userId = request.getParameter("userId");
-		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
-
-
-		ReviewDao dao = ReviewDao.getInstance();
-		if(userId.equals(id)){
-			dao.deleteReview(no);
-			response.sendRedirect("/forTourist/detailFestival?contentId="+ contentId);
-		}else{
-			response.sendRedirect("/forTourist/detailFestival?contentId="+ contentId);
-		}
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
