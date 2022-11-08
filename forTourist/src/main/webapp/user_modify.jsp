@@ -21,7 +21,7 @@ user = userDao.getUserById(id);
 %>
 	<section>
 		<h2>회원 정보 수정</h2>
-		<form method="post" action="user_modifyPro.jsp">
+		<form method="post" action="/forTourist/ModifyAction">
 			<table border="1" style="border-collapse: collapse;" class="mytable">
 				<tr style="background-color:#ddd;">
 					<td>회원번호</td>

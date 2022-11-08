@@ -13,7 +13,7 @@ review();
 function review(){
     $.ajax({
        method:"post",
-       url:"/forTourist/festivalReviewPro.jsp",
+       url:"/forTourist/FestivalReviewAction",
        data:{
 			contentId : contentId
        }
@@ -75,7 +75,7 @@ function review(){
 }
 function deleteValidation(dtoUserId,dtoNo){
 	if(dtoUserId===userid){
-		location.href="/forTourist/quartersReviewDeletePro.jsp?no=" + dtoNo + "&userId=" + dtoUserId+"&contentId=" + contentId + "&title=" + title + "&addr1=" + addr1 + "&firstimage=" + firstimage + "&tel=" + tel;
+		location.href="/forTourist/QuartersReviewDeleteAction?no=" + dtoNo + "&userId=" + dtoUserId+"&contentId=" + contentId + "&title=" + title + "&addr1=" + addr1 + "&firstimage=" + firstimage + "&tel=" + tel;
 	}else{
 		alert("본인이 작성한 리뷰가 아닙니다.");
 	}
