@@ -63,7 +63,7 @@ public class WantDao {
 			this.pstmt.setInt(3, wantDto.getContentId());
 			this.pstmt.setString(4, wantDto.getUserId());
 			this.pstmt.setString(5, wantDto.getTitle());
-			
+			this.pstmt.setString(6, wantDto.getUrl());
 
 			this.pstmt.execute();
 			System.out.println("찜 생성 성공");

@@ -1,3 +1,7 @@
+<%@page import="forTourist.want.WantDto"%>
+<%@page import="forTourist.want.WantDao"%>
+<%@page import="forTourist.like.LikeDao"%>
+<%@page import="forTourist.like.LikeDto"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -21,9 +25,22 @@
 	String addr1 = request.getParameter("addr1");
 	String addr1Encode = URLEncoder.encode(addr1,"utf-8").replaceAll("\\+", "%20");
 	String tel = request.getParameter("tel");
-	String firstimage = request.getParameter("firstimage");
 	
+	LikeDao likeDao = LikeDao.getInstance();
+	LikeDto likeDto = null;
+	
+	WantDao wantDao = WantDao.getInstance();
+	WantDto wantDto = null;
+ 	
+	String firstimage = request.getParameter("firstimage");
+	String id = (String)session.getAttribute("id");
+	likeDto = likeDao.getLikebyTwoId(contentId,id);
+	wantDto = wantDao.getWantbyTwoId(contentId,id);
+	String addr1De = URLDecoder.decode(request.getParameter("addr1"), "utf-8");
+	String addr1En = URLEncoder.encode(addr1De, "utf-8");
+	String url = "/forTourist/detailfestival?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage;
 	%>	
+	
   <div class="container">
       <div class="content">
         <div class="imgWarp"><img src="<%=firstimage%>" class="img" /></div>
@@ -47,6 +64,31 @@
           <input type="submit" value="작성" />
         </form>
     </div>
+    <div class = "likeBox">
+          	<%
+          	if(likeDto!=null){
+          	if(!likeDto.isLike()){%>
+    		<button class = "like" id ="like" name="like" onclick="likecheck()">like <span>숫자</span></button>
+    		<%}else{ %>
+    		<button class = "liked" id ="like" name="like" onclick="likecheck()">liked <span>숫자</span></button>
+    		<%} 
+    		}else{%>
+    			<button class = "like" id ="like" name="like" onclick="likecheck()">like <span>숫자</span></button>
+    		<%}%>
+    		<%
+          	if(wantDto!=null){
+          	if(!wantDto.isWant()){%>
+    		<button class = "want" id ="want" name="want" onclick="wantcheck()">want</button>
+    		<%}else{ %>
+    		<button class = "wanted" id ="wanted" name="wanted" onclick="wantcheck()">wanted</button>
+    		<%} 
+    		}else{%>
+    			<button class = "want" id ="want" name="want" onclick="wantcheck()">want</button>
+    		<%}%>
+    </div>
+    
+    
+    
     <div class="updateReview" style="display:none;">
       		  <form method="post" action="updateReviewQuartersPro.jsp">
         	<input type="hidden" id = "contentId" name="contentId" value=<%=contentId %>>
@@ -61,7 +103,17 @@
  	   </div>
     </div>
     	<script src="resources/reviewForQuarters.js"></script>
+    	<script src="resources/like.js"></script>
+    	<script src="resources/want.js"></script>
 	</section>
 	<jsp:include page="footer.jsp"/>
+<script>
+	<%
+  	if(likeDto!=null){%>
+console.log(<%=likeDto.isLike()%>);
+<%}%>
+</script>
+
+
 </body>
 </html>
