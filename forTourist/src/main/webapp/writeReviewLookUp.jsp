@@ -58,7 +58,7 @@
 			%>
 				<tr>
 					<td><%=i%></td>
-					<td><a href='/forTourist/detailKeyword.jsp?contentid=<%=contentId%>&title=<%=title%>&addr1=<%=addr1%>&firstimage=<%=firstimage%>'><%=review.getTitle()%></a></td>
+					<td><a href='/forTourist/detailKeyword?contentid=<%=contentId%>&title=<%=title%>&addr1=<%=addr1%>&firstimage=<%=firstimage%>'><%=review.getTitle()%></a></td>
 					<td><%=review.getContent() %></td>
 					</tr>
 			<%

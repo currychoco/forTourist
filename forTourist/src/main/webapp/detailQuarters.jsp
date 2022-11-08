@@ -60,7 +60,7 @@
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
             <input type="hidden" id="userid" name="userid" value=<%=session.getAttribute("id") %>>
         </div>
-        <form method="post" action="/forTourist/writeReviewProQuerters.jsp">
+        <form method="post" action="/forTourist/QuartersWriteReviewAction">
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
           <input type="hidden" id="title" name="title" value=<%=title%>>
           <input type="hidden" id="addr1" name="addr1" value=<%=addr1Encode%>>
@@ -78,7 +78,7 @@
     
     
     <div class="updateReview" style="display:none;">
-      		  <form method="post" action="updateReviewQuartersPro.jsp">
+      		  <form method="post" action="/forTourist/QuartersReviewUpdateAction">
         	<input type="hidden" id = "contentId" name="contentId" value=<%=contentId %>>
        	   <input type="hidden" id="title" name="title" value=<%=title%>>
           <input type="hidden" id="addr1" name="addr1" value=<%=addr1Encode%>>

@@ -11,7 +11,7 @@
 	<jsp:include page="header.jsp"/>
 	<section>
 		<h2>회원 	탈퇴</h2>
-		<form method="post" action="user_deletePro.jsp">
+		<form method="post" action="/forTourist/DeleteAction">
 			<table border="1" style="border-collapse: collapse;">
 				<tr>
 					<td>회원 아이디</td>
