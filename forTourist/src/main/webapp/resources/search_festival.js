@@ -31,7 +31,7 @@ function searchFestival(){
 function syncFestival(item){
 	   $.ajax({
 	       method:"post",
-	       url:"/forTourist/syncFestivalPro.jsp",
+	       url:"/forTourist/SyncFestivalAction",
 	       async:false,
 	       data:{
 	        	contentId : item.contentid,

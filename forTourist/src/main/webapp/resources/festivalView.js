@@ -12,7 +12,7 @@ function searchFestival(){
 	let date = $("#date").val();
    $.ajax({
        method:"post",
-       url:"/forTourist/searchFestivalViewPro.jsp",
+       url:"/forTourist/SearchFestivalViewAction",
        data:{
         	date : date
        }

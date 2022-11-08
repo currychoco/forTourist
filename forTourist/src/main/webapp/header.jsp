@@ -24,7 +24,7 @@
     <%}else{ %>
     	<div class = "logininfo">
     	<span><b><%=id %></b>님 안녕하세요!</span>
-    	<button onclick="location.href='logoutPro.jsp'">logout</button>
+    	<button onclick="location.href='/forTourist/Logout'">logout</button>
     	</div>
     <%} %>
 	</header>
