@@ -8,6 +8,8 @@ public class ReviewDto {
 	private String userid;
 	private String title;
 	private String content;
+	private String addr1;
+	private String firstimage;
 	private Timestamp resDate;
 	private Timestamp modDate;
 	
@@ -28,6 +30,15 @@ public class ReviewDto {
 		this.contentId = contentId;
 		this.userid = userid;
 		this.content = content;
+	}
+	public ReviewDto(int contentId, String userid, String content , String title , String addr1, String firstimage ) {
+		super();
+		this.contentId = contentId;
+		this.userid = userid;
+		this.content = content;
+		this.title = title;
+		this.addr1 = addr1;
+		this.firstimage = firstimage;
 	}
 
 	public ReviewDto(int no, String content) {
@@ -71,6 +82,20 @@ public class ReviewDto {
 	public void setModDate(Timestamp modDate) {
 		this.modDate = modDate;
 	}
-	
+	public String getAddr1() {
+		return addr1;
+	}
+
+	public String getFirstimage() {
+		return firstimage;
+	}
+
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
+	}
+
+	public void setFirstimage(String firstimage) {
+		this.firstimage = firstimage;
+	}	
 	
 }

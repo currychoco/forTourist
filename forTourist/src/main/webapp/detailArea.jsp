@@ -57,7 +57,7 @@
 	            <input type="submit" value="수정">
             </form>    
  	   </div>
-    	<script src="resources/review.js"></script>
+    	<script src="resources/reviewForApi.js"></script>
 	</section>
 	<jsp:include page="footer.jsp"/>
 </body>
