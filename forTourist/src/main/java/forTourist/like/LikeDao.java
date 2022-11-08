@@ -1,4 +1,4 @@
-package like;
+package forTourist.like;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,16 +25,42 @@ public class LikeDao {
 		return instance;
 	}
 	
+	public int getLastNo() {
+		String sql = "SELECT MAX(no) FROM like";
+
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1) + 1;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
+	
+	
+	
 	//create
 	public void createLike(LikeDto likeDto) {
-		String sql = "INSERT INTO `like`(`like`,`want`,`contentId`,`userId`,`title`) VALUES(?, ?, ?, ?, ?)";
-	
+		String sql = "INSERT INTO `like`(`no`, `like`, `contentId`,`userId`,`title`) VALUES(?, ?, ?, ?, ?)";
+		int no = getLastNo();
 		try {
 			this.conn = DBManager.getConnection();
 			this.pstmt = this.conn.prepareStatement(sql);
 			
-			this.pstmt.setBoolean(1, likeDto.isLike());
-			this.pstmt.setBoolean(2, likeDto.isWant());
+			this.pstmt.setInt(1, no);
+			this.pstmt.setBoolean(2, likeDto.isLike());
 			this.pstmt.setInt(3, likeDto.getContentId());
 			this.pstmt.setString(4, likeDto.getUserId());
 			this.pstmt.setString(5, likeDto.getTitle());
@@ -65,13 +91,13 @@ public class LikeDao {
 			this.rs = this.pstmt.executeQuery();
 			
 			while(rs.next()) {
-				boolean like = rs.getBoolean(1);
-				boolean want = rs.getBoolean(2);
+				int no = rs.getInt(1);
+				boolean like = rs.getBoolean(2);
 				int contentId = rs.getInt(3);
 				String userId = rs.getString(4);
 				String title = rs.getString(5);
 				
-				result.add(new LikeDto(like,want, contentId, userId, title));
+				result.add(new LikeDto(no, like, contentId, userId, title));
 
 			}
 		} catch(Exception e) {
@@ -100,12 +126,12 @@ public class LikeDao {
 			this.rs = this.pstmt.executeQuery();
 			
 			while(rs.next()) {
-				boolean like = rs.getBoolean(1);
-				boolean want = rs.getBoolean(2);
+				int no = rs.getInt(1);
+				boolean like = rs.getBoolean(2);
 				int contentId = rs.getInt(3);
-				String title = rs.getString(4);
+				String title = rs.getString(5);
 				
-				result.add(new LikeDto(like,want, contentId, userId, title));
+				result.add(new LikeDto(no,like, contentId, userId, title));
 
 			}
 		} catch(Exception e) {
@@ -134,12 +160,12 @@ public class LikeDao {
 			this.rs = this.pstmt.executeQuery();
 			
 			while(rs.next()) {
-				boolean like = rs.getBoolean(1);
-				boolean want = rs.getBoolean(2);
+				int no = rs.getInt(1);
+				boolean like = rs.getBoolean(2);
 				String userId = rs.getString(4);
 				String title = rs.getString(5);
 				
-				result.add(new LikeDto(like,want, contentId, userId, title));
+				result.add(new LikeDto(no,like, contentId, userId, title));
 
 			}
 		} catch(Exception e) {
@@ -169,11 +195,11 @@ public class LikeDao {
 			this.rs = this.pstmt.executeQuery();
 			
 			while(rs.next()) {
-				boolean like = rs.getBoolean(1);
-				boolean want = rs.getBoolean(2);
+				int no = rs.getInt(1);
+				boolean like = rs.getBoolean(2);
 				String title = rs.getString(5);
 				
-				result =new LikeDto(like,want, contentId, userId, title);
+				result =new LikeDto(no, like, contentId, userId, title);
 
 			}
 		} catch(Exception e) {
@@ -192,14 +218,14 @@ public class LikeDao {
 
 	// Update
 	public void modifyLike(LikeDto like) {
-		String sql = "UPDATE `like` SET `like`=?, `want`=? WHERE `contentId`=? AND `userId`=?";
+		String sql = "UPDATE `like` SET `like`=? WHERE `no`=?";
 		
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setBoolean(1, like.isLike());
-			pstmt.setBoolean(2, like.isWant());
+			pstmt.setInt(2, like.getNo());
 			
 			pstmt.execute();
 			

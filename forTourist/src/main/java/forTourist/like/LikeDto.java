@@ -1,21 +1,25 @@
-package like;
+package forTourist.like;
 
 public class LikeDto {
+	private int no;
 	private boolean like;
-	private boolean want;
 	private int contentId;
 	private String userId;
 	private String title;
 	
-	public LikeDto(boolean like, boolean want, int contentId, String userId, String title) {
+	public LikeDto(int no,boolean like, int contentId, String userId, String title) {
 		super();
+		this.no = no;
 		this.like = like;
-		this.want = want;
 		this.contentId = contentId;
 		this.userId = userId;
 		this.title = title;
 	}
 
+	public int getNo() {
+		return no;
+	}
+	
 	public boolean isLike() {
 		return like;
 	}
@@ -23,15 +27,7 @@ public class LikeDto {
 	public void setLike(boolean like) {
 		this.like = like;
 	}
-
-	public boolean isWant() {
-		return want;
-	}
-
-	public void setWant(boolean want) {
-		this.want = want;
-	}
-
+	
 	public int getContentId() {
 		return contentId;
 	}
