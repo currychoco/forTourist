@@ -6,14 +6,16 @@ public class WantDto {
 	private int contentId;
 	private String userId;
 	private String title;
+	private String url;
 
-	public WantDto(int no, boolean want, int contentId, String userId, String title) {
+	public WantDto(int no, boolean want, int contentId, String userId, String title, String url) {
 		super();
 		this.no = no;
 		this.want = want;
 		this.contentId = contentId;
 		this.userId = userId;
 		this.title = title;
+		this.url = url;
 	}
 
 	public int getNo() {
@@ -44,6 +46,9 @@ public class WantDto {
 		return title;
 	}
 
+	public String getUrl() {
+		return url;
+	}
 //		public void setTitle(String title) {
 //			this.title = title;
 //		}

@@ -52,7 +52,7 @@ public class WantDao {
 
 	// create
 	public void createWant(WantDto wantDto) {
-		String sql = "INSERT INTO `want`(`no`,`want`,`contentId`,`userId`,`title`) VALUES(?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO `want`(`no`,`want`,`contentId`,`userId`,`title`, `url`) VALUES(?, ?, ?, ?, ?, ?)";
 		int no = getLastNo();
 		try {
 			this.conn = DBManager.getConnection();
@@ -63,6 +63,7 @@ public class WantDao {
 			this.pstmt.setInt(3, wantDto.getContentId());
 			this.pstmt.setString(4, wantDto.getUserId());
 			this.pstmt.setString(5, wantDto.getTitle());
+			
 
 			this.pstmt.execute();
 			System.out.println("찜 생성 성공");
@@ -95,8 +96,9 @@ public class WantDao {
 				int contentId = rs.getInt(3);
 				String userId = rs.getString(4);
 				String title = rs.getString(5);
+				String url = rs.getString(6);
 
-				result.add(new WantDto(no, want, contentId, userId, title));
+				result.add(new WantDto(no, want, contentId, userId, title, url));
 
 			}
 		} catch (Exception e) {
@@ -129,8 +131,9 @@ public class WantDao {
 				boolean want = rs.getBoolean(2);
 				int contentId = rs.getInt(3);
 				String title = rs.getString(5);
+				String url = rs.getString(6);
 
-				result.add(new WantDto(no, want, contentId, userId, title));
+				result.add(new WantDto(no, want, contentId, userId, title, url));
 
 			}
 		} catch (Exception e) {
@@ -163,8 +166,9 @@ public class WantDao {
 				boolean want = rs.getBoolean(2);
 				String userId = rs.getString(4);
 				String title = rs.getString(5);
+				String url = rs.getString(6);
 
-				result.add(new WantDto(no, want, contentId, userId, title));
+				result.add(new WantDto(no, want, contentId, userId, title, url));
 
 			}
 		} catch (Exception e) {
@@ -197,8 +201,9 @@ public class WantDao {
 				int no = rs.getInt(1);
 				boolean want = rs.getBoolean(2);
 				String title = rs.getString(5);
+				String url = rs.getString(6);
 
-				result = new WantDto(no, want, contentId, userId, title);
+				result = new WantDto(no, want, contentId, userId, title, url);
 
 			}
 		} catch (Exception e) {
@@ -216,7 +221,7 @@ public class WantDao {
 	}
 
 	// Update
-	public void modifyWant(WantDto wantDto) {
+	public void modifyWant(WantDto wantDto, boolean want) {
 		String sql = "UPDATE `want` SET `want`=? WHERE `no`=?";
 
 		try {
@@ -224,7 +229,7 @@ public class WantDao {
 			pstmt = conn.prepareStatement(sql);
 
 
-			pstmt.setBoolean(1, wantDto.isWant());
+			pstmt.setBoolean(1, want);
 			pstmt.setInt(2, wantDto.getNo());
 
 			pstmt.execute();
