@@ -1,4 +1,4 @@
-package forTourist.review;
+	package forTourist.review;
 
 import java.sql.Timestamp;
 
@@ -33,6 +33,15 @@ public class ReviewDto {
 	public ReviewDto(int no, String content) {
 		super();
 		this.no = no;
+		this.content = content;
+	}
+	
+
+	public ReviewDto(int contentId, String userid, String title, String content) {
+		super();
+		this.contentId = contentId;
+		this.userid = userid;
+		this.title = title;
 		this.content = content;
 	}
 

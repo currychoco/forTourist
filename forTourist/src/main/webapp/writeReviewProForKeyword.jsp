@@ -30,7 +30,7 @@ if(session.getAttribute("id") == null){
 	
 
 	ReviewDao dao = ReviewDao.getInstance();
-	ReviewDto dto = new ReviewDto(contentId, userid, content);
+	ReviewDto dto = new ReviewDto(contentId, userid, title, content);
 	dao.setReview(dto);
 	
 	response.sendRedirect("/forTourist/detailKeyword?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage);

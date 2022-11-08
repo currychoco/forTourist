@@ -28,8 +28,8 @@
 			<thead>
 				<tr>
 					<th>no</th>
-					<th width="200px">contentId</th>
-					<th width="300px">title</th>
+					<th width="150px">contentId</th>
+					<th width="350px">title</th>
 					<th width="800px">content</th>
 				</tr>
 			</thead>
@@ -40,7 +40,7 @@
 					<td><%=review.getContentId()%></td>
 					<td><%=review.getTitle() %></td>
 					<td><%=review.getContent() %></td>
-				</tr>
+					</tr>
 			<%}%>
 			</tbody>
 		</table>
