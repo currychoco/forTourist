@@ -35,7 +35,7 @@ if(session.getAttribute("id") == null){
 
 	dao.setReview(dto);
 	
-	response.sendRedirect("/forTourist/detailKeyword?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage);
+	response.sendRedirect("/forTourist/likebutton?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage);
 }
 
 

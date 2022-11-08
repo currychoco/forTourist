@@ -26,7 +26,7 @@ public class LikeDao {
 	}
 	
 	public int getLastNo() {
-		String sql = "SELECT MAX(no) FROM like";
+		String sql = "SELECT MAX(`no`) FROM `like`";
 
 		try {
 			conn = DBManager.getConnection();
