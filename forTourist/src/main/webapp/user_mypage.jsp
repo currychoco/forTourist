@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/mypage.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -27,7 +28,7 @@ if(session.getAttribute("id") == null){
 	UserDto user = userDao.getUserById(id);
 %>
 	<h2>회원 정보 수정 및 탈퇴</h2>
-			<table border = "1" >
+			<table border = "1" class = "mytable" >
 			<thead>
 				<tr>
 					<th>회원 번호</th>
@@ -50,8 +51,8 @@ if(session.getAttribute("id") == null){
 				<td><%=user.getPhone()%></td>
 			</tr>
 		 <form>	
-		 <input type="button" onclick="location.href='user_modify.jsp?value=<%=id%>'" value="회원 정보수정">
-		 <input type="button" onclick="location.href='user_delete.jsp?value=<%=id%>'" value="회원 탈퇴 ">
+		 <input type="button" onclick="location.href='user_modify.jsp?value=<%=id%>'" value="회원 정보수정" class ="button">&nbsp; | &nbsp;
+		 <input type="button" onclick="location.href='user_delete.jsp?value=<%=id%>'" value="회원 탈퇴 "class ="button">
 		</form>
 		</tbody>
 		</table>
