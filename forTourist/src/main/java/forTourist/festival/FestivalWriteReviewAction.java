@@ -9,18 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import forTourist.review.ReviewDao;
+import forTourist.review.ReviewDto;
 
 /**
- * Servlet implementation class ReviewDeleteAction
+ * Servlet implementation class FestivalWriteReviewAction
  */
-@WebServlet("/FestivalReviewDeleteAction")
-public class FestivalReviewDeleteAction extends HttpServlet {
+@WebServlet("/FestivalWriteReviewAction")
+public class FestivalWriteReviewAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FestivalReviewDeleteAction() {
+    public FestivalWriteReviewAction() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,19 +32,19 @@ public class FestivalReviewDeleteAction extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
-		int no = Integer.parseInt(request.getParameter("no"));
-		int contentId = Integer.parseInt(request.getParameter("contentId"));
-		String userId = request.getParameter("userId");
 		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
-
-
-		ReviewDao dao = ReviewDao.getInstance();
-		if(userId.equals(id)){
-			dao.deleteReview(no);
-			response.sendRedirect("/forTourist/detailFestival?contentId="+ contentId);
+		if(session.getAttribute("id") == null){
+			response.sendRedirect("login");
 		}else{
-			response.sendRedirect("/forTourist/detailFestival?contentId="+ contentId);
+			int contentId=Integer.parseInt(request.getParameter("contentId"));
+			String content=request.getParameter("content");
+			String userid = (String)session.getAttribute("id");
+
+			ReviewDao dao = ReviewDao.getInstance();
+			ReviewDto dto = new ReviewDto(contentId, userid, content);
+			dao.setReview(dto);
+
+			response.sendRedirect("/forTourist/detailFestival?contentId=" + contentId);
 		}
 	}
 
@@ -51,7 +52,8 @@ public class FestivalReviewDeleteAction extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		doGet(request, response);
 	}
 

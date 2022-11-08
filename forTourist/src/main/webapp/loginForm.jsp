@@ -10,7 +10,7 @@
 <body>
 	<jsp:include page="header.jsp"/>
 	<div class="inner">
-      <form method="post" action="loginFormPro.jsp">
+      <form method="post" action="/forTourist/LoginAction">
       
       <h2>LOGIN</h2>
         <input

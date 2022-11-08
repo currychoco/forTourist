@@ -22,7 +22,7 @@
 	<div>
 		<section>
 		<!-- no id password name nickname gender phone resDate 8 -->
-			<form method = "POST" action = "user_joinPro.jsp">
+			<form method = "POST" action = "/forTourist/JoinAction">
 				<table>
 					 <tr>
 						<td id = "title"></td>

@@ -7,7 +7,7 @@ review();
 function review(){
     $.ajax({
        method:"post",
-       url:"/forTourist/festivalReviewPro.jsp",
+       url:"/forTourist/FestivalReviewAction",
        data:{
 			contentId : contentId
        }
