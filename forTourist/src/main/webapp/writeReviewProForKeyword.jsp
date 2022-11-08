@@ -30,7 +30,11 @@ if(session.getAttribute("id") == null){
 	
 
 	ReviewDao dao = ReviewDao.getInstance();
+<<<<<<< HEAD
 	ReviewDto dto = new ReviewDto(contentId, userid, content ,titleDe, addr1De, firstimage);
+=======
+	ReviewDto dto = new ReviewDto(contentId, userid, title, content);
+>>>>>>> refs/remotes/origin/#JeongMinsik
 	dao.setReview(dto);
 	
 	response.sendRedirect("/forTourist/detailKeyword?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage);

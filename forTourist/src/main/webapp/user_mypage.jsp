@@ -27,7 +27,7 @@ if(session.getAttribute("id") == null){
 	UserDao userDao = UserDao.getInstance();
 	UserDto user = userDao.getUserById(id);
 %>
-	<h2>회원 정보 수정 및 탈퇴</h2>
+	<h2>회원 관리</h2>
 			<table border = "1" class = "mytable" >
 			<thead>
 				<tr>
@@ -52,7 +52,8 @@ if(session.getAttribute("id") == null){
 			</tr>
 		 <form>	
 		 <input type="button" onclick="location.href='user_modify.jsp?value=<%=id%>'" value="회원 정보수정" class ="button">&nbsp; | &nbsp;
-		 <input type="button" onclick="location.href='user_delete.jsp?value=<%=id%>'" value="회원 탈퇴 "class ="button">
+		 <input type="button" onclick="location.href='user_delete.jsp?value=<%=id%>'" value="회원 탈퇴 "class ="button">&nbsp; | &nbsp;
+		 <input type="button" value='작성글 모음' class="button" onclick="location.href='writeReviewLookUp.jsp'"/>	<!-- 수정 (정민식) -->
 		</form>
 		</tbody>
 		</table>
@@ -60,14 +61,6 @@ if(session.getAttribute("id") == null){
 <%		
 		}
 %>
-
-	<!-- 수정 (정민식) --> 
-	<form>
- 	 <input type="button" value='작성글 모음' onclick="location.href='writeReviewLookUp.jsp'"/>
- 	 
-	</form>
-	
-
 
 	</section>
 	
