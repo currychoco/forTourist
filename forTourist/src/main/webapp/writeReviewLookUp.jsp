@@ -34,14 +34,17 @@
 				</tr>
 			</thead>
 			<tbody>
-			<%for(ReviewDto review :list){%>
+			<% int i=1;
+			for(ReviewDto review :list){%>
 				<tr>
-					<td><%=review.getNo() %></td>
+					<td><%=i%></td>
 					<td><%=review.getContentId()%></td>
 					<td><%=review.getTitle() %></td>
 					<td><%=review.getContent() %></td>
 					</tr>
-			<%}%>
+			<%
+			i++;
+			}%>
 			</tbody>
 		</table>
 			
