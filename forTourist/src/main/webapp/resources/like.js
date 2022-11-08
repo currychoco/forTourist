@@ -1,8 +1,8 @@
 
 function toggleLike() {
 	$.ajax({
-		method: "post",
-		url: "/forTourist/toggleLikePro.jsp",
+		method: "POST",
+		url: "/forTourist/QuarterLikeAction",
 		data: JSON.stringify({ contentId: contentId })
 	}).done(function(response) {
 		console.log(response);
@@ -15,7 +15,7 @@ function toggleLike() {
 function checkLike() {
 	$.ajax({
 		method: "GET",
-		url: "/forTourist/checkLikePro.jsp",
+		url: "/forTourist/QuarterLikeAction",
 		data: {
 			contentId: contentId
 		}

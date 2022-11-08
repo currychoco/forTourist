@@ -1,4 +1,4 @@
-function searchFestival(){
+function startSyncFestival(){
     let date = $("#date").val();
     
     console.log(typeof(date));

@@ -40,6 +40,7 @@ public class LoginAction extends HttpServlet {
 			if(password.equals(dto.getPassword())){
 				HttpSession session = request.getSession();
 				session.setAttribute("id", id);
+				session.setAttribute("manager", dto.getManager());
 				System.out.println("세션저장성공");
 				response.sendRedirect("home");
 			}else{

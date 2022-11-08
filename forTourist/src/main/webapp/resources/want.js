@@ -1,8 +1,8 @@
 
 function toggleWant() {
 	$.ajax({
-		method: "post",
-		url: "/forTourist/toggleWantPro.jsp",
+		method: "POST",
+		url: "/forTourist/QuarterWantAction",
 		contentType: "application/json",
 		data: JSON.stringify({
 			contentId: contentId,
@@ -31,7 +31,7 @@ function toggleWant() {
 function checkWant() {
 	$.ajax({
 		method: "GET",
-		url: "/forTourist/checkWantPro.jsp",
+		url: "/forTourist/QuarterWantAction",
 		data: {
 			contentId: contentId
 		}
