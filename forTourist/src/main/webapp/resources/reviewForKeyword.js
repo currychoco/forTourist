@@ -12,7 +12,7 @@ review();
 function review(){
     $.ajax({
        method:"post",
-       url:"/forTourist/festivalReviewPro.jsp",
+       url:"/forTourist/FestivalReviewAction",
        data:{
 			contentId : contentId
        }
@@ -47,10 +47,6 @@ function review(){
 						<td class="reviewContent" data-id="${e.no}">${e.content}</td>
 					`;
 				}
-				
-				
-				
-				
 				if(userid === e.userid){
 					htmlText += `
 						<td><button onclick="modifyValidation('${e.userid}',${e.no})">수정</button></td>
@@ -74,7 +70,7 @@ function review(){
 }
 function deleteValidation(dtoUserId,dtoNo){
 	if(dtoUserId===userid){
-		location.href="/forTourist/areaReviewDeletePro.jsp?no=" + dtoNo + "&userId=" + dtoUserId+"&contentId=" + contentId + "&title=" + title + "&addr1=" + addr1 + "&firstimage=" + firstimage;
+		location.href="/forTourist/KeywordReviewDeleteAction?no=" + dtoNo + "&userId=" + dtoUserId+"&contentId=" + contentId + "&title=" + title + "&addr1=" + addr1 + "&firstimage=" + firstimage;
 	}else{
 		alert("본인이 작성한 리뷰가 아닙니다.");
 	}

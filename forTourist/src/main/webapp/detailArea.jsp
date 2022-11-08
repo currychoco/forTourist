@@ -37,7 +37,7 @@
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
           <input type="hidden" id="userid" name="userid" value=<%=session.getAttribute("id") %>>
         </div>
-        <form method="post" action="/forTourist/writeReviewProForArea.jsp">
+        <form method="post" action="/forTourist/AreaWriteReviewAction">
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
           <input type="hidden" id="title" name="title" value=<%=title%>>
           <input type="hidden" id="addr1" name="addr1" value=<%=addr1Encode%>>
@@ -47,7 +47,7 @@
         </form>
     </div>
     <div class="updateReview" style="display:none;">
-      		  <form method="post" action="updateReviewAreaPro.jsp">
+      		  <form method="post" action="/forTourist/AreaReviewUpdateAction">
         	<input type="hidden" id = "contentId" name="contentId" value=<%=contentId %>>
        	   <input type="hidden" id="title" name="title" value=<%=title%>>
           <input type="hidden" id="addr1" name="addr1" value=<%=addr1Encode%>>

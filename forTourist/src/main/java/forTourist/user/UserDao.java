@@ -195,7 +195,7 @@ public class UserDao {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			if (rs.next()) {
+			while(rs.next()) {
 				String id = rs.getString(1);
 				idAll.add(id);
 			}
