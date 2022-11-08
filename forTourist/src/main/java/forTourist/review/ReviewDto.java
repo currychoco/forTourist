@@ -48,6 +48,18 @@ public class ReviewDto {
 	}
 	
 
+	
+	public ReviewDto(int no, int contentId, String userid, String title, String content,String addr1, String firstimage) {
+		super();
+		this.no = no;
+		this.contentId = contentId;
+		this.userid = userid;
+		this.title = title;
+		this.content = content;
+		this.addr1 = addr1;
+		this.firstimage = firstimage;
+	}
+	
 	public ReviewDto(int contentId, String userid, String title, String content) {
 		super();
 		this.contentId = contentId;
