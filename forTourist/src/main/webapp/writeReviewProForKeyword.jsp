@@ -21,8 +21,8 @@ if(session.getAttribute("id") == null){
 }else{
 	int contentId=Integer.parseInt(request.getParameter("contentId"));
 	String content=request.getParameter("content");
+	String titleDe = request.getParameter("title");
 	String userid = (String)session.getAttribute("id");
-	
 	String title=URLEncoder.encode(request.getParameter("title"),"utf-8");
 	String addr1De = URLDecoder.decode(request.getParameter("addr1"), "utf-8");
 	String addr1En = URLEncoder.encode(addr1De, "utf-8");
@@ -30,7 +30,7 @@ if(session.getAttribute("id") == null){
 	
 
 	ReviewDao dao = ReviewDao.getInstance();
-	ReviewDto dto = new ReviewDto(contentId, userid, content);
+	ReviewDto dto = new ReviewDto(contentId, userid, content ,titleDe, addr1De, firstimage);
 	dao.setReview(dto);
 	
 	response.sendRedirect("/forTourist/detailKeyword?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage);

@@ -54,6 +54,7 @@
 	            <input type="submit" value="수정">
             </form>    
  	   </div>
+ 	   </div>
     	<script src="resources/reviewForKeyword.js"></script>
 	</section>
 	<jsp:include page="footer.jsp"/>

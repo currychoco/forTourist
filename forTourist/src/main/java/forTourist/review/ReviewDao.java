@@ -60,6 +60,50 @@ public class ReviewDao {
 			}
 		}
 	}
+	
+	public void setReviewApi(ReviewDto dto) {
+		int no = getNo();
+		String sql ="insert into review(\r\n"
+				+ "	`no`\r\n"
+				+ "    ,contentid\r\n"
+				+ "    ,userid\r\n"
+				+ "    ,content\r\n"
+				+ "    ,title\r\n"
+				+ "    ,addr1\r\n"
+				+ "    ,firstimage\r\n"
+				+ ")values(\r\n"
+				+ "	?\r\n"
+				+ "    ,?\r\n"
+				+ "    ,?\r\n"
+				+ "    ,?\r\n"
+				+ "    ,?\r\n"
+				+ "    ,?\r\n"
+				+ "    ,?\r\n"
+				+ ");";
+		
+		try {
+			conn=DBManager.getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.setInt(2, dto.getContentId());
+			pstmt.setString(3, dto.getUserid());
+			pstmt.setString(4, dto.getContent());
+			pstmt.setString(5, dto.getTitle());
+			pstmt.setString(6, dto.getAddr1());
+			pstmt.setString(7, dto.getFirstimage());
+			pstmt.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+	
 	//no생성
 	private int getNo() {
 		int no = 0;
