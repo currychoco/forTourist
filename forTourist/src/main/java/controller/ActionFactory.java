@@ -1,6 +1,7 @@
 package controller;
 
 import controller.action.Action;
+import controller.action.FestivalReviewDeleteAction;
 
 public class ActionFactory {
 	// Singletone
@@ -14,8 +15,8 @@ public class ActionFactory {
 	public Action getAction(String command) {
 		Action action = null;
 		
-		if(command.equals("join")) {
-			//action = new JoinAction();
+		if(command.equals("festivalReviewDelete")) {
+			action = new FestivalReviewDeleteAction();
 		}
 		return action;
 	}

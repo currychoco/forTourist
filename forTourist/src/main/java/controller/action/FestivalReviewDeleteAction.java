@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import forTourist.review.ReviewDao;
 
-public class FestivalReviewDelete implements Action {
+public class FestivalReviewDeleteAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException {

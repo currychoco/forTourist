@@ -72,7 +72,7 @@ function review(){
 
 function deleteValidation(dtoUserId,dtoNo){
 	if(dtoUserId===userid){
-		location.href="/forTourist/festivalReviewDeletePro.jsp?no=" + dtoNo + "&&userId=" + dtoUserId+"&&contentId=" + contentId;
+		location.href="/forTourist/ReviewDeleteAction?no=" + dtoNo + "&userId=" + dtoUserId+"&contentId=" + contentId;
 	}else{
 		alert("본인이 작성한 리뷰가 아닙니다.");
 	}
