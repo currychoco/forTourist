@@ -34,7 +34,7 @@ if(session.getAttribute("id") == null){
 	ReviewDto dto = new ReviewDto(contentId, userid, content ,titleDe, addr1De, firstimage);
 	dao.setReviewApi(dto);
 
-	response.sendRedirect("/forTourist/detailQuarters?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage + "&&tel=" + tel);
+	response.sendRedirect("/forTourist/detailQuarters?contentId=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage + "&&tel=" + tel);
 
 }
 

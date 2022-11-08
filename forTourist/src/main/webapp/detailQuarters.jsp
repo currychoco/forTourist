@@ -17,25 +17,31 @@
 	<jsp:include page="header.jsp"/>
 	<section>
 	<%
- 	request.setCharacterEncoding("UTF-8"); 
+ 	// set encoding
+	request.setCharacterEncoding("UTF-8"); 
 	response.setCharacterEncoding("utf-8");
 	
-	int contentId = Integer.parseInt(request.getParameter("contentid"));
+	// get session
+	String id = (String)session.getAttribute("id");
+	
+	// get params
+	int contentId = Integer.parseInt(request.getParameter("contentId"));
 	String title = request.getParameter("title");
 	String addr1 = request.getParameter("addr1");
 	String addr1Encode = URLEncoder.encode(addr1,"utf-8").replaceAll("\\+", "%20");
 	String tel = request.getParameter("tel");
+	String firstimage = request.getParameter("firstimage");
 	
+	// connect db
 	LikeDao likeDao = LikeDao.getInstance();
 	LikeDto likeDto = null;
 	
 	WantDao wantDao = WantDao.getInstance();
 	WantDto wantDto = null;
- 	
-	String firstimage = request.getParameter("firstimage");
-	String id = (String)session.getAttribute("id");
+	
 	likeDto = likeDao.getLikebyTwoId(contentId,id);
 	wantDto = wantDao.getWantbyTwoId(contentId,id);
+	
 	String addr1De = URLDecoder.decode(request.getParameter("addr1"), "utf-8");
 	String addr1En = URLEncoder.encode(addr1De, "utf-8");
 	String url = "/forTourist/detailfestival?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage;
@@ -65,26 +71,8 @@
         </form>
     </div>
     <div class = "likeBox">
-          	<%
-          	if(likeDto!=null){
-          	if(!likeDto.isLike()){%>
-    		<button class = "like" id ="like" name="like" onclick="likecheck()">like <span>숫자</span></button>
-    		<%}else{ %>
-    		<button class = "liked" id ="like" name="like" onclick="likecheck()">liked <span>숫자</span></button>
-    		<%} 
-    		}else{%>
-    			<button class = "like" id ="like" name="like" onclick="likecheck()">like <span>숫자</span></button>
-    		<%}%>
-    		<%
-          	if(wantDto!=null){
-          	if(!wantDto.isWant()){%>
-    		<button class = "want" id ="want" name="want" onclick="wantcheck()">want</button>
-    		<%}else{ %>
-    		<button class = "wanted" id ="wanted" name="wanted" onclick="wantcheck()">wanted</button>
-    		<%} 
-    		}else{%>
-    			<button class = "want" id ="want" name="want" onclick="wantcheck()">want</button>
-    		<%}%>
+    	<button class = "like" id ="like" name="like" onclick="toggleLike()">좋아요 <span id="like-count">좋아요 숫자</span>개</button>
+    	<button class = "want" id ="want" name="want" onclick="toggleWant()">찜 <span id="want-text">찜여부</span></button>
     </div>
     
     
@@ -107,13 +95,6 @@
     	<script src="resources/want.js"></script>
 	</section>
 	<jsp:include page="footer.jsp"/>
-<script>
-	<%
-  	if(likeDto!=null){%>
-console.log(<%=likeDto.isLike()%>);
-<%}%>
-</script>
-
 
 </body>
 </html>

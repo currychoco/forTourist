@@ -53,18 +53,15 @@ public class LikeDao {
 	
 	//create
 	public void createLike(LikeDto likeDto) {
-		String sql = "INSERT INTO `like`(`no`, `like`, `contentId`,`userId`,`title`,`url`) VALUES(?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO `like`(`no`, `contentId`, `userId`) VALUES(?, ?, ?)";
 		int no = getLastNo();
 		try {
 			this.conn = DBManager.getConnection();
 			this.pstmt = this.conn.prepareStatement(sql);
 			
 			this.pstmt.setInt(1, no);
-			this.pstmt.setBoolean(2, likeDto.isLike());
-			this.pstmt.setInt(3, likeDto.getContentId());
-			this.pstmt.setString(4, likeDto.getUserId());
-			this.pstmt.setString(5, likeDto.getTitle());
-			this.pstmt.setString(6, likeDto.getUrl());
+			this.pstmt.setInt(2, likeDto.getContentId());
+			this.pstmt.setString(3, likeDto.getUserId());
 			
 			this.pstmt.execute();
 			System.out.println("좋아요칸 생성 성공");
@@ -93,14 +90,10 @@ public class LikeDao {
 			
 			while(rs.next()) {
 				int no = rs.getInt(1);
-				boolean like = rs.getBoolean(2);
-				int contentId = rs.getInt(3);
-				String userId = rs.getString(4);
-				String title = rs.getString(5);
-				String url = rs.getString(6);
+				int contentId = rs.getInt(2);
+				String userId = rs.getString(3);
 				
-				result.add(new LikeDto(no, like, contentId, userId, title, url));
-
+				result.add(new LikeDto(no, contentId, userId));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -129,12 +122,9 @@ public class LikeDao {
 			
 			while(rs.next()) {
 				int no = rs.getInt(1);
-				boolean like = rs.getBoolean(2);
-				int contentId = rs.getInt(3);
-				String title = rs.getString(5);
-				String url = rs.getString(6);
+				int contentId = rs.getInt(2);
 				
-				result.add(new LikeDto(no,like, contentId, userId, title, url));
+				result.add(new LikeDto(no, contentId, userId));
 
 			}
 		} catch(Exception e) {
@@ -164,13 +154,9 @@ public class LikeDao {
 			
 			while(rs.next()) {
 				int no = rs.getInt(1);
-				boolean like = rs.getBoolean(2);
-				String userId = rs.getString(4);
-				String title = rs.getString(5);
-				String url = rs.getString(6);
+				String userId = rs.getString(3);
 				
-				result.add(new LikeDto(no,like, contentId, userId, title, url));
-
+				result.add(new LikeDto(no, contentId, userId));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -200,11 +186,8 @@ public class LikeDao {
 			
 			while(rs.next()) {
 				int no = rs.getInt(1);
-				boolean like = rs.getBoolean(2);
-				String title = rs.getString(5);
-				String url = rs.getString(6);
 				
-				result =new LikeDto(no, like, contentId, userId, title, url);
+				result =new LikeDto(no, contentId, userId);
 
 			}
 		} catch(Exception e) {
@@ -221,31 +204,6 @@ public class LikeDao {
 		return result;
 	}
 
-	// Update
-	public void modifyLike(LikeDto likeDto, boolean like) {
-		String sql = "UPDATE `like` SET `like`=? WHERE `no`=?";
-		
-		try {
-			conn = DBManager.getConnection();
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setBoolean(1, like);
-			pstmt.setInt(2, likeDto.getNo());
-			
-			pstmt.execute();
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally{
-			try {
-				pstmt.close();
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
 	//delete
 	public void deleteLikes(String userId) {
 		String sql = "DELETE FROM `like` WHERE `userId`=?";
@@ -254,6 +212,28 @@ public class LikeDao {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userId);
+			pstmt.execute();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	//본인의 좋아요 삭제
+	public void deleteLike(int contentId, String userId) {
+		final String sql = "DELETE FROM `like` WHERE `userId`=? AND `contentId`=?";
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			pstmt.setInt(2, contentId);
 			pstmt.execute();
 		}catch (Exception e) {
 			e.printStackTrace();

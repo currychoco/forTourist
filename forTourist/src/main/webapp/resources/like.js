@@ -1,22 +1,30 @@
 
-function likecheck(){
-		$.ajax({
-		method:"post",
-		url:"/forTourist/checkLikePro2.jsp",
-		data:{
-			type:"GET",
-			firstimage:firstimage,
-			addr1:addr1,
-			url:"/forTourist/detailfestival?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1 + "&&firstimage=" + firstimage,
-			title:title,
-			contentId:contentId		
+function toggleLike() {
+	$.ajax({
+		method: "post",
+		url: "/forTourist/toggleLikePro.jsp",
+		data: JSON.stringify({ contentId: contentId })
+	}).done(function(response) {
+		console.log(response);
+		if(response.result === "OK") {
+			checkLike();
 		}
-		}).done(function(){
-			if($(".like").show()){
-				$(".like").hide();
-				$(".liked").show();
-			}else if($(".liked").show()){
-				$(".liked").hide();
-				$(".like").show();
-			}
-		})}
+	})
+}
+
+function checkLike() {
+	$.ajax({
+		method: "GET",
+		url: "/forTourist/checkLikePro.jsp",
+		data: {
+			contentId: contentId
+		}
+	}).done(function(response) {
+		console.log(response);
+		$("#like-count").text(response.count);
+	})
+}
+
+$(document).ready(function() {
+	checkLike();
+});

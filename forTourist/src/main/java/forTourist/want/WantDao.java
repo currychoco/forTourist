@@ -266,5 +266,27 @@ public class WantDao {
 			}
 		}
 	}
+	
+	// 사용자의 찜 정보 삭제
+	public void deleteWant(int contentId, String userId) {
+		final String sql = "DELETE FROM `want` WHERE `userId` = ? AND `contentId` = ?";
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			pstmt.setInt(2, contentId);
+			pstmt.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 }

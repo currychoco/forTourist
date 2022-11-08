@@ -40,7 +40,7 @@ function start(let){
               const contentid= e.contentid;
               $(".container").append(
                   `<ol class = "content">
-                  <li><a href='detailQuarters?contentid=${contentid}&title=${title}&addr1=${addr1}&firstimage=${firstimage}&tel=${tel}' target='_blank' ><img src="${firstimage}  " class = "img" id = "firstimg"></a></li>
+                  <li><a href='/forTourist/detailQuarters?contentId=${contentid}&title=${title}&addr1=${addr1}&firstimage=${firstimage}&tel=${tel}' target='_blank' ><img src="${firstimage}  " class = "img" id = "firstimg"></a></li>
 				  <li id = "title">${title}</li>
                   <li id = "address">${addr1}</li>
                   <li id = "tel">${tel}</li>               

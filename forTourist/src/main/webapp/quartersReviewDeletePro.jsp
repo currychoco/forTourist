@@ -28,10 +28,10 @@ String firstimage=URLEncoder.encode(request.getParameter("firstimage"),"utf-8");
 ReviewDao dao = ReviewDao.getInstance();
 if(userId.equals(id)){
 	dao.deleteReview(no);
-	response.sendRedirect("/forTourist/detailQuarters?contentid=" + contentId + "&title=" + title + "&addr1=" + addr1En
+	response.sendRedirect("/forTourist/detailQuarters?contentId=" + contentId + "&title=" + title + "&addr1=" + addr1En
 			+ "&firstimage=" + firstimage + "&tel=" + tel);
 }else{
-	response.sendRedirect("/forTourist/detailQuarters?contentid=" + contentId + "&title=" + title + "&addr1=" + addr1En
+	response.sendRedirect("/forTourist/detailQuarters?contentId=" + contentId + "&title=" + title + "&addr1=" + addr1En
 			+ "&firstimage=" + firstimage + "&tel=" + tel);
 }
 %>
