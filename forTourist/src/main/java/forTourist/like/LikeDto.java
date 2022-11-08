@@ -6,14 +6,16 @@ public class LikeDto {
 	private int contentId;
 	private String userId;
 	private String title;
+	private String url;
 	
-	public LikeDto(int no,boolean like, int contentId, String userId, String title) {
+	public LikeDto(int no,boolean like, int contentId, String userId, String title, String url) {
 		super();
 		this.no = no;
 		this.like = like;
 		this.contentId = contentId;
 		this.userId = userId;
 		this.title = title;
+		this.url = url;
 	}
 
 	public int getNo() {
@@ -42,6 +44,9 @@ public class LikeDto {
 
 	public String getTitle() {
 		return title;
+	}
+	public String getUrl() {
+		return url;
 	}
 
 //	public void setTitle(String title) {

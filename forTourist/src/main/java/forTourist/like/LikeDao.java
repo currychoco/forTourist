@@ -53,7 +53,7 @@ public class LikeDao {
 	
 	//create
 	public void createLike(LikeDto likeDto) {
-		String sql = "INSERT INTO `like`(`no`, `like`, `contentId`,`userId`,`title`) VALUES(?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO `like`(`no`, `like`, `contentId`,`userId`,`title`,`url`) VALUES(?, ?, ?, ?, ?, ?)";
 		int no = getLastNo();
 		try {
 			this.conn = DBManager.getConnection();
@@ -64,6 +64,7 @@ public class LikeDao {
 			this.pstmt.setInt(3, likeDto.getContentId());
 			this.pstmt.setString(4, likeDto.getUserId());
 			this.pstmt.setString(5, likeDto.getTitle());
+			this.pstmt.setString(6, likeDto.getUrl());
 			
 			this.pstmt.execute();
 			System.out.println("좋아요칸 생성 성공");
@@ -96,8 +97,9 @@ public class LikeDao {
 				int contentId = rs.getInt(3);
 				String userId = rs.getString(4);
 				String title = rs.getString(5);
+				String url = rs.getString(6);
 				
-				result.add(new LikeDto(no, like, contentId, userId, title));
+				result.add(new LikeDto(no, like, contentId, userId, title, url));
 
 			}
 		} catch(Exception e) {
@@ -130,8 +132,9 @@ public class LikeDao {
 				boolean like = rs.getBoolean(2);
 				int contentId = rs.getInt(3);
 				String title = rs.getString(5);
+				String url = rs.getString(6);
 				
-				result.add(new LikeDto(no,like, contentId, userId, title));
+				result.add(new LikeDto(no,like, contentId, userId, title, url));
 
 			}
 		} catch(Exception e) {
@@ -164,8 +167,9 @@ public class LikeDao {
 				boolean like = rs.getBoolean(2);
 				String userId = rs.getString(4);
 				String title = rs.getString(5);
+				String url = rs.getString(6);
 				
-				result.add(new LikeDto(no,like, contentId, userId, title));
+				result.add(new LikeDto(no,like, contentId, userId, title, url));
 
 			}
 		} catch(Exception e) {
@@ -198,8 +202,9 @@ public class LikeDao {
 				int no = rs.getInt(1);
 				boolean like = rs.getBoolean(2);
 				String title = rs.getString(5);
+				String url = rs.getString(6);
 				
-				result =new LikeDto(no, like, contentId, userId, title);
+				result =new LikeDto(no, like, contentId, userId, title, url);
 
 			}
 		} catch(Exception e) {
@@ -217,15 +222,15 @@ public class LikeDao {
 	}
 
 	// Update
-	public void modifyLike(LikeDto like) {
+	public void modifyLike(LikeDto likeDto, boolean like) {
 		String sql = "UPDATE `like` SET `like`=? WHERE `no`=?";
 		
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setBoolean(1, like.isLike());
-			pstmt.setInt(2, like.getNo());
+			pstmt.setBoolean(1, like);
+			pstmt.setInt(2, likeDto.getNo());
 			
 			pstmt.execute();
 			
