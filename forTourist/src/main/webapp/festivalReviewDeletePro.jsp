@@ -23,7 +23,6 @@ if(userId.equals(id)){
 }else{
 	response.sendRedirect("/forTourist/detailFestival?contentId="+ contentId);
 }
-
 %>
 </body>
 </html>
