@@ -119,8 +119,6 @@
   	<url-pattern>/detailQuarters</url-pattern>
   </servlet-mapping>
    
-   
-   
   <servlet>
   	<servlet-name>myPage</servlet-name>
   	<jsp-file>/user_mypage.jsp</jsp-file>
