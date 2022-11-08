@@ -49,9 +49,7 @@ if(session.getAttribute("id") == null){
 				<td><%=user.getNickname()%></td>
 				<td><%=user.getGender()%></td>
 				<td><%=user.getPhone()%></td>
-				
 			</tr>
-			
 		 <form>	
 		 <input type="button" onclick="location.href='user_modify.jsp?value=<%=id%>'" value="회원 정보수정" class ="button">&nbsp; | &nbsp;
 		 <input type="button" onclick="location.href='user_delete.jsp?value=<%=id%>'" value="회원 탈퇴 "class ="button">
@@ -62,7 +60,18 @@ if(session.getAttribute("id") == null){
 <%		
 		}
 %>
+
+	<!-- 수정 (정민식) --> 
+	<form>
+ 	 <input type="button" value='작성글 모음' onclick="location.href='writeReviewLookUp.jsp'"/>
+ 	 
+	</form>
+	
+
+
 	</section>
+	
+	
 	<jsp:include page="footer.jsp"/>
 </body>
 </html>

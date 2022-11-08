@@ -168,4 +168,43 @@ public class ReviewDao {
 			}
 		}
 	}
+	
+	//수정한부분(정민식)
+	public List<ReviewDto> getAllReviewById(String userid){
+		System.out.println("내 리뷰읽어오기");
+		List<ReviewDto> list = new ArrayList<>();
+		String sql = "select * from review where userid = ? order by no desc";
+		
+		try {
+			conn=DBManager.getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,userid);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int no = rs.getInt(1);
+				int contentId = rs.getInt(2);
+				
+				String title = rs.getString(4);
+				String content = rs.getString(5);
+				
+				Timestamp resDate = rs.getTimestamp(6);
+				Timestamp modDate = rs.getTimestamp(7);
+				
+				list.add(new ReviewDto(no, contentId, userid, title, content, resDate, modDate));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		return list;
+	}
 }
