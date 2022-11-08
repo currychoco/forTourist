@@ -56,10 +56,8 @@ public class UserDao {
 			this.pstmt.setString(7, userDto.getPhone());
 
 			this.pstmt.execute();
-			System.out.println("생성 성공 ");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("생성 실패 ");
 		} finally {
 			try {
 				pstmt.close();
@@ -78,7 +76,6 @@ public class UserDao {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-
 			while (rs.next()) {
 				int no = rs.getInt(1);
 				String id = rs.getString(2);
@@ -190,11 +187,34 @@ public class UserDao {
 		}
 		return dto;
 	}
+	
+	public ArrayList<String> getIdAll() {
+		ArrayList<String>idAll = new ArrayList<>();
+		String sql = "SELECT id FROM user";
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				String id = rs.getString(1);
+				idAll.add(id);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return idAll;
+	}
 
 	public void deleteUser(String id) {
 		String sql = "DELETE FROM user WHERE id=?";
-		System.out.println(id);
-		System.out.println("값잘넘어옴");
 		try {
 			conn = DBManager.getConnection();
 			PreparedStatement pstmt = null;
