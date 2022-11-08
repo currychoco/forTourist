@@ -10,7 +10,6 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-
 <%
 	request.setCharacterEncoding("utf-8");
 	
@@ -25,9 +24,9 @@
 		<!-- no id password name nickname gender phone resDate 8 -->
 			<form method = "POST" action = "user_joinPro.jsp">
 				<table>
-					<tr>
-						<td id = "title"> 회원번호</td>
-						<td><input type = "text" id = "no" name = "no" value="<%=no %>" maxlength = "50" readonly><td>
+					 <tr>
+						<td id = "title"></td>
+						<td><input type = "hidden" id = "no" name = "no" value="<%=no %>" maxlength = "50" readonly><td>
 					 </tr>
 					<tr>
 						<td id = "title"> 아이디 </td>
@@ -41,7 +40,6 @@
 						<td id = "title"> 이름 </td>
 						<td><input type = "text" id = "name" name = "name" maxlength = "20" placeholder = "이름을 입력해주세요."><td>
 					 </tr>
-					 
 					 <tr>
 						<td id = "title"> 닉네임 </td>
 						<td><input type = "text" id = "nickname" name = "nickname" maxlength = "20" placeholder = "닉네임을 입력해주세요."><td>
