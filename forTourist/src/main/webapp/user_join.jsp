@@ -18,17 +18,12 @@
 	int no = dao.getLastNo();
 	ArrayList<String> id = new ArrayList<>();
 	id = dao.getIdAll();
-
-	for (int i = 0; i < id.size(); i++) {
-		System.out.println(id.size());
-		System.out.println(id.get(i));
-	}
 	%>
 
 	<h1>회원가입 폼</h1>
 	<div>
 		<section>
-			<form method = "POST" action = "/forTourist/JoinAction">
+			<form method="POST" action="/forTourist/JoinAction">
 
 				<table>
 					<tr>
@@ -41,9 +36,6 @@
 						<td id="title">아이디</td>
 						<td><input type="text" id="id" name="id" maxlength="20"
 							placeholder="아이디를 입력해주세요.">
-						<td>
-						<td><button type="button" onclick="id_check();">아이디
-								중복확인</button>
 						<td>
 					</tr>
 					<tr>
@@ -87,7 +79,7 @@
 						<td>
 					</tr>
 					<tr>
-						<td id="btnWarp" colspan="2" style="text-align:center"><input
+						<td id="btnWarp" colspan="2" style="text-align: center"><input
 							type="button" onclick="checkForm(form)" value="등록"> <input
 							type="button" onclick="location.href='index.jsp'" value="취소">
 						</td>
