@@ -168,6 +168,44 @@ public class ReviewDao {
 		return list;
 	}
 	
+	//no를 받아와서 dto돌려보내기
+	public ReviewDto getReviewByNo(int no){
+		System.out.println("리뷰가져오기");
+		ReviewDto result = null;
+		String sql = "select * from review where contentid = ? order by no desc";
+		
+		try {
+			conn=DBManager.getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int contentId = rs.getInt(2);
+				String userid = rs.getString(3);
+				String title = rs.getString(4);
+				String content = rs.getString(5);
+				Timestamp resDate = rs.getTimestamp(6);
+				Timestamp modDate = rs.getTimestamp(7);
+				
+				result = new ReviewDto(no, contentId, userid, title, content, resDate, modDate);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
+	
+	
 	public void deleteReview(int no) {
 		String sql = "delete from review where no = ?";
 		
