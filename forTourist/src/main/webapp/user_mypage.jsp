@@ -29,9 +29,7 @@
 			<table border = "1" class = "mytable" >
 			<thead>
 				<tr>
-					<th>회원 번호</th>
 					<th>회원 아아디</th>
-					<th>회원 비밀번호</th>
 					<th>회원 이름</th>
 					<th>회원 닉네임</th>
 					<th>회원 성별</th>
@@ -40,9 +38,7 @@
 			</thead>
 			<tbody>
 			<tr>
-				<td><%=user.getNo()%></td>
 				<td><%=user.getId()%></td>
-				<td><%=user.getPassword()%></td>
 				<td><%=user.getName()%></td>
 				<td><%=user.getNickname()%></td>
 				<td><%=user.getGender()%></td>
@@ -57,15 +53,12 @@
 		 &nbsp; | &nbsp;
 		 <input type="button" value='관리자' class="button" onclick="location.href='admin_mypage.jsp'"/>
 		 <% } %>
-		 
 		</form>
 		</tbody>
 		</table>
-		
 <%		
 		}
 %>
-
 	</section>
 	
 	
