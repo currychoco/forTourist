@@ -60,7 +60,7 @@
 			<form method="post" action="/forTourist/FestivalReviewUpdateAction" class = "updateForm" >
 				<input type="hidden" id = "contentId" name="contentId" value=<%=contentId %>>
 				<input type="hidden" id="no" name="no" value="">
-				<textarea required name="contentM" id="contentM" rows="3" placeholder="리뷰 수정" required></textarea>
+				<textarea required name="content" id="content" rows="3" placeholder="리뷰 수정" required></textarea>
 	            <input type="submit" value="수정">
             </form>
 		</div>
