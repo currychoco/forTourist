@@ -23,17 +23,17 @@
 	String firstimage = request.getParameter("firstimage");
 	
 	%>	
-  <div class="container">
-      <div class="content">
-        <div class="imgWarp"><img src="<%=firstimage%>" class="img" /></div>
-        <div class="title"><%=title%></div>
-        <div class="text"><%=addr1%></div>
-      </div>
+ 	<div class="container">
+      	<div class="content">
+        	<div class="imgWarp"><img src="<%=firstimage%>" class="img" /></div>
+        	<div class="title"><%=title%></div>
+        	<div class="text"><%=addr1%></div>
+      	</div>
        
-      <div class="writeReview">  
-       <div class="review">
-          <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
-          <input type="hidden" id="userid" name="userid" value=<%=session.getAttribute("id") %>>
+      	<div class="writeReview">  
+       		<div class="review">
+          	<input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
+          	<input type="hidden" id="userid" name="userid" value=<%=session.getAttribute("id") %>>
         </div>
         <form method="post" action="/forTourist/AreaWriteReviewAction">
           <input type="hidden" id="contentId" name="contentId" value=<%=contentId%>>
@@ -43,19 +43,19 @@
           <textarea required name="content" id="content" rows="3" placeholder="리뷰 작성" required></textarea>
           <input type="submit" value="작성" />
         </form>
-    </div>
-    <div class="updateReview" style="display:none;">
-      		  <form method="post" action="/forTourist/AreaReviewUpdateAction">
-        	<input type="hidden" id = "contentId" name="contentId" value=<%=contentId %>>
-       	   <input type="hidden" id="title" name="title" value=<%=title%>>
-          <input type="hidden" id="addr1" name="addr1" value=<%=addr1Encode%>>
-          <input type="hidden" id="firstimage" name="firstimage" value=<%=firstimage%>>
-        	<input type="hidden" id="no" name="no" value="">
-        	<textarea required name="content" id="content" rows="3" placeholder="리뷰 수정" required></textarea>
+    	</div>
+    	<div class="updateReview" style="display:none;">
+      		<form method="post" action="/forTourist/AreaReviewUpdateAction">
+        		<input type="hidden" id = "contentId" name="contentId" value=<%=contentId %>>
+       	   		<input type="hidden" id="title" name="title" value=<%=title%>>
+          		<input type="hidden" id="addr1" name="addr1" value=<%=addr1Encode%>>
+          		<input type="hidden" id="firstimage" name="firstimage" value=<%=firstimage%>>
+        		<input type="hidden" id="no" name="no" value="">
+        		<textarea required name="content" id="content" rows="3" placeholder="리뷰 수정" required></textarea>
 	            <input type="submit" value="수정">
             </form>    
- 	   </div>
- 	   </div>
+ 	   	</div>
+ 	</div>
     	<script src="resources/reviewForApi.js"></script>
 	</section>
 	<jsp:include page="footer.jsp"/>
