@@ -54,8 +54,9 @@ function review(){
 				
 				if(userid === e.userid){
 					htmlText += `
-						<td><button onclick="modifyValidation('${e.userid}',${e.no})">수정</button></td>
-						<td><button onclick="deleteValidation('${e.userid}',${e.no})">삭제</button></td>
+						<td><button onclick="if(confirm('수정하시겠습니까?'))modifyValidation('${e.userid}',${e.no})">수정</button></td>
+						<td><button onclick="if(confirm('삭제하시겠습니까?'))deleteValidation('${e.userid}',${e.no})">삭제</button></td>
+						
 					`;
 				} else {
 					htmlText += `
