@@ -60,6 +60,35 @@
 	background: rgb(213, 54, 170);
 }
 
+.updateReview textarea {
+	width: 500px;
+	height: 100px;
+	
+}
+
+.updateReview input {
+	margin-top: 10px;
+	width: 300px;
+	padding: 10px;
+	color: #fff;
+	background: #000;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.updateReview input:hover {
+	background: rgb(216, 29, 166);
+}
+
+.updateReview input:active {
+	background: rgb(213, 54, 170);
+}
+
+.updateReview {
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+}
 .review {
 	flex: 1;
 	height: 500px;
