@@ -43,6 +43,46 @@
 	
 }
 
+.updateForm{
+	grid-area:review;
+	width:100%;
+	height:100%
+}
+
+#contentM{
+	text-align:left;
+	grid-area: table;
+	
+}
+
+.updateReview input {
+	margin-top: 10px;
+	width: 90%;
+	padding: 10px;
+	color: #fff;
+	background: #000;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.updateReview input:hover {
+	background: rgb(216, 29, 166);
+}
+
+.updateReview input:active {
+	background: rgb(213, 54, 170);
+}
+
+.updateReview input {
+	margin-top: 10px;
+	width: 90%;
+	padding: 10px;
+	color: #fff;
+	background: #000;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
 .writeReview input {
 	margin-top: 10px;
 	width: 90%;
