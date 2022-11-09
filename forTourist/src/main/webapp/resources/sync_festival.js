@@ -25,6 +25,7 @@ function startSyncFestival(){
        items.forEach(e => {
           syncFestival(e);
        });
+       alert("동기화 완료");
    });
 }
 
