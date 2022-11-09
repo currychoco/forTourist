@@ -25,7 +25,7 @@
 	
 	String id = (String)session.getAttribute("id");
 	ReviewDao dao = ReviewDao.getInstance();
-	List<ReviewDto> list =dao.getAllReviewById(id);
+	List<ReviewDto> list =dao.getAllReviewByIdTwo(id);
 	
 	
 

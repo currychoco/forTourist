@@ -228,10 +228,8 @@ public class ReviewDao {
 			while(rs.next()) {
 				int no = rs.getInt(1);
 				int contentId = rs.getInt(2);
-				
 				String title = rs.getString(4);
 				String content = rs.getString(5);
-				
 				Timestamp resDate = rs.getTimestamp(6);
 				Timestamp modDate = rs.getTimestamp(7);
 				
@@ -268,7 +266,6 @@ public class ReviewDao {
 				while(rs.next()) {
 					int no = rs.getInt(1);
 					int contentId = rs.getInt(2);
-					
 					String title = rs.getString(4);
 					String content = rs.getString(5);
 					String addr1 = rs.getString(9);
