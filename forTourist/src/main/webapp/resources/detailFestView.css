@@ -50,10 +50,14 @@
 }
 
 #contentM{
-	text-align:left;
-	grid-area: table;
-	
+	width:inherit;
+	text-align:left;	
 }
+
+.updateReview{
+	width:100%;
+}
+
 
 .updateReview input {
 	margin-top: 10px;
