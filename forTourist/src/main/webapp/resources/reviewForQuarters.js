@@ -39,7 +39,7 @@ function review(){
 					<td>${e.userid}</td>
 				`;
 				
-				if(e.modDate != "null"){
+				if(e.modDate != null){
 					htmlText += `<td><span>(수정일)</span>${e.modDate}</td>
 						<td class="reviewContent" data-id="${e.no}">${e.content}</td>
 					`;
