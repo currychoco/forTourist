@@ -56,16 +56,16 @@
 	            <input type="submit" value="작성">
             </form>
 		
-		</div>
-		
-		<div class="updateReview" style="display:none;">
-			<form method="post" action="/forTourist/FestivalReviewUpdateAction">
+		<div style="display:none;" class="updateReview">
+			<form method="post" action="/forTourist/FestivalReviewUpdateAction" class = "updateForm" >
 				<input type="hidden" id = "contentId" name="contentId" value=<%=contentId %>>
 				<input type="hidden" id="no" name="no" value="">
-				<textarea required name="content" id="content" rows="3" placeholder="리뷰 수정" required></textarea>
+				<textarea required name="contentM" id="contentM" rows="3" placeholder="리뷰 수정" required></textarea>
 	            <input type="submit" value="수정">
             </form>
 		</div>
+		</div>
+		
 		<div class="review">
 			<input type="hidden" id="contentId" name="contentId" value=<%=contentId %>>
 			<input type="hidden" id="userid" name="userid" value=<%=session.getAttribute("id") %>>
