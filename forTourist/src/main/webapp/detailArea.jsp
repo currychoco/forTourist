@@ -29,8 +29,6 @@
         <div class="title"><%=title%></div>
         <div class="text"><%=addr1%></div>
       </div>
-      
-      
        
       <div class="writeReview">  
        <div class="review">
@@ -56,6 +54,7 @@
         	<textarea required name="content" id="content" rows="3" placeholder="리뷰 수정" required></textarea>
 	            <input type="submit" value="수정">
             </form>    
+ 	   </div>
  	   </div>
     	<script src="resources/reviewForApi.js"></script>
 	</section>
