@@ -13,7 +13,7 @@ import forTourist.review.ReviewDto;
 /**
  * Servlet implementation class ReviewUpdateAction
  */
-@WebServlet("/ReviewUpdateAction")
+@WebServlet("/FestivalReviewUpdateAction")
 public class FestivalReviewUpdateAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
