@@ -12,7 +12,7 @@
 	<section>
 	<div class="searchrow">
 		<span class ="searchdate">
-			<input type="date" id="date" name="date">
+			<input type="date" id="date" name="date" value = "2022-11-06">
 			<button onclick="searchFestival()">search</button>
 		</span>
 	</div>

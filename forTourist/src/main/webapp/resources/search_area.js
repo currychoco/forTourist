@@ -5,8 +5,9 @@ $(".back_button").hide();
 $(".next_button").hide();
 $(".head").hide();
 
-let key;
+let key=1;
 
+start(key);
 
 function clk(element) {
     key = element.value;

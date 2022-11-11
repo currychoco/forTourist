@@ -64,7 +64,7 @@ section{
 }
 .content{
     list-style-type: none;
-    margin: 10px 10px;
+    margin: 20px 30px;
     text-align: center;
     padding-top: 5px;
 }
@@ -94,7 +94,8 @@ button{
 
 .imgs{
 	text-align:center;
-	height:450px;
+	height:350px;
+	margin-top:10px;
 	margin-bottom:3px;
 	width:100%;
 }

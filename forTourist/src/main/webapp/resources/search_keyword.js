@@ -17,8 +17,9 @@ $(".back_button").hide();
 
 $(".head").hide();
 
+searchKeyword();
 function searchKeyword(){
-    let keyword =  $("#keyword").val();
+   let keyword =  $("#keyword").val();
    console.log(keyword);
 
     $(".container").empty();
