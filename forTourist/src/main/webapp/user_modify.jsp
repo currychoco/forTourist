@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="resources/mypage.css">
-<!-- <link rel="stylesheet" href="resources/writeReviewLookUp.css"> -->
+
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -22,9 +22,9 @@ String id = request.getParameter("value");
 user = userDao.getUserById(id);
 %>
 	<section>
-		<h1>회원 정보 수정</h1>
+		<h2>회원 정보 수정</h2>
 		
-		<div style="text-align: center;  display: inline-block;" class="table-container" id = "forcenter">
+		<div style="text-align: center;  display: inline-block;" id = "forcenter">
 		<form method="post" action="/forTourist/ModifyAction">
 			<table class="mytable">
 				<tr style="background-color:#ddd;">
