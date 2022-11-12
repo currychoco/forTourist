@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/detailArea.css">
+<link rel="stylesheet" href="resources/likes.css">
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
@@ -42,6 +43,10 @@
           <textarea required name="content" id="content" rows="3" placeholder="리뷰 작성" required></textarea>
           <input type="submit" value="작성" />
         </form>
+        <div class = "likeBox">
+    	<button class = "like" id ="like" name="like" onclick="toggleLike()">좋아요 <span id="like-count">좋아요 숫자</span>개</button>
+    	<button class = "want" id ="want" name="want" onclick="toggleWant()">찜 <span id="want-text">찜여부</span></button>
+    </div>
     </div>
     <div class="updateReview" style="display:none;">
       		  <form method="post" action="/forTourist/KeywordReviewUpdateAction">
@@ -56,6 +61,8 @@
  	   </div>
  	   </div>
     	<script src="resources/reviewForKeyword.js"></script>
+    	    	<script src="resources/like.js"></script>
+    	<script src="resources/want.js"></script>
 	</section>
 	<jsp:include page="footer.jsp"/>
 </body>

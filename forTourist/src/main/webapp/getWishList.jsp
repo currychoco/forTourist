@@ -6,10 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/writeReviewLookUp.css">
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"/>
 <% 
 	String id = (String)session.getAttribute("id");
 	WantDao dao = WantDao.getInstance();
@@ -40,5 +43,6 @@
 			</tbody>
 		</table>
 	</div>
+		<jsp:include page="footer.jsp"/>
 </body>
 </html>

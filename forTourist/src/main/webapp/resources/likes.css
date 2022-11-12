@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/*
+<div class = "likeBox">
+    	<button class = "like" id ="like" name="like" onclick="toggleLike()">좋아요 <span id="like-count">좋아요 숫자</span>개</button>
+    	<button class = "want" id ="want" name="want" onclick="toggleWant()">찜 <span id="want-text">찜여부</span></button>
+    </div>
+    */
+    
+    .likeBox{
+    }
+    
+    .like{
+    border: solid 2px #DF013A;
+    background-color:#F8E0E6;
+    padding: 3px
+    }
+    
+    .like-count{
+    color: #DF013A;
+    }
+    
+    .want{
+    border: solid 2px #FF8000;
+    background-color:#F5F6CE;
+    padding: 3px
+    }
+    
+    .want-text{
+    color:#FF8000;
+    }

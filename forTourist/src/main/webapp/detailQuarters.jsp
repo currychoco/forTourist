@@ -11,6 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/detailArea.css">
+<link rel="stylesheet" href="resources/likes.css">
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
