@@ -1,12 +1,11 @@
 @charset "UTF-8";
 
 .mytable {
-	margin-left: auto;
-	margin-right: auto;
+	margin-left : auto;
+	margin-right : auto;
+	margin-top : 50px;
 	border-collapse: collapse;
-	margin-top: 50px;
-	height: 52px;
-	width: 702px;
+	
 }
 
 h2 {
@@ -32,4 +31,11 @@ input{
 
 #id{
 	background-color:#ddd;	
+}
+
+#forcenter{
+	    display: inline-block;
+          text-align: center;
+          margin: auto
+	
 }

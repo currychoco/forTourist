@@ -12,7 +12,7 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
-<nav>
+<nav class = "nav">
 	<button id="key" onclick="clk(this)" value="1">서울</button> |
 	<button id="key" onclick="clk(this)" value="6">부산</button> |
 	<button id="key" onclick="clk(this)" value="4">대구</button> |

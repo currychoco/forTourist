@@ -5,10 +5,14 @@ $(".back_button").hide();
 $(".next_button").hide();
 $(".head").hide();
 
-let key;
+let key=1;
 
+<<<<<<< HEAD
 //처음 실행될 때 서울 지역 명소가 보이게 고정
 start(1);
+=======
+start(key);
+>>>>>>> refs/remotes/origin/#RyuHyeKyoung
 
 //클릭 했을 경우 해당 번호의 정보가 출력되게 하는 함수
 function clk(element) {

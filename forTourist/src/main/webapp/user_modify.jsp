@@ -7,7 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet" href="resources/mypage.css">
+
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -21,8 +23,10 @@ user = userDao.getUserById(id);
 %>
 	<section>
 		<h2>회원 정보 수정</h2>
+		
+		<div style="text-align: center;  display: inline-block;" id = "forcenter">
 		<form method="post" action="/forTourist/ModifyAction">
-			<table border="1" style="border-collapse: collapse;" class="mytable">
+			<table class="mytable">
 				<tr style="background-color:#ddd;">
 					<td>회원번호</td>
 					<td><input type="text" id="no" name = "no" value = "<%=user.getNo()%>" readonly></td>
@@ -57,6 +61,7 @@ user = userDao.getUserById(id);
 				</tr>
 			</table>
 		</form>
+		</div>
 	</section>
 	<jsp:include page="footer.jsp"/>
 </body>

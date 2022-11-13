@@ -2,6 +2,8 @@ let key = 39;
 let pageNo = 1;
 let endPoint = false;
 
+start(key);
+
 $(".back_button").hide();
 $(".next_button").hide();
 $(".head").hide();
