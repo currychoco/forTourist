@@ -11,6 +11,10 @@
     font-family: 'Nanum Gothic', sans-serif;    
 }
 
+body{
+	margin : 0 10%;
+}
+
 header{
    position: relative;
    text-align: left; 

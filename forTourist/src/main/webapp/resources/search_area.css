@@ -49,20 +49,20 @@ cursor: pointer
     grid-template-rows: repeat(3,300px);
 }
 
-<<<<<<< HEAD
 img {
 	border-radius:10px;
     width: 100%;
     height: 240px;
     object-fit: cover;
-=======
+}
+
 .img {
 	border-radius:10px;
 	width: 100%;
 	height: 240px;
 	object-fit: cover;
->>>>>>> refs/remotes/origin/#RyuHyeKyoung
-  }
+
+ }
   
 .content{
 		margin: 10px 10px;

@@ -8,8 +8,6 @@ $(".back_button").hide();
 $(".next_button").hide();
 $(".head").hide();
 
-start(1);
-
 function clk(element) {
     key = element.value;
     pageNo = 1;
@@ -34,7 +32,6 @@ function start(num){
             sigunguCode: ""
         },
     }).done(function (response) {
-        console.log("response : ", response);
         const items = response.response.body.items.item;
         items.forEach((e) => {
               const firstimage = e.firstimage;

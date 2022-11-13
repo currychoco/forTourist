@@ -36,7 +36,6 @@ function searchKeyword(){
           keyword: keyword
        },
     }).done(function (response) {
-       console.log("response : ", response);
        const items = response.response.body.items.item;
        console.log(items);
         items.forEach((e) => {

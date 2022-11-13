@@ -32,7 +32,6 @@ function start(num){
             numOfRows: 20
         },
     }).done(function (response) {
-        console.log("response : ", response);
         const items = response.response.body.items.item;
         items.forEach((e) => {
             if (e.firstimage !== "") {
