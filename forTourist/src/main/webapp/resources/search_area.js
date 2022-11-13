@@ -27,7 +27,7 @@ function start(){
             MobileApp: 'AppTest',
             areaCode: key,
             pageNo: pageNo,
-            numOfRows: 20
+            numOfRows: 12
         },
     }).done(function (response) {
         const items = response.response.body.items.item;
