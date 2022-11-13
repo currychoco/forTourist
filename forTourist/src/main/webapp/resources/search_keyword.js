@@ -17,15 +17,8 @@ $(".back_button").hide();
 
 $(".head").hide();
 
-<<<<<<< HEAD
 const keyword =  $("#keyword").val();
 searchKeyword();
-=======
-searchKeyword();
-function searchKeyword(){
-   let keyword =  $("#keyword").val();
-   console.log(keyword);
->>>>>>> refs/remotes/origin/#RyuHyeKyoung
 
 function searchKeyword(){
     
