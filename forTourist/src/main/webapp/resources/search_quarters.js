@@ -6,13 +6,15 @@ $(".back_button").hide();
 $(".next_button").hide();
 $(".head").hide();
 
+start(1);
+
 function clk(element) {
     key = element.value;
     pageNo = 1;
     start(key);
 }
 
-function start(let){
+function start(num){
     $(".container").empty();
     $.ajax({
         method:"GET",
@@ -26,7 +28,7 @@ function start(let){
             arrange: 'Q',
             serviceKey: "V5KE3rjqul+J8o0qA4zHE52eNpZ3JIAhHXlwW8NUDBtkQgfpBceSSAfCHwpp46sjpkyWZ6SXpnmGvkCH5HzGlQ==",
             MobileOS : "ETC",
-            areaCode: `${key}`,
+            areaCode: num,
             sigunguCode: ""
         },
     }).done(function (response) {

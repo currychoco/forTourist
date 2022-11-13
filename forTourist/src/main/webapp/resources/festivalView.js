@@ -4,6 +4,10 @@ const CNT = 12;
 let page = 1;
 let lastPage = 100;
 
+document.getElementById('date').valueAsDate = new Date();
+searchFestival();
+
+
 $('.back_button').hide();
 $('.next_button').hide();
 

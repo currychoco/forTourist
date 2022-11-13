@@ -19,7 +19,7 @@
 			<h2 style = "text-align:center">활동별 검색</h2>
 	<section class="page" style = "text-align:center">
 		<span class="searchword" style="text-align: center;">
-   			<input type="text" id="keyword"/>
+   			<input type="text" id="keyword"  value="낚시"/>
     		<button onclick="searchKeyword()">search</button>
     	</span>
         <div class="container"></div>

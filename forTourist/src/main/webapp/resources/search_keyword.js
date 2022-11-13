@@ -17,10 +17,11 @@ $(".back_button").hide();
 
 $(".head").hide();
 
-function searchKeyword(){
-    let keyword =  $("#keyword").val();
-   console.log(keyword);
+const keyword =  $("#keyword").val();
+searchKeyword();
 
+function searchKeyword(){
+    
     $(".container").empty();
     $.ajax({
        method: "GET",
