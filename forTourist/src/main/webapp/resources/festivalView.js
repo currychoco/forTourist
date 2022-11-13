@@ -10,9 +10,10 @@ searchFestival();
 
 $('.back_button').hide();
 $('.next_button').hide();
-searchFestival();
+
 function searchFestival(){
-	  $('.container').empty(); // 지우기
+	page = 1;
+	$('.container').empty(); // 지우기
 	let date = $("#date").val();
    $.ajax({
        method:"post",
