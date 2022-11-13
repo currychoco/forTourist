@@ -253,7 +253,6 @@ public class ReviewDao {
 	
 //	수정한부분(정민식)
 	public List<ReviewDto> getAllReviewById(String userid){
-		System.out.println("내 리뷰읽어오기");
 		List<ReviewDto> list = new ArrayList<>();
 		String sql = "select * from review where userid = ? order by no desc";
 		
@@ -291,7 +290,6 @@ public class ReviewDao {
 	
 	//수정한부분(정민식)
 		public List<ReviewDto> getAllReviewByIdTwo(String userid){
-			System.out.println("내 리뷰읽어오기");
 			List<ReviewDto> list = new ArrayList<>();
 			String sql = "select * from review where userid = ? order by no desc";
 			//int contentId, String userid, String content , String title , String addr1, String firstimage
