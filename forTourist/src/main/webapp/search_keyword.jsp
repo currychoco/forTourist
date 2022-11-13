@@ -20,12 +20,12 @@
 	<section class="page" style = "text-align:center">
 		<span class="searchword" style="text-align: center;">
    			<input type="text" id="keyword"  value="등산"/>
-    		<button onclick="searchKeyword()">search</button>
+    		<button class="search_paging_button" onclick="searchKeyword()">검색</button>
     	</span>
         <div class="container"></div>
 		<div class="button" style="text-align: center;">
-        	<button class="back_button" onclick="getDataBack()">back</button>
-        	<button class="next_button" onclick="getDataNext()">next</button>
+        	<button class="back_button search_paging_button" onclick="getDataBack()">이전</button>
+        	<button class="next_button search_paging_button" onclick="getDataNext()">다음</button>
     	</div>
     </section>
   	<jsp:include page="footer.jsp"/>

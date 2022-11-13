@@ -67,7 +67,7 @@ ol {
 	padding-top: 5px;
 }
 
-button {
+.search_paging_button {
 	border: 0;
 	outline: 0;
 	background-color: white;

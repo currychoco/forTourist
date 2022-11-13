@@ -13,14 +13,14 @@
 	<div class="searchrow">
 		<span class ="searchdate">
 			<input type="date" id="date" name="date" value = "2022-11-06">
-			<button onclick="searchFestival()">search</button>
+			<button class="search_paging_button" onclick="searchFestival()">검색</button>
 		</span>
 	</div>
 	    <div class='container'>
     	</div>
     	<div class="page_form">
-	        <button class="back_button" onclick="getDataBack()">back</button>
-	        <button class="next_button" onclick="getDataNext()">next</button>
+	        <button class="back_button search_paging_button" onclick="getDataBack()">이전</button>
+	        <button class="next_button search_paging_button" onclick="getDataNext()">다음</button>
     	</div>
 		<script src = "resources/festivalView.js"></script>
 	</section>

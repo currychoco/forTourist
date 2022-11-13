@@ -23,6 +23,16 @@ header{
 header a img{
 	    width: 300px;
 }
+
+.btn_logout {
+	border: 0;
+	outline: 0;
+	background-color: white;
+	font-size: 17px;
+	margin: 0px 10px;
+	cursor: pointer
+}
+
 .logininfo{
 	align-items: flex-start;
     display: flex;

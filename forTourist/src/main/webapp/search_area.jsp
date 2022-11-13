@@ -32,8 +32,8 @@
             <div class="container">
             </div>
             <div style="text-align: center;">
-                <button id = "key" class="back_button" onclick="getDataBack()">back</button>
-                <button id = "key" class="next_button" onclick="getDataNext()">next</button>
+                <button id = "key" class="back_button" onclick="getDataBack()">이전</button>
+                <button id = "key" class="next_button" onclick="getDataNext()">다음</button>
             </div>
         </section>
     	</article>

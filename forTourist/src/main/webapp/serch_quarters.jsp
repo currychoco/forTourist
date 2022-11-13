@@ -50,8 +50,8 @@
 		</div>
 		<div class="container"></div>
 		<div class="buttons">
-			<button class="back_button" onclick="getDataBack()">back</button>
-			<button class="next_button" onclick="getDataNext()">next</button>
+			<button class="back_button" onclick="getDataBack()">이전</button>
+			<button class="next_button" onclick="getDataNext()">다음</button>
 		</div>
 	</div>
 	<jsp:include page="footer.jsp" />

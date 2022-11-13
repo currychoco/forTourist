@@ -23,7 +23,7 @@
     <%}else{ %>
     	<div class = "logininfo">
     	<span><b><%=id %></b>님 안녕하세요!</span>
-    	<button onclick="location.href='/forTourist/LogoutAction'">logout</button>
+    	<a class="btn_logout" href="/forTourist/LogoutAction">로그아웃</a>
     	</div>
     <%} %>
 	</header>
