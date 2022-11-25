@@ -29,7 +29,7 @@ function review(){
 			let htmlText = "";
 			
 			htmlText += `<table>`;
-        
+        	
 	        list.forEach(e=>{
 				
 				

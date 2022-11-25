@@ -25,9 +25,7 @@ function searchFestival(){
 		}
 		
 		 $('.container').append(
-               `
-	    <div class='contained'>
-				`
+               ` <div class='contained'> `
             );
             for(let i = (page-1)*CNT; i<(page-1)*CNT + CNT; i++){
 				if(i == list.length){

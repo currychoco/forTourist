@@ -22,7 +22,7 @@
 					<td><input type="password" id="password" name="password" placeholder = "비밀번호를 입력해주세요."></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" value="탈퇴"> <!-- onclick="alert('회원이 탈퇴 되었습니다.')" -->
+					<td colspan="2"><input type="submit" onclick="if(confirm('수정하시겠습니까?'))" value="탈퇴"> <!-- onclick="alert('회원이 탈퇴 되었습니다.')" -->
 						<input type="button" value="취소" onclick="location.href='user_mypage.jsp'"></td>
 				</tr>
 			</table>

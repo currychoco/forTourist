@@ -48,15 +48,10 @@ public class AreaReviewDeleteAction extends HttpServlet {
 		ReviewDao dao = ReviewDao.getInstance();
 		if(userId.equals(id)){
 			dao.deleteReview(no);
-			response.sendRedirect("/forTourist/detailArea?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En
-					+ "&&firstimage=" + firstimage);
+			response.sendRedirect("/forTourist/detailArea?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage);
 		}else{
-			response.sendRedirect("/forTourist/detailArea?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En
-					+ "&&firstimage=" + firstimage);
+			response.sendRedirect("/forTourist/detailArea?contentid=" + contentId + "&&title=" + title + "&&addr1=" + addr1En + "&&firstimage=" + firstimage);
 		}
-	
-		
-		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -64,5 +59,4 @@ public class AreaReviewDeleteAction extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 	}
-
 }

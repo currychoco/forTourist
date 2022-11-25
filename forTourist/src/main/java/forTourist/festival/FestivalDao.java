@@ -114,6 +114,9 @@ public class FestivalDao {
 		String sql = "select * from festival\r\n" + " where event_start_date <= STR_TO_DATE(?, '%Y-%m-%d') \r\n"
 				+ " AND event_end_date >= STR_TO_DATE(?, '%Y-%m-%d') ORDER BY event_end_date;";
 
+		
+//		 "select * from festival where event_start_date <= STR_TO_DATE(?, '%Y-%m-%d') AND event_end_date >= STR_TO_DATE(?, '%Y-%m-%d') ORDER BY event_end_date;";
+
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);

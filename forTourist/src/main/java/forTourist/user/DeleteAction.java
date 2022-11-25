@@ -14,48 +14,54 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/DeleteAction")
 public class DeleteAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DeleteAction() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		UserDao userDao = UserDao.getInstance();
-		UserDto user = null;
-
-		String id = request.getParameter("id");
-		String password = request.getParameter("password");
-
-		user = userDao.getUserById(id);
-		userDao.deleteUser(id);
-
-		if (user != null) {
-			String checkPassword = user.getPassword();
-			String checkId = user.getId();
-
-			if (id.equals(checkId) && password.equals(checkPassword)) {
-				userDao.deleteUser(id);
-				HttpSession session = request.getSession();
-				session.setAttribute("id", null);
-				response.sendRedirect("home");
-			} else {
-				response.sendRedirect("home");
-			}
-		}
+	public DeleteAction() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		UserDao userDao = UserDao.getInstance();
+		UserDto user = null;
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
+		HttpSession session = request.getSession();
+		String userid = (String) session.getAttribute("id");
+		System.out.println(user);
+		if (id.equals(userid)) {
+			user = userDao.getUserById(id);
+			userDao.deleteUser(id);
+			if (user != null) {
+				String checkPassword = user.getPassword();
+				if (password.equals(checkPassword)) {
+					userDao.deleteUser(id);
+					session.setAttribute("id", null);
+					response.sendRedirect("home");
+				} else {
+					response.sendRedirect("home");
+				}
+			}else {
+				response.sendRedirect("/forTourist/myPage");
+			}
+		}else {
+			response.sendRedirect("/forTourist/myPage");
+		}
+	}
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		request.setCharacterEncoding("UTF-8");

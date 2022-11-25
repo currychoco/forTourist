@@ -42,12 +42,13 @@ public class UserDao {
 							
 	public void createUser(UserDto userDto) {
 		String sql = "INSERT INTO `user`(`no`,id,`password`,`name`,nickname,gender,phone) VALUES(?, ?, ?, ?, ?, ?, ?)";
-
+		int no = getLastNo();
+		
 		try {
 			this.conn = DBManager.getConnection();
 			this.pstmt = this.conn.prepareStatement(sql);
 
-			this.pstmt.setInt(1, userDto.getNo());
+			this.pstmt.setInt(1, no);
 			this.pstmt.setString(2, userDto.getId());
 			this.pstmt.setString(3, userDto.getPassword());
 			this.pstmt.setString(4, userDto.getName());
